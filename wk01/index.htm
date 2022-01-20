@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTEC-104 Wk01 Intro to Powershell</title>
+</head>
+
+<body>
+    <h1>CTEC-104 Intro to Scripting / Intro to Powershell</h1>
+    <p><b>Scripting</b> is a method of programming certain <i>run-time</i> environments that automates the execution of tasks</p>
+    <p>scripting is an 'interpreted' (rather than 'compiled') language</p>
+    <p>we will use PowerShell, but there are other scripting languages, ex: Unix Shell, PHP, Perl, Python, and JavaScript.</p>
+    <p>Network Security professionals audit and monitor systems with scripting and test the security of systems and log files of servers.</p>
+    <p>System Admins are expected to write script to monitor and test performance, secure systems, and debug servers</p>
+    <h3>What is PowerShell?</h3>
+    <p>PowerShell is a scripting tool provided in Windows Systems. it provides hundreds of commands to make the Sys Admin job easier. Sys Admins are responsible for the upkeep, configuration, and operation of computer systems.</p>
+    <i>find out the Version of PowerShell:</i> $PSVersionTable.PSVersion -- i'm using 7.2.1 and will use 5.1.19041.1320 for this course
+    <p><a href="http://docs.microsoft.com/en-us/powershell/module/">official PowerShell Documentation</a><i> http://docs.microsoft.com/en-us/powershell/module/</i></p>
+    <p><a href="https://www.youtube.com/c/DonJonesConTech">additional PowerShell YouTube Videos from Don Jones</a></p>
+    <p>we will use the Microsoft Help System extensively in this course. <i>usage ex: (at PowerShell Prompt)</i> get-help get-date -online or get-help get-date -full</p>
+    <p> the above commands will open the online help in the default browsers, or within your powershell (more difficult to read).</p>
+    <p>PowerShell executes 4 Named Commands:</p>
+    <ul>
+        <li>Cmdlets -- commandlets the most basic commands that we will use most often</li>
+        <li>PowerShell scripts (extension .ps1) - files with multiple 'cmdlets' saved as .PS1 file</li>
+        <li>PowerShell Functions - can contain multiple scripts in a function and they are reusable</li>
+        <li>Standalone Executable Programs</li>
+    </ul>
+
+    <h3>cmdlets</h3>
+    <p>cmdlets have a naming format of verb-noun</p>
+    <ul>
+        <li>Get-Command</li>
+        <li>Enable-ScheduledJob</li>
+        <li>Export-Csv</li>
+        <li>Get-Hosted</li>
+        <li>New-Services</li>
+        <li>Set-Location</li>
+    </ul>
+    <p> there are 3 major command types: Alias, Function, cmdlet</p>
+    <p> Ctrl-c to break or 'cancel' the command</p>
+    <p>when using the 'get-command' cmdlet notice the 'source' column it will tell you were the command comes from, either Microsoft or a 3rd party library</p>
+
+    <h3>Aliases</h3>
+    <p>provide shortcuts to reduce typing</p> they refer to cmdlets and substitute for the cmdelt name.</p>
+    <ul>Alias ex: {to see all Alias type: get-alias}
+        <li>cls - clear-host</li>
+        <li>dir - get-childitem</li>
+        <li>gps - get-process</li>
+        <li>type - get-content</li>
+    </ul>
+
+    <h3>Functions</h3>
+    <p>cmdlets that you can create and customize and reuse</p>
+
+    <h3>Parameters</h3>
+    <p>extra information that we give a command so that it does extra</p>
+    <p>2 types of Parameters: named and positional. Named parameters have the name in order to be used; Positional parameters are identified by their position in the command input</p>
+    <p>Positional Parameters will have a position of 0,1, or 2. this # specifies the order of the parameter when typed. 0 index, index 1, or index 2</p>
+
+    <h4>Named Parameter ex:</h4>named parameters will be explicitly present in a command.
+    <p>ex: Get-Command -Module "Microsoft.PowerShell.Core"
+        <p> the name of the Command is Get-Command. the Named Parameter is -Module and the Named Parameter Value is "Microsoft.PowerShell.Core"<br>this will retrieve all commands found in Microsoft.PowerShell.Core module
+        </p>
+
+        <h4>Positional Parameter</h4>
+        Positional Parameter names are assumed by the order in which they are input
+
+        <h4>Objects</h4>
+        in PowerShell commands produce output as Objects. Objects are data items made up of properties and methods.<br>this allows for incredibly large amounts of data to be packaged into an object and displayed and manipulated via PowerShell.
+        <h5>Object example: Date Object</h5>the following command is used to get current date and time: <b>get-date</b>
+        <p>if you: <b>get-date | select-object *</b> you will see that you have much more information displayed</p>
+        <p>you can also use the command: <b>get-date | select hour, minute, kind, year</b> and it will pull only the hour, minute, kind, and year from the date information</p>
+        <p><b>Get-Member</b> the get-member command is used to display the type of object along with it's methods and properties</p>ex: get-date | get-member -- the TypeName shows that this is a System.DateTime Object.<br>Get-Member lists all available methods,
+        but does not display any property values (as were displayed using the Select-Object {select} command).
+
+        <h4>Convenience Options</h4>
+        Wildcard '*' character can be used with many parameters to specify multiple items, ex: <b>get-command m*</b> will get all commands that begin with 'm'.<br><b>get-command *event*</b> will return all commands with the text 'event'
+
+        <h2>READ Chapters 1-4 in text PowerShell in a Week of Lunches, complete chapter quizes, and complete PowerShell Exercise week 01</h2>
+
+
+
+</body>
+
+</html>
