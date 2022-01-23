@@ -82,6 +82,19 @@
 
         <h2>READ Chapters 1-4 in text PowerShell in a Week of Lunches, complete chapter quizes, and complete PowerShell Exercise week 01</h2>
 
+        <h1>from <a href="https://www.youtube.com/watch?v=IHrGresKu2w">YouTube Microsoft PowerShell for beginners part 1</a></h1>
+        always <b>start-transcript</b> 1st in every session.
+        <p>verb-noun is the format used for powershell.</p><b>ex: get-service</b> - this lists all services and if they are running or stopped.
+        <p>ex: of Alias - <b>cls</b> is the alias of Clear-Host, if you type <b>get-alias cls</b> it will reveal the command</p>
+        <p><b>get-process</b> does basically what taskmanager does - shows processes that are working, the handlers, the cpus active and more</p>
+
+        <p><b>get-process -Name iCue</b> will show the information about the 1 process iCue. we can then start interacting with the object by piping "|" the output to another </p>
+        <br> <b>get-process -name icue | get-member</b> we will use the get-member cmdlet often. <b>get-member</b> reveals the properties and methods associated with the object.<br>Methods are the actions that can be done to the object. Properties are
+        information we know about a particular object.<br><i>ex: of Method = car.start, car.drive. ex: of Properties = car.color, car.doors.</i>
+        <p><b>get-process -name icue | select-object *</b> returns all of the information about the object, it is very important in sharepoint and azure in the future.</p><br><b>Get-member</b> shows the methods and what we can do with the object, and <b>select-object *</b>        shows the properties
+        <h3>Variables</h3>ex: <b>$variable = get-process icue</b> variables start with $ in powershell. in order to create one you simply name the variable "=" and the command you want to perform.
+        <p><b>get-history</b> shows your history during this session.</p><b>stop-transcript</b> to end the transcript of the session.
+
 
 
 </body>

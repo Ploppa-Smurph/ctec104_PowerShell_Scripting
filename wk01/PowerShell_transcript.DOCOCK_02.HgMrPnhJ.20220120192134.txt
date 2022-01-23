@@ -1,0 +1,1211 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20220120192134
+Username: DOCOCK\JSWalley
+RunAs User: DOCOCK\JSWalley
+Configuration Name: 
+Machine: DOCOCK (Microsoft Windows NT 10.0.19044.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 12100
+PSVersion: 5.1.19041.1320
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.1320
+BuildVersion: 10.0.19041.1320
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\JSWalley\Documents\PowerShell_transcript.DOCOCK.HgMrPnhJ.20220120192134.txt
+PS C:\users\jswalley\desktop\courses\ctec104> cd wk01
+PS C:\users\jswalley\desktop\courses\ctec104\wk01> ls
+
+
+    Directory: C:\users\jswalley\desktop\courses\ctec104\wk01
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         1/20/2022   5:26 PM          11280 a1-Basics-Exercise.docx
+-a----         1/20/2022   5:27 PM         713263 a1-Basicsnew.pptx
+-a----         1/20/2022  10:11 AM          23933 Collect Information about local computers.docx
+-a----         1/20/2022   4:18 PM           5973 index.htm
+-a----         1/20/2022   5:56 PM         764324 PowerShell_transcript.DOCOCK.xGbjRL7s.20220120161333.txt
+
+
+PS C:\users\jswalley\desktop\courses\ctec104\wk01> get-service
+
+Status   Name               DisplayName
+------   ----               -----------
+Stopped  AarSvc_381e3       AarSvc_381e3
+Running  agent_ovpnconnect  OpenVPN Agent agent_ovpnconnect
+Stopped  AJRouter           AllJoyn Router Service
+Stopped  ALG                Application Layer Gateway Service
+Running  AMD Crash Defen... AMD Crash Defender Service
+Running  AMD External Ev... AMD External Events Utility
+Stopped  AppIDSvc           Application Identity
+Running  Appinfo            Application Information
+Stopped  AppMgmt            Application Management
+Stopped  AppReadiness       App Readiness
+Stopped  AppVClient         Microsoft App-V Client
+Running  AppXSvc            AppX Deployment Service (AppXSVC)
+Stopped  AssignedAccessM... AssignedAccessManager Service
+Running  AudioEndpointBu... Windows Audio Endpoint Builder
+Running  Audiosrv           Windows Audio
+Running  AUEPLauncher       AMD User Experience Program Data Up...
+Stopped  autotimesvc        Cellular Time
+Stopped  AxInstSV           ActiveX Installer (AxInstSV)
+Running  AzureAttestService AzureAttestService
+Stopped  BcastDVRUserSer... BcastDVRUserService_381e3
+Stopped  BDESVC             BitLocker Drive Encryption Service
+Running  BFE                Base Filtering Engine
+Stopped  BITS               Background Intelligent Transfer Ser...
+Stopped  BluetoothUserSe... BluetoothUserService_381e3
+Running  Bonjour Service    Bonjour Service
+Stopped  brave              Brave Update Service (brave)
+Stopped  bravem             Brave Update Service (bravem)
+Running  BrokerInfrastru... Background Tasks Infrastructure Ser...
+Stopped  BTAGService        Bluetooth Audio Gateway Service
+Running  BthAvctpSvc        AVCTP service
+Stopped  bthserv            Bluetooth Support Service
+Running  camsvc             Capability Access Manager Service
+Stopped  CaptureService_... CaptureService_381e3
+Running  cbdhsvc_381e3      cbdhsvc_381e3
+Running  CDPSvc             Connected Devices Platform Service
+Running  CDPUserSvc_381e3   CDPUserSvc_381e3
+Stopped  CertPropSvc        Certificate Propagation
+Stopped  ClipSVC            Client License Service (ClipSVC)
+Stopped  cloudidsvc         Microsoft Cloud Identity Service
+Running  CmWebAdmin.exe     CmWebAdmin
+Running  CodeMeter.exe      CodeMeter Runtime Server
+Running  com.docker.service Docker Desktop Service
+Stopped  COMSysApp          COM+ System Application
+Stopped  ConsentUxUserSv... ConsentUxUserSvc_381e3
+Running  CoreMessagingRe... CoreMessaging
+Running  CorsairGamingAu... Corsair Gaming Audio Configuration ...
+Running  CorsairLLAService  Corsair LLA Service
+Running  CorsairService     Corsair Service
+Stopped  CredentialEnrol... CredentialEnrollmentManagerUserSvc_...
+Running  CryptSvc           Cryptographic Services
+Stopped  CscService         Offline Files
+Running  DcomLaunch         DCOM Server Process Launcher
+Stopped  defragsvc          Optimize drives
+Stopped  DeviceAssociati... DeviceAssociationBrokerSvc_381e3
+Running  DeviceAssociati... Device Association Service
+Running  DeviceInstall      Device Install Service
+Stopped  DevicePickerUse... DevicePickerUserSvc_381e3
+Stopped  DevicesFlowUser... DevicesFlowUserSvc_381e3
+Stopped  DevQueryBroker     DevQuery Background Discovery Broker
+Running  Dhcp               DHCP Client
+Stopped  diagnosticshub.... Microsoft (R) Diagnostics Hub Stand...
+Stopped  diagsvc            Diagnostic Execution Service
+Running  DiagTrack          Connected User Experiences and Tele...
+Stopped  DialogBlockingS... DialogBlockingService
+Running  DispBrokerDeskt... Display Policy Service
+Stopped  DisplayEnhancem... Display Enhancement Service
+Stopped  DmEnrollmentSvc    Device Management Enrollment Service
+Stopped  dmwappushservice   Device Management Wireless Applicat...
+Running  Dnscache           DNS Client
+Running  DoSvc              Delivery Optimization
+Stopped  dot3svc            Wired AutoConfig
+Running  DPS                Diagnostic Policy Service
+Stopped  DsmSvc             Device Setup Manager
+Running  DsSvc              Data Sharing Service
+Running  DusmSvc            Data Usage
+Stopped  Eaphost            Extensible Authentication Protocol
+Stopped  EasyAntiCheat      EasyAntiCheat
+Stopped  edgeupdate         Microsoft Edge Update Service (edge...
+Stopped  edgeupdatem        Microsoft Edge Update Service (edge...
+Stopped  EFS                Encrypting File System (EFS)
+Stopped  embeddedmode       Embedded Mode
+Stopped  EntAppSvc          Enterprise App Management Service
+Stopped  EpicOnlineServices Epic Online Services
+Running  EventLog           Windows Event Log
+Running  EventSystem        COM+ Event System
+Stopped  Fax                Fax
+Stopped  fdPHost            Function Discovery Provider Host
+Stopped  FDResPub           Function Discovery Resource Publica...
+Stopped  fhsvc              File History Service
+Running  Focusrite Contr... Focusrite Control Server
+Running  FontCache          Windows Font Cache Service
+Stopped  FontCache3.0.0.0   Windows Presentation Foundation Fon...
+Stopped  FrameServer        Windows Camera Frame Server
+Stopped  GalaxyClientSer... GalaxyClientService
+Stopped  GalaxyCommunica... GalaxyCommunication
+Running  GamingServices     Gaming Services
+Running  GamingServicesNet  Gaming Services
+Stopped  gpsvc              Group Policy Client
+Stopped  GraphicsPerfSvc    GraphicsPerfSvc
+Running  hidserv            Human Interface Device Service
+Running  hns                Host Network Service
+Running  HvHost             HV Host Service
+Stopped  icssvc             Windows Mobile Hotspot Service
+Stopped  IKEEXT             IKE and AuthIP IPsec Keying Modules
+Running  InstallService     Microsoft Store Install Service
+Running  iphlpsvc           IP Helper
+Stopped  IpxlatCfgSvc       IP Translation Configuration Service
+Running  KeyIso             CNG Key Isolation
+Running  KiteService        KiteService
+Stopped  KtmRm              KtmRm for Distributed Transaction C...
+Running  LanmanServer       Server
+Running  LanmanWorkstation  Workstation
+Running  lfsvc              Geolocation Service
+Running  LicenseManager     Windows License Manager Service
+Stopped  lltdsvc            Link-Layer Topology Discovery Mapper
+Running  lmhosts            TCP/IP NetBIOS Helper
+Running  LSM                Local Session Manager
+Stopped  LxpSvc             Language Experience Service
+Running  LxssManager        LxssManager
+Stopped  LxssManagerUser... LxssManagerUser_381e3
+Stopped  MapsBroker         Downloaded Maps Manager
+Stopped  MessagingServic... MessagingService_381e3
+Stopped  MicrosoftEdgeEl... Microsoft Edge Elevation Service (M...
+Stopped  MixedRealityOpe... Windows Mixed Reality OpenXR Service
+Running  mpssvc             Windows Defender Firewall
+Stopped  MSDTC              Distributed Transaction Coordinator
+Stopped  MSiSCSI            Microsoft iSCSI Initiator Service
+Stopped  msiserver          Windows Installer
+Stopped  MsKeyboardFilter   Microsoft Keyboard Filter
+Stopped  MsMpiLaunchSvc     MS-MPI Launch Service
+Running  MSSQL$SQLEXPRESS   SQL Server (SQLEXPRESS)
+Running  MSSQLFDLauncher... SQL Full-text Filter Daemon Launche...
+Running  MSSQLLaunchpad$... SQL Server Launchpad (SQLEXPRESS)
+Stopped  NaturalAuthenti... Natural Authentication
+Stopped  NcaSvc             Network Connectivity Assistant
+Running  NcbService         Network Connection Broker
+Stopped  NcdAutoSetup       Network Connected Devices Auto-Setup
+Stopped  Netlogon           Netlogon
+Stopped  Netman             Network Connections
+Running  netprofm           Network List Service
+Stopped  NetSetupSvc        Network Setup Service
+Stopped  NetTcpPortSharing  Net.Tcp Port Sharing Service
+Stopped  NgcCtnrSvc         Microsoft Passport Container
+Stopped  NgcSvc             Microsoft Passport
+Running  NlaSvc             Network Location Awareness
+Running  nsi                Network Store Interface Service
+Running  nvagent            Network Virtualization Service
+Running  OneSyncSvc_381e3   OneSyncSvc_381e3
+Stopped  Origin Client S... Origin Client Service
+Running  Origin Web Help... Origin Web Helper Service
+Running  ovpnhelper_service OpenVPN Connect Helper Service
+Stopped  OVRLibraryService  Oculus VR Library Service
+Running  OVRService         Oculus VR Runtime Service
+Stopped  p2pimsvc           Peer Networking Identity Manager
+Stopped  p2psvc             Peer Networking Grouping
+Running  PaceLicenseDSer... PACE License Services
+Running  PcaSvc             Program Compatibility Assistant Ser...
+Stopped  PeerDistSvc        BranchCache
+Stopped  perceptionsimul... Windows Perception Simulation Service
+Stopped  PerfHost           Performance Counter DLL Host
+Stopped  PhoneSvc           Phone Service
+Running  PimIndexMainten... PimIndexMaintenanceSvc_381e3
+Stopped  pla                Performance Logs & Alerts
+Running  PlexUpdateService  Plex Update Service
+Running  PlugPlay           Plug and Play
+Running  PnkBstrA           PnkBstrA
+Stopped  PNRPAutoReg        PNRP Machine Name Publication Service
+Stopped  PNRPsvc            Peer Name Resolution Protocol
+Running  PolicyAgent        IPsec Policy Agent
+Running  Power              Power
+Stopped  PrintNotify        Printer Extensions and Notifications
+Stopped  PrintWorkflowUs... PrintWorkflowUserSvc_381e3
+Running  ProfSvc            User Profile Service
+Stopped  PushToInstall      Windows PushToInstall Service
+Stopped  QWAVE              Quality Windows Audio Video Experience
+Stopped  RasAuto            Remote Access Auto Connection Manager
+Running  RasMan             Remote Access Connection Manager
+Stopped  RemoteAccess       Routing and Remote Access
+Stopped  RemoteRegistry     Remote Registry
+Stopped  RetailDemo         Retail Demo Service
+Running  RmSvc              Radio Management Service
+Running  RpcEptMapper       RPC Endpoint Mapper
+Stopped  RpcLocator         Remote Procedure Call (RPC) Locator
+Running  RpcSs              Remote Procedure Call (RPC)
+Running  SamSs              Security Accounts Manager
+Stopped  SCardSvr           Smart Card
+Stopped  ScDeviceEnum       Smart Card Device Enumeration Service
+Running  Schedule           Task Scheduler
+Stopped  SCPolicySvc        Smart Card Removal Policy
+Stopped  SDRSVC             Windows Backup
+Stopped  seclogon           Secondary Logon
+Running  SecurityHealthS... Windows Security Service
+Running  SEMgrSvc           Payments and NFC/SE Manager
+Running  SENS               System Event Notification Service
+Stopped  Sense              Windows Defender Advanced Threat Pr...
+Stopped  SensorDataService  Sensor Data Service
+Stopped  SensorService      Sensor Service
+Stopped  SensrSvc           Sensor Monitoring Service
+Stopped  SessionEnv         Remote Desktop Configuration
+Running  SgrmBroker         System Guard Runtime Monitor Broker
+Running  SharedAccess       Internet Connection Sharing (ICS)
+Stopped  SharedRealitySvc   Spatial Data Service
+Running  ShellHWDetection   Shell Hardware Detection
+Stopped  shpamsvc           Shared PC Account Manager
+Stopped  smphost            Microsoft Storage Spaces SMP
+Stopped  SmsRouter          Microsoft Windows SMS Router Service.
+Stopped  SNMPTRAP           SNMP Trap
+Stopped  spectrum           Windows Perception Service
+Stopped  Spooler            Print Spooler
+Stopped  sppsvc             Software Protection
+Stopped  SQLAgent$SQLEXP... SQL Server Agent (SQLEXPRESS)
+Stopped  SQLBrowser         SQL Server Browser
+Stopped  SQLPBDMS$SQLEXP... SQL Server PolyBase Data Movement (...
+Stopped  SQLPBENGINE$SQL... SQL Server PolyBase Engine (SQLEXPR...
+Running  SQLTELEMETRY$SQ... SQL Server CEIP service (SQLEXPRESS)
+Running  SQLWriter          SQL Server VSS Writer
+Running  SSDPSRV            SSDP Discovery
+Stopped  ssh-agent          OpenSSH Authentication Agent
+Running  SstpSvc            Secure Socket Tunneling Protocol Se...
+Running  StateRepository    State Repository Service
+Stopped  Steam Client Se... Steam Client Service
+Running  stisvc             Windows Image Acquisition (WIA)
+Running  StorSvc            Storage Service
+Stopped  svsvc              Spot Verifier
+Stopped  swprv              Microsoft Software Shadow Copy Prov...
+Running  SysMain            SysMain
+Running  SystemEventsBroker System Events Broker
+Running  TabletInputService Touch Keyboard and Handwriting Pane...
+Running  TapiSrv            Telephony
+Stopped  TermService        Remote Desktop Services
+Running  Themes             Themes
+Stopped  TieringEngineSe... Storage Tiers Management
+Running  TimeBrokerSvc      Time Broker
+Running  TokenBroker        Web Account Manager
+Stopped  Transmission       Transmission Daemon
+Running  TrkWks             Distributed Link Tracking Client
+Stopped  TroubleshootingSvc Recommended Troubleshooting Service
+Stopped  TrustedInstaller   Windows Modules Installer
+Stopped  tzautoupdate       Auto Time Zone Updater
+Stopped  UdkUserSvc_381e3   UdkUserSvc_381e3
+Stopped  UevAgentService    User Experience Virtualization Service
+Stopped  uhssvc             Microsoft Update Health Service
+Stopped  UmRdpService       Remote Desktop Services UserMode Po...
+Running  UnistoreSvc_381e3  UnistoreSvc_381e3
+Stopped  Updater            Updater
+Running  upnphost           UPnP Device Host
+Running  UserDataSvc_381e3  UserDataSvc_381e3
+Running  UserManager        User Manager
+Running  UsoSvc             Update Orchestrator Service
+Stopped  VacSvc             Volumetric Audio Compositor Service
+Running  VaultSvc           Credential Manager
+Stopped  vds                Virtual Disk
+Running  VirtualDesktop.... Virtual Desktop Service
+Running  VMAuthdService     VMware Authorization Service
+Running  vmcompute          Hyper-V Host Compute Service
+Stopped  vmicguestinterface Hyper-V Guest Service Interface
+Stopped  vmicheartbeat      Hyper-V Heartbeat Service
+Stopped  vmickvpexchange    Hyper-V Data Exchange Service
+Stopped  vmicrdv            Hyper-V Remote Desktop Virtualizati...
+Stopped  vmicshutdown       Hyper-V Guest Shutdown Service
+Stopped  vmictimesync       Hyper-V Time Synchronization Service
+Stopped  vmicvmsession      Hyper-V PowerShell Direct Service
+Stopped  vmicvss            Hyper-V Volume Shadow Copy Requestor
+Running  VMnetDHCP          VMware DHCP Service
+Running  VMUSBArbService    VMware USB Arbitration Service
+Running  VMware NAT Service VMware NAT Service
+Stopped  VSS                Volume Shadow Copy
+Stopped  W32Time            Windows Time
+Stopped  WaaSMedicSvc       Windows Update Medic Service
+Stopped  WalletService      WalletService
+Stopped  WarpJITSvc         WarpJITSvc
+Stopped  wbengine           Block Level Backup Engine Service
+Stopped  WbioSrvc           Windows Biometric Service
+Running  Wcmsvc             Windows Connection Manager
+Stopped  wcncsvc            Windows Connect Now - Config Registrar
+Running  WdiServiceHost     Diagnostic Service Host
+Running  WdiSystemHost      Diagnostic System Host
+Running  WdNisSvc           Microsoft Defender Antivirus Networ...
+Running  WebClient          WebClient
+Stopped  Wecsvc             Windows Event Collector
+Stopped  WEPHOSTSVC         Windows Encryption Provider Host Se...
+Stopped  wercplsupport      Problem Reports Control Panel Support
+Stopped  WerSvc             Windows Error Reporting Service
+Stopped  WFDSConMgrSvc      Wi-Fi Direct Services Connection Ma...
+Stopped  WiaRpc             Still Image Acquisition Events
+Running  WinDefend          Microsoft Defender Antivirus Service
+Running  WinHttpAutoProx... WinHTTP Web Proxy Auto-Discovery Se...
+Running  Winmgmt            Windows Management Instrumentation
+Stopped  WinRM              Windows Remote Management (WS-Manag...
+Stopped  wisvc              Windows Insider Service
+Stopped  WlanSvc            WLAN AutoConfig
+Stopped  wlidsvc            Microsoft Account Sign-in Assistant
+Stopped  wlpasvc            Local Profile Assistant Service
+Stopped  WManSvc            Windows Management Service
+Stopped  wmiApSrv           WMI Performance Adapter
+Running  WMPNetworkSvc      Windows Media Player Network Sharin...
+Stopped  workfolderssvc     Work Folders
+Stopped  WpcMonSvc          Parental Controls
+Stopped  WPDBusEnum         Portable Device Enumerator Service
+Running  WpnService         Windows Push Notifications System S...
+Running  WpnUserService_... WpnUserService_381e3
+Running  wscsvc             Security Center
+Running  WSearch            Windows Search
+Stopped  wuauserv           Windows Update
+Stopped  WwanSvc            WWAN AutoConfig
+Stopped  XblAuthManager     Xbox Live Auth Manager
+Stopped  XblGameSave        Xbox Live Game Save
+Stopped  XboxGipSvc         Xbox Accessory Management Service
+Stopped  XboxNetApiSvc      Xbox Live Networking Service
+
+
+PS C:\users\jswalley\desktop\courses\ctec104\wk01> get-help get-service
+
+NAME
+    Get-Service
+
+SYNOPSIS
+    Gets the services on a local or remote computer.
+
+
+SYNTAX
+    Get-Service [-ComputerName <System.String[]>] [-DependentServices] -DisplayName <System.String[]> [-Exclude <System.String[]>] [-Include
+    <System.String[]>] [-RequiredServices] [<CommonParameters>]
+
+    Get-Service [-ComputerName <System.String[]>] [-DependentServices] [-Exclude <System.String[]>] [-Include <System.String[]>] [-InputObject
+    <System.ServiceProcess.ServiceController[]>] [-RequiredServices] [<CommonParameters>]
+
+    Get-Service [[-Name] <System.String[]>] [-ComputerName <System.String[]>] [-DependentServices] [-Exclude <System.String[]>] [-Include
+    <System.String[]>] [-RequiredServices] [<CommonParameters>]
+
+
+DESCRIPTION
+    The `Get-Service` cmdlet gets objects that represent the services on a local computer or on a remote computer, including running and stopped
+    services.
+
+    You can direct this cmdlet to get only particular services by specifying the service name or the display name of the services, or you can
+    pipe service objects to this cmdlet.
+
+
+RELATED LINKS
+    Online Version:
+    https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-service?view=powershell-5.1&WT.mc_id=ps-gethelp
+    New-Service
+    Restart-Service
+    Resume-Service
+    Set-Service
+    Start-Service
+    Stop-Service
+    Suspend-Service
+
+REMARKS
+    To see the examples, type: "get-help Get-Service -examples".
+    For more information, type: "get-help Get-Service -detailed".
+    For technical information, type: "get-help Get-Service -full".
+    For online help, type: "get-help Get-Service -online"
+
+
+PS C:\users\jswalley\desktop\courses\ctec104\wk01> get-help get-service -examples
+
+NAME
+    Get-Service
+
+SYNOPSIS
+    Gets the services on a local or remote computer.
+
+
+    --------- Example 1: Get all services on the computer ---------
+
+    Get-Service
+
+    This command gets all of the services on the computer. It behaves as though you typed `Get-Service *`. The default display shows the status,
+    service name, and display name of each service.
+    --- Example 2: Get services that begin with a search string ---
+
+    Get-Service "wmi*"
+
+    This command retrieves services with service names that begin with WMI (the acronym for Windows Management Instrumentation).
+    --- Example 3: Display services that include a search string ---
+
+    Get-Service -Displayname "*network*"
+
+    This command displays services with a display name that includes the word network. Searching the display name finds network-related services
+    even when the service name does not include "Net", such as xmlprov, the Network Provisioning Service.
+    Example 4: Get services that begin with a search string and an exclusion
+
+    Get-Service -Name "win*" -Exclude "WinRM"
+
+    These commands get only the services with service names that begin with win, except for the WinRM service.
+    ---- Example 5: Display services that are currently active ----
+
+    Get-Service | Where-Object {$_.Status -eq "Running"}
+
+    This command displays only the services that are currently active. It uses the `Get-Service` cmdlet to get all of the services on the
+    computer. The pipeline operator (`|`) passes the results to the Where-Object cmdlet, which selects only the services with a Status property
+    that equals Running.
+
+    Status is only one property of service objects. To see all of the properties, type `Get-Service | Get-Member`.
+    ------- Example 6: Get the services on a remote computer -------
+
+    Get-Service -ComputerName "Server02"
+
+    This command gets the services on the Server02 remote computer.
+
+    Because the ComputerName parameter of `Get-Service` does not use Windows PowerShell remoting, you can use this parameter even if the computer
+    is not configured for remoting in Windows PowerShell.
+    Example 7: List the services on the local computer that have dependent services
+
+    Get-Service |
+      Where-Object {$_.DependentServices} |
+        Format-List -Property Name, DependentServices, @{
+          Label="NoOfDependentServices"; Expression={$_.dependentservices.count}
+        }
+
+    Name                  : AudioEndpointBuilder
+    DependentServices     : {AudioSrv}
+    NoOfDependentServices : 1
+
+    Name                  : Dhcp
+    DependentServices     : {WinHttpAutoProxySvc}
+    NoOfDependentServices : 1
+    ...
+
+    The first command uses the `Get-Service` cmdlet to get the services on the computer. A pipeline operator (|) sends the services to the
+    `Where-Object` cmdlet, which selects the services whose DependentServices property is not null.
+
+    Another pipeline operator sends the results to the Format-List cmdlet. The command uses its Property parameter to display the name of the
+    service, the name of the dependent services, and a calculated property that displays the number of dependent services that each service has.
+    ---------- Example 8: Sort services by property value ----------
+
+    Get-Service "s*" | Sort-Object status
+
+    Status   Name               DisplayName
+    ------   ----               -----------
+    Stopped  stisvc             Windows Image Acquisition (WIA)
+    Stopped  SwPrv              MS Software Shadow Copy Provider
+    Stopped  SysmonLog          Performance Logs and Alerts
+    Running  Spooler            Print Spooler
+    Running  srservice          System Restore Service
+    Running  SSDPSRV            SSDP Discovery Service
+    Running  ShellHWDetection   Shell Hardware Detection
+    Running  Schedule           Task Scheduler
+    Running  SCardSvr           Smart Card
+    Running  SamSs              Security Accounts Manager
+    Running  SharedAccess       Windows Firewall/Internet Connectio...
+    Running  SENS               System Event Notification
+    Running  seclogon           Secondary Logon
+
+    This command shows that when you sort services in ascending order by the value of their Status property, stopped services appear before
+    running services. This happens because the value of Status is an enumeration, in which Stopped has a value of 1, and Running has a value of 4.
+
+    To list running services first, use the Descending parameter of the Sort-Object cmdlet.
+    -------- Example 9: Get services on multiple computers --------
+
+    Get-Service -Name "WinRM" -ComputerName "localhost", "Server01", "Server02" |
+     Format-Table -Property MachineName, Status, Name, DisplayName -auto
+
+    MachineName    Status  Name  DisplayName
+    ------------   ------  ----  -----------
+    localhost      Running WinRM Windows Remote Management (WS-Management)
+    Server01       Running WinRM Windows Remote Management (WS-Management)
+    Server02       Running WinRM Windows Remote Management (WS-Management)
+
+    This command uses the `Get-Service` cmdlet to run a `Get-Service Winrm` command on two remote computers and the local computer ("localhost").
+
+    The command runs on the remote computers, and the results are returned to the local computer. A pipeline operator (`|`) sends the results to
+    the `Format-Table` cmdlet, which formats the services as a table. The `Format-Table` command uses the Property parameter to specify the
+    properties displayed in the table, including the MachineName property.
+    ----- Example 10: Get the dependent services of a service -----
+
+    Get-Service "WinRM" -RequiredServices
+
+    This command gets the services that the WinRM service requires.
+
+    The command returns the value of the ServicesDependedOn property of the service.
+    --- Example 11: Get a service through the pipeline operator ---
+
+    "WinRM" | Get-Service
+
+    This command gets the WinRM service on the local computer. This example shows that you can pipe a service name string (enclosed in quotation
+    marks) to `Get-Service`.
+
+
+
+PS C:\users\jswalley\desktop\courses\ctec104\wk01>  get-help get-services -online
+get-help : Get-Help could not find get-services in a help file in this session. To download updated help topics type: 
+"Update-Help". To get help online, search for the help topic in the TechNet library at 
+https:/go.microsoft.com/fwlink/?LinkID=107116.
+At line:1 char:2
++  get-help get-services -online
++  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (:) [Get-Help], HelpNotFoundException
+    + FullyQualifiedErrorId : HelpNotFound,Microsoft.PowerShell.Commands.GetHelpCommand
+get-help : Get-Help could not find get-services in a help file in this session. To download updated help topics type: "Update-Help". To get help
+online, search for the help topic in the TechNet library at https:/go.microsoft.com/fwlink/?LinkID=107116.
+At line:1 char:2
++  get-help get-services -online
++  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (:) [Get-Help], HelpNotFoundException
+    + FullyQualifiedErrorId : HelpNotFound,Microsoft.PowerShell.Commands.GetHelpCommand
+
+PS C:\users\jswalley\desktop\courses\ctec104\wk01>  get-help get-service -online
+PS C:\users\jswalley\desktop\courses\ctec104\wk01> cls
+PS C:\users\jswalley\desktop\courses\ctec104\wk01> get-alias cls
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           cls -> Clear-Host
+
+
+PS C:\users\jswalley\desktop\courses\ctec104\wk01> clear-host
+PS C:\users\jswalley\desktop\courses\ctec104\wk01> cls
+PS C:\users\jswalley\desktop\courses\ctec104\wk01> get-alias
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           % -> ForEach-Object
+Alias           ? -> Where-Object
+Alias           ac -> Add-Content
+Alias           asnp -> Add-PSSnapin
+Alias           cat -> Get-Content
+Alias           cd -> Set-Location
+Alias           CFS -> ConvertFrom-String                          3.1.0.0    Microsoft.PowerShell.Utility
+Alias           chdir -> Set-Location
+Alias           clc -> Clear-Content
+Alias           clear -> Clear-Host
+Alias           clhy -> Clear-History
+Alias           cli -> Clear-Item
+Alias           clp -> Clear-ItemProperty
+Alias           cls -> Clear-Host
+Alias           clv -> Clear-Variable
+Alias           cnsn -> Connect-PSSession
+Alias           compare -> Compare-Object
+Alias           copy -> Copy-Item
+Alias           cp -> Copy-Item
+Alias           cpi -> Copy-Item
+Alias           cpp -> Copy-ItemProperty
+Alias           curl -> Invoke-WebRequest
+Alias           cvpa -> Convert-Path
+Alias           dbp -> Disable-PSBreakpoint
+Alias           del -> Remove-Item
+Alias           diff -> Compare-Object
+Alias           dir -> Get-ChildItem
+Alias           dnsn -> Disconnect-PSSession
+Alias           ebp -> Enable-PSBreakpoint
+Alias           echo -> Write-Output
+Alias           epal -> Export-Alias
+Alias           epcsv -> Export-Csv
+Alias           epsn -> Export-PSSession
+Alias           erase -> Remove-Item
+Alias           etsn -> Enter-PSSession
+Alias           exsn -> Exit-PSSession
+Alias           fc -> Format-Custom
+Alias           fhx -> Format-Hex                                  3.1.0.0    Microsoft.PowerShell.Utility
+Alias           fl -> Format-List
+Alias           foreach -> ForEach-Object
+Alias           ft -> Format-Table
+Alias           fw -> Format-Wide
+Alias           gal -> Get-Alias
+Alias           gbp -> Get-PSBreakpoint
+Alias           gc -> Get-Content
+Alias           gcb -> Get-Clipboard                               3.1.0.0    Microsoft.PowerShell.Management
+Alias           gci -> Get-ChildItem
+Alias           gcm -> Get-Command
+Alias           gcs -> Get-PSCallStack
+Alias           gdr -> Get-PSDrive
+Alias           ghy -> Get-History
+Alias           gi -> Get-Item
+Alias           gin -> Get-ComputerInfo                            3.1.0.0    Microsoft.PowerShell.Management
+Alias           gjb -> Get-Job
+Alias           gl -> Get-Location
+Alias           gm -> Get-Member
+Alias           gmo -> Get-Module
+Alias           gp -> Get-ItemProperty
+Alias           gps -> Get-Process
+Alias           gpv -> Get-ItemPropertyValue
+Alias           group -> Group-Object
+Alias           gsn -> Get-PSSession
+Alias           gsnp -> Get-PSSnapin
+Alias           gsv -> Get-Service
+Alias           gtz -> Get-TimeZone                                3.1.0.0    Microsoft.PowerShell.Management
+Alias           gu -> Get-Unique
+Alias           gv -> Get-Variable
+Alias           gwmi -> Get-WmiObject
+Alias           h -> Get-History
+Alias           history -> Get-History
+Alias           icm -> Invoke-Command
+Alias           iex -> Invoke-Expression
+Alias           ihy -> Invoke-History
+Alias           ii -> Invoke-Item
+Alias           ipal -> Import-Alias
+Alias           ipcsv -> Import-Csv
+Alias           ipmo -> Import-Module
+Alias           ipsn -> Import-PSSession
+Alias           irm -> Invoke-RestMethod
+Alias           ise -> powershell_ise.exe
+Alias           iwmi -> Invoke-WmiMethod
+Alias           iwr -> Invoke-WebRequest
+Alias           kill -> Stop-Process
+Alias           lp -> Out-Printer
+Alias           ls -> Get-ChildItem
+Alias           man -> help
+Alias           md -> mkdir
+Alias           measure -> Measure-Object
+Alias           mi -> Move-Item
+Alias           mount -> New-PSDrive
+Alias           move -> Move-Item
+Alias           mp -> Move-ItemProperty
+Alias           mv -> Move-Item
+Alias           nal -> New-Alias
+Alias           ndr -> New-PSDrive
+Alias           ni -> New-Item
+Alias           nmo -> New-Module
+Alias           npssc -> New-PSSessionConfigurationFile
+Alias           nsn -> New-PSSession
+Alias           nv -> New-Variable
+Alias           ogv -> Out-GridView
+Alias           oh -> Out-Host
+Alias           popd -> Pop-Location
+Alias           ps -> Get-Process
+Alias           pushd -> Push-Location
+Alias           pwd -> Get-Location
+Alias           r -> Invoke-History
+Alias           rbp -> Remove-PSBreakpoint
+Alias           rcjb -> Receive-Job
+Alias           rcsn -> Receive-PSSession
+Alias           rd -> Remove-Item
+Alias           rdr -> Remove-PSDrive
+Alias           ren -> Rename-Item
+Alias           ri -> Remove-Item
+Alias           rjb -> Remove-Job
+Alias           rm -> Remove-Item
+Alias           rmdir -> Remove-Item
+Alias           rmo -> Remove-Module
+Alias           rni -> Rename-Item
+Alias           rnp -> Rename-ItemProperty
+Alias           rp -> Remove-ItemProperty
+Alias           rsn -> Remove-PSSession
+Alias           rsnp -> Remove-PSSnapin
+Alias           rujb -> Resume-Job
+Alias           rv -> Remove-Variable
+Alias           rvpa -> Resolve-Path
+Alias           rwmi -> Remove-WmiObject
+Alias           sajb -> Start-Job
+Alias           sal -> Set-Alias
+Alias           saps -> Start-Process
+Alias           sasv -> Start-Service
+Alias           sbp -> Set-PSBreakpoint
+Alias           sc -> Set-Content
+Alias           scb -> Set-Clipboard                               3.1.0.0    Microsoft.PowerShell.Management
+Alias           select -> Select-Object
+Alias           set -> Set-Variable
+Alias           shcm -> Show-Command
+Alias           si -> Set-Item
+Alias           sl -> Set-Location
+Alias           sleep -> Start-Sleep
+Alias           sls -> Select-String
+Alias           sort -> Sort-Object
+Alias           sp -> Set-ItemProperty
+Alias           spjb -> Stop-Job
+Alias           spps -> Stop-Process
+Alias           spsv -> Stop-Service
+Alias           start -> Start-Process
+Alias           stz -> Set-TimeZone                                3.1.0.0    Microsoft.PowerShell.Management
+Alias           sujb -> Suspend-Job
+Alias           sv -> Set-Variable
+Alias           swmi -> Set-WmiInstance
+Alias           tee -> Tee-Object
+Alias           trcm -> Trace-Command
+Alias           type -> Get-Content
+Alias           wget -> Invoke-WebRequest
+Alias           where -> Where-Object
+Alias           wjb -> Wait-Job
+Alias           write -> Write-Output
+
+
+PS C:\users\jswalley\desktop\courses\ctec104\wk01> get-process
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+    155       8     1660       6256       0.02   4832   0 agent_ovpnconnect_1623661264483
+    140       9     2232       6588       0.02   2220   0 amdfendrsr
+    169      11     2208       1584       0.53  11668   1 amdow
+   3301      38   162484      87832       2.33  15900   1 AMDRSServ
+    353      34    58572      42076       1.19  14192   1 AMDRSSrcExt
+    424      24    16276      28884       0.44  11692   1 ApplicationFrameHost
+    334      16     4368      13236      21.23   2956   1 atieclxx
+    191       9     1480       5724       0.05   2228   0 atiesrxx
+    328      17    10416      16720       4.34   4548   0 audiodg
+    403      13     6224      10184       0.28   2172   0 AUEPDU
+    143       8     1424       1444       0.00   3240   0 bash
+    250      16    16484      36088       0.27   1044   1 brave
+    250      16    15984      35396       0.19   1664   1 brave
+    201      14    32984      42224       6.70   2848   1 brave
+    252      17    24264      45804       5.39   3928   1 brave
+    234      16    13436      28144       0.06   4384   1 brave
+    252      16    15996      35244       0.33   4716   1 brave
+    306      18    60632      95432      96.22   7740   1 brave
+    278      18    23208      57812       2.23   9676   1 brave
+    351      23   169060     201400     121.69   9916   1 brave
+    342      20    59404      91112       9.56  10040   1 brave
+    391      21   126332     159996     100.45  10428   1 brave
+   3440      71   285684     217104     337.80  13340   1 brave
+    346      21    60496      68660      13.02  14128   1 brave
+    732      23   196352     225024      75.86  14280   1 brave
+    264      17    46440      72612      15.08  14516   1 brave
+    257       9     2080       7164       0.08  16504   1 brave
+    918      48   365472     149412     350.42  17480   1 brave
+    187      13     7244      16328       1.06  17564   1 brave
+    256      17    32776      50052       1.59  18072   1 brave
+    459      27    21184      40676      40.98  18884   1 brave
+    322      20     8332      19464       2.72  18960   1 brave
+    227      14    10408      16612       0.89  19200   1 brave
+    181      11     1828       1084       0.03  12620   0 BraveCrashHandler
+    164      10     1872       1052       0.00  12648   0 BraveCrashHandler64
+    106       5     5164       5076       0.03  15540   1 cmd
+    191      14    23244      12976       3.23   4872   0 CmWebAdmin
+    114       9     1440       1012       0.00  15344   1 cncmd
+    207      12    17944      72124       0.27    800   1 Code
+    243      12     9712      24048       0.02   1448   1 Code
+   2637     482   377796     248048     188.30   1576   1 Code
+   1170      45    51932      91084      13.67   3196   1 Code
+    175      13    21052      72452       0.22   4056   1 Code
+    231      14    28864      70960       0.44   5648   1 Code
+    197      12    19076      71480       0.22   7752   1 Code
+    279      16    12108      36960       0.55  11184   1 Code
+    740      31   213220     114232      19.88  13456   1 Code
+    411      21    49528      88676      31.77  14688   1 Code
+    601      27   158720     198640      61.78  16268   1 Code
+    186      12    49408      78180       1.45  16616   1 Code
+    208      14    33168      67548       0.52  17792   1 Code
+    411      27     9032      21172      35.75   4912   0 CodeMeter
+    262      19    14880      17188       4.66  11580   1 CodeMeterCC
+    409      25    31236      29476       0.77   5836   0 com.docker.service
+    107       7     6364       6052       0.03   3228   1 conhost
+    129       9     6536       1708       0.00   3376   0 conhost
+    102       7     6384       5504       0.00   6148   1 conhost
+    101       8     1292       6072       0.05  10092   1 conhost
+    105       7     6400      11300             10832   1 conhost
+    110       8     6388       1160       0.06  10868   0 conhost
+    102       7     6244       5168       0.02  10900   0 conhost
+    103       8     6412      11480       0.02  11112   1 conhost
+    264      13     4820      17244       1.33  13304   1 conhost
+     99       7     6264       4992       0.02  14116   0 conhost
+    125       9     6704       7560       0.03  14772   1 conhost
+    105       7     6340       6044       0.02  16552   1 conhost
+    105       7     6320       5768       0.03  18616   1 conhost
+    184      11     2068       6968       0.38   5040   0 ControlServer
+    649      48   205588     215920     312.27   4924   0 Corsair.Service
+    252      11     2216       7132       0.11   4848   0 CorsairGamingAudioCfgService64
+    798      31     2024       4412       2.70    796   0 csrss
+    840      34    10572       5056      75.36    952   1 csrss
+    466      16     4640      18472      17.30   6504   1 ctfmon
+    267      17     2240      11496       2.36   4904   0 CueLLAccessService
+    265      14     7732      15728      13.89   5340   0 dasHost
+    144      17     2612       7360       0.00   1780   1 dllhost
+    221      16     3924      10880       0.06   7448   1 dllhost
+    119       7     1460       7184       0.03  10872   1 dllhost
+    151      26     3620       6632       0.02  14148   0 dllhost
+   1292      63   100384      58956     231.55   1380   1 dwm
+   3289     239   165500     183972     209.63   7184   1 explorer
+    198      12     1980       5808       0.02  10952   0 fdhost
+     65       5      828       3892       0.03  10780   0 fdlauncher
+     37       6     1908       3532       0.00   1064   0 fontdrvhost
+     44      10     4244      11060       2.66   1304   1 fontdrvhost
+    482      20     7204      22848      13.34   6988   0 gamingservices
+    116       6     1196       4472       0.02   6776   0 gamingservicesnet
+    338      18     4036      15048      34.27  11512   1 HuionServer
+    480      23     8632      25208     673.77   8516   1 HuionTablet
+    164      13     3496      10264      32.81  11372   1 HuionTabletCore
+   1094      53    50092      71644       2.48  13504   1 HxOutlook
+    762      33    25192      61912       5.67  16832   1 HxTsr
+    925      81   144048      99172     589.78   4940   1 iCUE
+      0       0       60          8                 0   0 Idle
+    817      44   611716     200308     371.50  15792   1 kited
+    570      37    54044      32228       1.00   4252   0 KiteService
+    435      22    94260      16952       0.39  10756   0 Launchpad
+    367      26    49572      46584       0.66   5224   0 LDSvc
+    543      30    14316      37632       0.28    768   1 LockApp
+    237      14     2756      12092      16.97  13608   1 LogiOptions
+    844      37    34764      34804      28.77  14368   1 LogiOptionsMgr
+   2308      39   109688      66316      24.78  14392   1 LogiOverlay
+     50       6      980       2540       0.09    516   0 LsaIso
+   1749      26     8916      21168      53.52    736   0 lsass
+    173      14     2116       6048       0.45   4840   0 mDNSResponder
+      0       0     2076     729032      40.36   2412   0 Memory Compression
+    104       7     2980       6044       0.45  19060   0 MpCopyAccelerator
+   1004     102   363040     277768   1,462.77   5416   0 MsMpEng
+    218      16     9448      13140      11.28  12560   0 NisSrv
+    173      13    12492      21636       0.45  15944   1 node
+    377      26     8028      16656       3.39   5148   0 OriginWebHelperService
+     97       7     1336       4964       0.02   4232   0 ovpnhelper_service
+    168      10     2312       7656      16.84   6172   1 OVRRedir
+    767      43   148732      64128      14.11   5908   1 OVRServer_x64
+    130       9     1744      63724       0.05   3836   0 OVRServiceLauncher
+    168      12     3120       8572       0.05   4964   0 Plex Update Service
+    160      10     1340       6108       0.11   5348   0 PnkBstrA
+    859      39   247916     272248       5.88  12100   1 powershell
+    333      20     8568      21268       0.11   7252   1 QtWebEngineProcess
+   2814      98   247832      40680       9.28  15132   1 RadeonSoftware
+      0      19    13284      44332       3.28    156   0 Registry
+    305      16     5504      18580       0.34   1856   1 RuntimeBroker
+    309      16     5216      20360       0.42   7228   1 RuntimeBroker
+    285      17     6104      23496       1.25  10120   1 RuntimeBroker
+    588      27    13392      36300       3.72  10856   1 RuntimeBroker
+    273      15     3612      20256       1.11  11900   1 RuntimeBroker
+    350      18     4860      23512       7.83  13888   1 RuntimeBroker
+   1563     106   139668     203932      17.27  10380   1 SearchApp
+    143       8     1448       7412       0.02   2508   0 SearchFilterHost
+   1610      79   103476      65788     915.59  10440   0 SearchIndexer
+    266       9     1780       8308       0.02   9376   1 SearchProtocolHost
+      0       0      184      40480       0.00     88   0 Secure System
+    401      16     4944      13556       0.31  12092   0 SecurityHealthService
+    161       9     1920       8304       0.08  10432   1 SecurityHealthSystray
+    874      14     6816      12308       9.06   1016   0 services
+    612      26     9732       7640       4.42  11904   1 SettingSyncHost
+    117       7     8280       8244      27.84   8500   0 SgrmBroker
+    609      30    17424      53836       0.86  19416   1 ShellExperienceHost
+    563      18     7464      25784       4.33   3424   1 sihost
+     53       3     1064       1128       0.33    576   0 smss
+    605      32    64952      45908       1.33   5520   0 sqlceip
+    775      63   532180     131548   1,807.30   5456   0 sqlservr
+    140       9     1908       6936       0.09   5280   0 sqlwriter
+    641      33    36188      60612       5.83   9584   1 StartMenuExperienceHost
+   2276      25    13860      28168      12.70   1036   0 svchost
+   1383      22     9676      16796      60.30   1136   0 svchost
+    305      12     2800       7976     136.55   1184   0 svchost
+    101      10     1208       4876       0.03   1496   0 svchost
+    112       7     1340       4740       0.02   1516   0 svchost
+    439      14    15192      14428       2.19   1584   0 svchost
+    217      12     2280       8816       0.13   1608   0 svchost
+    255      13     3404      12400       0.53   1616   0 svchost
+    507       9     2256      10084       0.13   1624   0 svchost
+    406      17     6500      14808       2.36   1644   0 svchost
+    273      10     2992      10596       2.25   1804   0 svchost
+    156      15     1864       6204       0.06   1832   0 svchost
+    153      28     6084       6812       0.33   1844   0 svchost
+    188       9     1828       7656       0.11   1916   0 svchost
+    246      10     2936       7192       4.92   1964   0 svchost
+    165       7     1560       5632       0.23   2028   0 svchost
+    399      16     5116       9380       2.44   2152   0 svchost
+    459      12     3192       9252       4.69   2328   0 svchost
+    234      12     2516      10024       0.16   2352   0 svchost
+    124       8     1504       6336       0.02   2428   0 svchost
+    185      12     2384      10860       0.70   2448   0 svchost
+    195      11     8448      16416      56.23   2572   0 svchost
+    357      12     3944      10616       0.50   2584   0 svchost
+    185       9     2056       6944       1.83   2636   0 svchost
+    328      16     3932       8788      18.73   2740   0 svchost
+    132       8     1548       6220       0.00   2776   0 svchost
+    174      12     1824       7200       0.03   2860   0 svchost
+    432      33    19848      14352       4.91   2872   0 svchost
+    233      12     2720      11868      58.73   2940   0 svchost
+    256       7     1336       5384       3.78   2948   0 svchost
+    163       9     1928       6644       0.06   2964   0 svchost
+    176       9     1888       7552       0.02   3080   0 svchost
+    261      10     2760       7376       1.38   3084   0 svchost
+    152      10     1916       7608       0.45   3092   0 svchost
+    162      11     1640       6312       0.05   3172   0 svchost
+    432      18     8848      22824       3.73   3472   1 svchost
+    353      17     6256      24864       4.56   3572   1 svchost
+    278      12     4012      18688       2.28   3580   0 svchost
+    450      16    13232      19092      72.06   3720   0 svchost
+    333      19    38564      46588      10.98   4016   0 svchost
+    470      14     4180      13496       4.70   4156   0 svchost
+    140       9     1652       8416       0.02   4292   0 svchost
+    131      11     1828       5924       0.25   4308   0 svchost
+    366      15     2764       8576       0.19   4316   0 svchost
+    219      16     2844      10784       2.45   4376   0 svchost
+    183      11     2104       7544       0.16   4564   0 svchost
+    367      17     2872       9236       0.14   4660   0 svchost
+    418      20     7356      17116       6.05   4688   0 svchost
+    110       8     1276       5388       0.02   4820   0 svchost
+    208      12     2404       8740       0.19   4948   0 svchost
+    142       8     1652       6208       1.17   4956   0 svchost
+    281      27     4504      13316       1.20   4968   0 svchost
+    589      28    21280      28424       5.08   5024   0 svchost
+    110       8     1884       5368       0.05   5108   0 svchost
+    133       9     1636       5940       0.03   5232   0 svchost
+    185      10     1992       7556       0.08   5260   0 svchost
+    149       7     1336       5280       0.03   5268   0 svchost
+    364      18     4416      17872       0.20   5468   0 svchost
+    106       7     1372       4968       0.03   5536   0 svchost
+    215      13     2648       6760       0.13   5592   0 svchost
+    222      12     2624       9500       0.08   5636   0 svchost
+    404      26     3764      12000       0.17   6076   0 svchost
+    223      12     3132      11224       6.14   6236   0 svchost
+    254      51     3044      10912       0.64   6724   0 svchost
+    306      22     2976       8164       2.81   7104   0 svchost
+    385      20     5180      14836       0.23   7544   0 svchost
+    215      11     2056       7432       0.06   7888   0 svchost
+     81       5     1140       4236       0.14   8432   0 svchost
+    161      10     1984       6448       0.19   8452   0 svchost
+    299      15     4084      20112       0.58   8904   1 svchost
+    234      13     3092      10624       0.08   9336   0 svchost
+    125       7     1364       6072       0.05  10896   0 svchost
+    188      14     6468       8808       0.02  12108   0 svchost
+    690      32     8416      32128       2.14  13352   1 svchost
+    618      14    25188      26428      89.02  13616   0 svchost
+    273      16     4200      18580       0.25  14812   0 svchost
+    200      11     2588      10120       0.27  16828   0 svchost
+    483      19     4172      18388       0.69  17728   0 svchost
+    443      20    11096      25104       1.47  18340   0 svchost
+   6120       0      208       4536     522.77      4   0 System
+    983      48    27176       3240       0.63   9908   1 SystemSettings
+    486      41   188848     142784      45.14   2180   1 TabNine
+    437      21    13164      21168       1.84  16188   1 TabNine
+    453      33   631660     411164     346.50   7136   1 TabNine-deep-local
+    312      36     8260      17072       4.69   3864   1 taskhostw
+    355      19     5924      16952       0.28  11048   1 taskhostw
+    201      12     2168       9416             14592   1 tasklist
+    581      26    13136      35684       6.97  13864   1 TextInputHost
+    137      10     2252       9244       0.06  17980   1 UserOOBEBroker
+    344      19    35196      26512       0.55   5300   0 VirtualDesktop.Service
+    195       9     2668      11324       0.11   8172   0 vmcompute
+      0       0   476172       6812      21.72   1200   0 vmmem
+      0       0   478236     456440      56.56   7776   0 vmmem
+    124      11     2060       5968       0.17   5388   0 vmnat
+     83       8     7732       4784       0.02   5380   0 vmnetdhcp
+    217      15     3848       9920       0.09   5324   0 vmware-authd
+    226      13     2864       9992       0.05   5356   0 vmware-usbarbitrator64
+    393      36    13508      14588       0.67   6948   0 vmwp
+    380      35    13228      14252       0.22  11300   0 vmwp
+    418      18    13644      23224      59.33  17296   1 WD-TabNine
+    165      11     1444       5768       0.08    944   0 wininit
+    278      12     2888      12408       0.53   1252   1 winlogon
+    175      10     3300       9236       1.23   4060   0 WmiPrvSE
+    328      14    11816      18496      96.50  15736   0 WmiPrvSE
+    542      26     7872      20800       0.33   5696   0 wmpnetwk
+    136       7     1372       6472       0.02  15436   1 wsl
+    110       7     1196       5984       0.02   4608   1 wslhost
+    112       6     1132       1116       0.05  12864   0 wslhost
+    111       7     1204       5632       0.02  14108   0 wslhost
+    111       6     1140       5864       0.03  18908   1 wslhost
+    258      10     1932       7108       0.13   2236   0 WUDFHost
+
+
+PS C:\users\jswalley\desktop\courses\ctec104\wk01> get-process -Name iCue
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+    921      81   143976      98964     610.88   4940   1 iCUE
+
+
+PS C:\users\jswalley\desktop\courses\ctec104\wk01> get-process -name iCue | get-member
+
+
+   TypeName: System.Diagnostics.Process
+
+Name                       MemberType     Definition
+----                       ----------     ----------
+Handles                    AliasProperty  Handles = Handlecount
+Name                       AliasProperty  Name = ProcessName
+NPM                        AliasProperty  NPM = NonpagedSystemMemorySize64
+PM                         AliasProperty  PM = PagedMemorySize64
+SI                         AliasProperty  SI = SessionId
+VM                         AliasProperty  VM = VirtualMemorySize64
+WS                         AliasProperty  WS = WorkingSet64
+Disposed                   Event          System.EventHandler Disposed(System.Object, System.EventArgs)
+ErrorDataReceived          Event          System.Diagnostics.DataReceivedEventHandler ErrorDataReceived(System.Object, System.Diagnostics.DataR...
+Exited                     Event          System.EventHandler Exited(System.Object, System.EventArgs)
+OutputDataReceived         Event          System.Diagnostics.DataReceivedEventHandler OutputDataReceived(System.Object, System.Diagnostics.Data...
+BeginErrorReadLine         Method         void BeginErrorReadLine()
+BeginOutputReadLine        Method         void BeginOutputReadLine()
+CancelErrorRead            Method         void CancelErrorRead()
+CancelOutputRead           Method         void CancelOutputRead()
+Close                      Method         void Close()
+CloseMainWindow            Method         bool CloseMainWindow()
+CreateObjRef               Method         System.Runtime.Remoting.ObjRef CreateObjRef(type requestedType)
+Dispose                    Method         void Dispose(), void IDisposable.Dispose()
+Equals                     Method         bool Equals(System.Object obj)
+GetHashCode                Method         int GetHashCode()
+GetLifetimeService         Method         System.Object GetLifetimeService()
+GetType                    Method         type GetType()
+InitializeLifetimeService  Method         System.Object InitializeLifetimeService()
+Kill                       Method         void Kill()
+Refresh                    Method         void Refresh()
+Start                      Method         bool Start()
+ToString                   Method         string ToString()
+WaitForExit                Method         bool WaitForExit(int milliseconds), void WaitForExit()
+WaitForInputIdle           Method         bool WaitForInputIdle(int milliseconds), bool WaitForInputIdle()
+__NounName                 NoteProperty   string __NounName=Process
+BasePriority               Property       int BasePriority {get;}
+Container                  Property       System.ComponentModel.IContainer Container {get;}
+EnableRaisingEvents        Property       bool EnableRaisingEvents {get;set;}
+ExitCode                   Property       int ExitCode {get;}
+ExitTime                   Property       datetime ExitTime {get;}
+Handle                     Property       System.IntPtr Handle {get;}
+HandleCount                Property       int HandleCount {get;}
+HasExited                  Property       bool HasExited {get;}
+Id                         Property       int Id {get;}
+MachineName                Property       string MachineName {get;}
+MainModule                 Property       System.Diagnostics.ProcessModule MainModule {get;}
+MainWindowHandle           Property       System.IntPtr MainWindowHandle {get;}
+MainWindowTitle            Property       string MainWindowTitle {get;}
+MaxWorkingSet              Property       System.IntPtr MaxWorkingSet {get;set;}
+MinWorkingSet              Property       System.IntPtr MinWorkingSet {get;set;}
+Modules                    Property       System.Diagnostics.ProcessModuleCollection Modules {get;}
+NonpagedSystemMemorySize   Property       int NonpagedSystemMemorySize {get;}
+NonpagedSystemMemorySize64 Property       long NonpagedSystemMemorySize64 {get;}
+PagedMemorySize            Property       int PagedMemorySize {get;}
+PagedMemorySize64          Property       long PagedMemorySize64 {get;}
+PagedSystemMemorySize      Property       int PagedSystemMemorySize {get;}
+PagedSystemMemorySize64    Property       long PagedSystemMemorySize64 {get;}
+PeakPagedMemorySize        Property       int PeakPagedMemorySize {get;}
+PeakPagedMemorySize64      Property       long PeakPagedMemorySize64 {get;}
+PeakVirtualMemorySize      Property       int PeakVirtualMemorySize {get;}
+PeakVirtualMemorySize64    Property       long PeakVirtualMemorySize64 {get;}
+PeakWorkingSet             Property       int PeakWorkingSet {get;}
+PeakWorkingSet64           Property       long PeakWorkingSet64 {get;}
+PriorityBoostEnabled       Property       bool PriorityBoostEnabled {get;set;}
+PriorityClass              Property       System.Diagnostics.ProcessPriorityClass PriorityClass {get;set;}
+PrivateMemorySize          Property       int PrivateMemorySize {get;}
+PrivateMemorySize64        Property       long PrivateMemorySize64 {get;}
+PrivilegedProcessorTime    Property       timespan PrivilegedProcessorTime {get;}
+ProcessName                Property       string ProcessName {get;}
+ProcessorAffinity          Property       System.IntPtr ProcessorAffinity {get;set;}
+Responding                 Property       bool Responding {get;}
+SafeHandle                 Property       Microsoft.Win32.SafeHandles.SafeProcessHandle SafeHandle {get;}
+SessionId                  Property       int SessionId {get;}
+Site                       Property       System.ComponentModel.ISite Site {get;set;}
+StandardError              Property       System.IO.StreamReader StandardError {get;}
+StandardInput              Property       System.IO.StreamWriter StandardInput {get;}
+StandardOutput             Property       System.IO.StreamReader StandardOutput {get;}
+StartInfo                  Property       System.Diagnostics.ProcessStartInfo StartInfo {get;set;}
+StartTime                  Property       datetime StartTime {get;}
+SynchronizingObject        Property       System.ComponentModel.ISynchronizeInvoke SynchronizingObject {get;set;}
+Threads                    Property       System.Diagnostics.ProcessThreadCollection Threads {get;}
+TotalProcessorTime         Property       timespan TotalProcessorTime {get;}
+UserProcessorTime          Property       timespan UserProcessorTime {get;}
+VirtualMemorySize          Property       int VirtualMemorySize {get;}
+VirtualMemorySize64        Property       long VirtualMemorySize64 {get;}
+WorkingSet                 Property       int WorkingSet {get;}
+WorkingSet64               Property       long WorkingSet64 {get;}
+PSConfiguration            PropertySet    PSConfiguration {Name, Id, PriorityClass, FileVersion}
+PSResources                PropertySet    PSResources {Name, Id, Handlecount, WorkingSet, NonPagedMemorySize, PagedMemorySize, PrivateMemorySiz...
+Company                    ScriptProperty System.Object Company {get=$this.Mainmodule.FileVersionInfo.CompanyName;}
+CPU                        ScriptProperty System.Object CPU {get=$this.TotalProcessorTime.TotalSeconds;}
+Description                ScriptProperty System.Object Description {get=$this.Mainmodule.FileVersionInfo.FileDescription;}
+FileVersion                ScriptProperty System.Object FileVersion {get=$this.Mainmodule.FileVersionInfo.FileVersion;}
+Path                       ScriptProperty System.Object Path {get=$this.Mainmodule.FileName;}
+Product                    ScriptProperty System.Object Product {get=$this.Mainmodule.FileVersionInfo.ProductName;}
+ProductVersion             ScriptProperty System.Object ProductVersion {get=$this.Mainmodule.FileVersionInfo.ProductVersion;}
+
+
+PS C:\users\jswalley\desktop\courses\ctec104\wk01> get-process -name iCue | select-object *
+
+
+Name                       : iCUE
+Id                         : 4940
+PriorityClass              : Normal
+FileVersion                : 3.37.140.0
+HandleCount                : 921
+WorkingSet                 : 101261312
+PagedMemorySize            : 147427328
+PrivateMemorySize          : 147427328
+VirtualMemorySize          : 884359168
+TotalProcessorTime         : 00:10:29
+SI                         : 1
+Handles                    : 921
+VM                         : 884359168
+WS                         : 101261312
+PM                         : 147427328
+NPM                        : 82968
+Path                       : D:\Program Files (x86)\Corsair\CORSAIR iCUE Software\iCUE.exe
+Company                    : Corsair Memory, Inc.
+CPU                        : 629
+ProductVersion             : 3.37.140
+Description                : iCUE
+Product                    : iCUE
+__NounName                 : Process
+BasePriority               : 8
+ExitCode                   :
+HasExited                  : False
+ExitTime                   :
+Handle                     : 4868
+SafeHandle                 : Microsoft.Win32.SafeHandles.SafeProcessHandle
+MachineName                : .
+MainWindowHandle           : 0
+MainWindowTitle            :
+MainModule                 : System.Diagnostics.ProcessModule (iCUE.exe)
+MaxWorkingSet              : 1413120
+MinWorkingSet              : 204800
+Modules                    : {System.Diagnostics.ProcessModule (iCUE.exe), System.Diagnostics.ProcessModule (ntdll.dll),
+                             System.Diagnostics.ProcessModule (wow64.dll), System.Diagnostics.ProcessModule (wow64win.dll)...}
+NonpagedSystemMemorySize   : 82968
+NonpagedSystemMemorySize64 : 82968
+PagedMemorySize64          : 147427328
+PagedSystemMemorySize      : 1269264
+PagedSystemMemorySize64    : 1269264
+PeakPagedMemorySize        : 152137728
+PeakPagedMemorySize64      : 152137728
+PeakWorkingSet             : 212230144
+PeakWorkingSet64           : 212230144
+PeakVirtualMemorySize      : 990973952
+PeakVirtualMemorySize64    : 990973952
+PriorityBoostEnabled       : True
+PrivateMemorySize64        : 147427328
+PrivilegedProcessorTime    : 00:01:36.7187500
+ProcessName                : iCUE
+ProcessorAffinity          : 4095
+Responding                 : True
+SessionId                  : 1
+StartInfo                  : System.Diagnostics.ProcessStartInfo
+StartTime                  : 1/20/2022 10:07:13 AM
+SynchronizingObject        :
+Threads                    : {5252, 1544, 5032, 4992...}
+UserProcessorTime          : 00:08:52.2812500
+VirtualMemorySize64        : 884359168
+EnableRaisingEvents        : False
+StandardInput              :
+StandardOutput             :
+StandardError              :
+WorkingSet64               : 101261312
+Site                       :
+Container                  :
+
+
+
+PS C:\users\jswalley\desktop\courses\ctec104\wk01>  $variable = get-process icue
+PS C:\users\jswalley\desktop\courses\ctec104\wk01> $variable
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+    923      81   144044      98936     659.22   4940   1 iCUE
+
+
+PS C:\users\jswalley\desktop\courses\ctec104\wk01> $variable.MachineName
+.
+PS C:\users\jswalley\desktop\courses\ctec104\wk01> $variable.Name
+iCUE
+PS C:\users\jswalley\desktop\courses\ctec104\wk01> get-history
+
+  Id CommandLine
+  -- -----------
+   1 cd
+   2 cd.
+   3 cd .
+   4 cd ..
+   5 cd ..
+   6 cd users
+   7 cd jswalley
+   8 cd desktop
+   9 cd courses
+  10 cd ctec104
+  11 start-transcript
+  12 cd wk01
+  13 ls
+  14 get-service
+  15 get-help get-service
+  16 get-help get-service -examples
+  17  get-help get-services -online
+  18  get-help get-service -online
+  19 cls
+  20 get-alias cls
+  21 clear-host
+  22 cls
+  23 get-alias
+  24 get-process
+  25 get-process -Name iCue
+  26 get-process -name iCue | get-member
+  27 get-process -name iCue | select-object *
+  28  $variable = get-process icue
+  29 $variable
+  30 $variable.MachineName
+  31 $variable.Name
+
+
+PS C:\users\jswalley\desktop\courses\ctec104\wk01> stop-transcript
+**********************
+Windows PowerShell transcript end
+End time: 20220120205404
+**********************
