@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTEC-104 Wk 02 More PowerShell Basics</title>
+</head>
+
+<body>
+    <h1>CTECT-104 Wk 02 More PowerShell Basics</h1>
+    <a href="https://www.youtube.com/watch?v=2pe1vfcH0-c">Video: PowerShell Basics Link</a>
+    <ul>
+        <li>Additional Commands</li>
+        <li>the Pipeline</li>
+        <li>Parentheses</li>
+        <li>Working with Output</li>
+        <li>PowerShell Providers</li>
+    </ul>
+    <h4>Review:</h4>
+    <ul>
+        <li>cls = clear-host - clears the screen in powershell</li>
+        <li>get-history = lists all commands that have been entered in the CURRENT PowerShell session</li>
+        <li>get-service = </li>
+        <li>get-history | where-object {$_.commandline -like "*service*"}</li>
+        <li>get-history -count 1</li>
+        <li>get-history | format-list -property *</li>
+    </ul>
+    <br><b>Get-Module</b><br>
+    <b>get-module -listavailable</b> - show modules currently loaded on pooter<br>
+    <b>get-module "microsoft.powershell.utility"</b> - diplays a specified module
+    <br> in the above examples <i>-listavailable</i> is a named parameter and <i>"microsoft.powershell.utility"</i> is a positional parameter.
+    <br> named parameter will have the hyphen - in front of them
+    <p><b>Get-Command</b> - search for commands based on a given type
+        <br><i>get-command -type cmdlet</i> - uses named paremeter '-type'; get ALL the commands of type cmdlet
+        <br><i>get-command -type function</i> - uses named paremeter '-function'; get ALL the commands of type function</p>
+    <h3>Using Parameters</h3>
+    <ul>
+        <li>Module parameter lists the commands found in a specified module</li>
+        <i>get-command -module microsoft.powershell.core</i>
+        <li>Verb parameter list commands containing a specified verb</li>
+        <i>get-command -Verb update</i>
+        <li>PowerShell has formally defined sets of legal Verbs and cmdlets</li>
+        to see the Verb list simply type: <i>get-verb</i>
+    </ul>
+    <h3>Pipeline</h3>
+    the pipeline is one of the most important features in PowerShell.<br>
+    <b>Pipeline | </b>= the output of one command becomes the input for the next command
+    <br><i>data is "piped" through a series of commands to produce some final result</i>
+    <p>ex: <b>get-command | select name</b> <i></i><br>in the above illustration the output is all the commands, names only. otherwise get-command returns name, module, version</p>
+    <p>ex02: <b>get-date | select-object *</b><i>the output of get-date (a DateTime object) becomes the input of the select-object command.</i><br>
+        <i>if you were to: <b>get-date | select year, ticks</b>; then the output would be filtered to return only the date and year</i></p>
+    <p>
+        <ul>
+            <li>In order to use the 'pipeline' the command <b>must have parameters that accept pipline</b>
+                <ul>
+                    <li>you can look up these parameters in the help system</li>
+                    <li>in help for a command the parameters that accept pipeline are identified</li>
+                </ul>
+            </li>
+            <li>Pipeline input can be in one of two forms
+                <ul>
+                    <li><b>Value</b> - input must be matching object type for the parameter</li>
+                    <li><b>Property Name</b> - object has a property name that is the same as the parameter name</li>
+                </ul>
+            </li>
+        </ul>
+        in an example (in powershell) we mkdir test, cd to test, $ echo 'hello world' | new-item test.txt; $ echo 'hello again' >> test.txt<br>
+        <i>mkdir is a function, cd and echo are aliases for powershell commands. use: get-alias to find the commands</i>
+        <br> ex: <u>get-alias cd</u> --cd is alias for = set-location in powershell; --echo = write-output.
+    </p>
+    <b>cat test.txt</b> catalogs the results to output (displays the contents of the files so you can read)
+    <br> in the example there are some errors with spacing which can happen when appending '>>' a file.
+    <h3>Parentheses</h3>
+    methods with ().notation!! ex:<i>get-date | select year</i> is relatively the same as <br><i>(get-date).year</i>
+    <p>ex02: get-date | select * = gets the current date and time and displays ALL of it's properties.
+        <br>(get-date).DayOfWeek = runs get-date and stores the result as a temporary variable, then the DayOfWeek property is displayed from that variable</p>
+    i forgot to start-transcript until now when i was reminded, so start-transcript
+    <h3>Working with Output -Transcript</h3>
+    <ul><b>Start-Transcript</b>
+        <li>logs all commands and output from the current session and saves the info as a txt file</li>
+        <li>randomly generated file is created and stored (usually in Documents folder) </li>
+        <li>good for logging and auditing Window instances</li>
+        <li>used to log your activity so you don't have to write it down</li>
+        <li>to stop: <b>stop-transcript</b></li>
+    </ul>
+    <br>use <b>'Out-File'</b> will redirect output of a command into a specified text file.
+    <br> ex: Get-Command | out-file commands.txt -- will save the list of commands to a file named commands.txt
+    <br> Get-Date | out-file date.txt -append -- will append the current date into an existing file
+    <br> you can use the command get-content to read the contents of items, like the alias cat
+    <h3>Working with Output - Writing to CSV file</h3>
+    Output from commands can be stored as CSV files and later be imported into other commands.
+    <ul>
+        <li>CSV files can also be imported and manipulated in Excel or other programs</li>
+        <li>CSV files are 1 way to retain data objects between PowerShell sessions</li>
+        <li>to create a CSV file: <b>cmd | export-csv file.csv</b></li>
+        <li>to import that data to another command: <b>import-csv file.csv | cmd</b></li>
+    </ul>
+    <h3>Write Output to Terminal</h3>
+    <b>Write-Host</b> command can be used to display messages to the PowerShell window. ex: <i>write-host "hello"</i>
+    <br>this command is usually not used in sessions, but can be useful when learning scripting.
+    <br> the alias for write-host is: <b>echo</b>
+    <h2>PowerShell Providers</h2>
+    a PowerShell Provider, or PSProvider, is an adapter. It is designed to take some kind of data storage and make it look like a disk drive.
+    <ul>PowerShell uses a set of providers to access resources on the computer
+        <li>Alias = stores PowerShell aliases</li>
+        <li>Certificate = stores certificates for signed resources</li>
+        <li>Environment = stores system environment variables</li>
+        <li>File System = accesses the file system -- your drives and storage</li>
+        <li>Function = stores PowerShell functions</li>
+        <li>Registry = accesses the registry - configuration database</li>
+        <li>Variable = stores PowerShell variables</li>
+        <li>WSMan = accesses Web Services for Management</li>
+    </ul>
+    <h3>PowerShell Providers Capabilities</h3>
+    PowerShell Providers have capabilities, here are some common ones:
+    <ul>
+        <li><b>ShouldProcess</b> - provider supports the use of -WhatIf and -Confirm parameters, enabling you to test certain actions before commit.</li>
+        <li><b>Filter</b> - supports the -Filter parameter on the cmdlets that manipulate providers' content</li>
+        <li><b>Credentials</b> - permits you to specify alternate credentials when connecting to data stores. -credential parameter is for this</li>
+        <li><b>Transactions</b> - supports the use of transactions, which enable you to use the provider to make several changes and then roll back or commit those changes as a single unit.</li>
+    </ul>
+    <br> Provider is used to create PSDrive -- PSDrive uses a single provider to connect to some piece of data storage.
+    <br> to see all PSDrives: $ <b>Get-PSDrive</b> -- my results show c, cert, d, e, env, function, hkcu, hklm, v, variable, wsman
+    <br> we will be concentrating on filesystem and registry providers filesystem = c:, d:, e:, v:; registry = HKCU (or HKEY_CURRENT) and HKLM (HKEY_LOCAL_MACHINE)
+    <h4>Commands to use Providers</h4>
+    cmdlets you use with PSDrive have the word <b>Item</b> in their Noun: <br>
+    <b>Get-Command -noun *item*</b> - will return a list of PSDrive cmdlets
+    <br>PSDrive considers items to be files or folders -- items = files or folders -- pretty much interchangable in powershell
+    <p>to get specific information on a drive (or item) type: <b>Get-PSDrive C</b> - in this instance it will return information about the C: drive<br>
+        <b>Get-PSDrive -PSProvider FileSystem</b> - will return ALL drives supported by the file system provider (in my ex: C, D, E, V)
+        <br>if i were to: get-psdrive -psprovider registry -- the return will be HKCU and HKLM from my system (as stated above)
+    </p>
+    <h5>Read Chapters 5 & 6 in the book and complete the More PowerShell Basics Exercise</h5>
+    <h2>Video: PowerShell Additional Resource -- PowerShell Objects</h2>
+    <a href="https://www.youtube.com/watch?v=f9xPJXslVWE">Additional Video Link</a> another Bold Zebras PowerShell tutorial with Shane Young
+    <h3>Manipulating PowerShell Objects</h3>
+    we start with this powershell command and break it down:<br> Get-PSDrive | ?{$_.Free -gt 1} | %{$Count = 0; Write-Host "";} { $_.Name + ": Used: " + "{0:N2}" -f ($_.Used/1gb) + " Free: " + "{0:N2}" -f ($_.free/1gb) + " Total: " + "{0:N2}" -f (($_.Used/1gb)+($_.Free/1gb));
+    $Count = $Count + $_.Free;}{Write-Host"";Write-Host "Total Free Space " ("{0:N2}" -f ($Count/1gb)) -backgroundcolor magenta}
+    <p>that code returns: <br> C: Used: 265.81 Free: 26.55 Total: 292.37
+        <br>D: Used: 476.54 Free: 454.98 Total: 931.52
+        <br>E: Used: 1,423.80 Free: 1,370.59 Total: 2,794.39
+        <br>V: Used: 1,379.82 Free: 2,346.08 Total: 3,725.90
+        <br>Total Free Space 4,198.20
+    </p>
+    <br>'?' is an alias for where-object
+    <br>start breaking the command down and looking at it without aliases
+    <p><b>get-psdrive | where-object {$_.free -gt 1}</b> - the ? = where-object. -gt = greater than $_ = the current object in the pipe
+        <br> this command so far has looped through all of the psdrive objects and returned only the objects that have .free greater than 1 - it returns the c, d, e, v drives.
+    </p>
+    the command above returns:
+    <br> Name Used (GB) Free (GB) Provider Root
+    <br>---- --------- --------- -------- ----
+    <br>C 265.88 26.48 FileSystem C:\
+    <br>D 476.12 455.39 FileSystem D:\
+    <br>E 1423.80 1370.59 FileSystem E:\
+    <br>V 1379.82 2346.08 FileSystem V:\
+    <p>
+        in powershell use: -gt = greater than, -ge = greater than equal, -lt = less than, -le = less than equal, -eq = equal, -?? = like
+    </p>
+    <b>get-psdrive | where-object {$_.free -gt 1} | select-object root, used, free</b> returns:
+    <br>Root Used Free
+    <br>---- ---- ----
+    <br>C:\ 285500076032 28427845632
+    <br>D:\ 511233454080 488975925248
+    <br>E:\ 1528794480640 1471662743552
+    <br>V:\ 1481568714752 2519082168320
+    <br><br> the command get-psdrive returns all the results, 'where-object' filters those items and returns the 4 drives that have free space with a value greater than 1, we then use 'select-object' {or 'select'} to filter the returns again to show only
+    the root, used, and free
+    <br><br> a good command to find the different properties available - use the wildcard *; as follows:
+    <br> get-psdrive | where-object {$_.free -gt 1} | select *<br> this returns the objects and all the properties available, then you can specify which ones you would like to display
+    <p>
+        <b>get-psdrive | where-object {$_.free -gt 1} | foreach-object {"ploppa"}</b> this outputs:
+        <br>ploppa
+        <br>ploppa
+        <br>ploppa
+        <br>ploppa
+        <br><br> get-psdrive returns all the data, where-object filters to the objects that are greater-than 1, foreach-object {'ploppa'} outputs 'ploppa' for each of the filtered items (replaced c, d, e, v with ploppa, ploppa, ploppa, ploppa) -- not
+        useful, but good for demonstration
+    </p>
+    <p>get-psdrive | where-object {$_.free -gt 1} | foreach-object {write-host "free space for" $_.root "is" $_.free -foregroundColor blue}
+        <br>free space for C:\ is 28425859072
+        <br>free space for D:\ is 488975794176
+        <br>free space for E:\ is 1471662743552
+        <br>free space for V:\ is 2519082168320
+        <br> all of the above outputs show 'blue' since blue was specified
+        <br> $_.root - is the current item in the pipeline root output (which shows c:\, d:\, e:\, and v:\)
+    </p>
+    get-psdrive | where-object {$_.free -gt 1} | foreach-object {write-host "free space for" $_.root "is" ($_.free/1gb) -foregroundColor blue}
+    <br> in the above code we add () and /1gb for while we write-host -- this will format the byte output into a gigabyte format -- make certain to contain the data you want to manipulate in parentheses
+    <br>
+    <br>free space for C:\ is 26.4718322753906
+    <br>free space for D:\ is 455.394195556641
+    <br>free space for E:\ is 1370.59273529053
+    <br>free space for V:\ is 2346.07809066772
+    <p> "{0:N0}" -f 100000000000
+        <br>100,000,000,000
+        <br><br> the "{0:N0}" - use this to format numbers -- the 1st 0 states to format the first item we are fed, the N formats as a number, and the last 0 states it is a Number with 0 decimal places
+        <br> -- if we use "{0:N2}" -- it will return a number with 2 decimal places, "{0:C2}" -- returns currency with 2 decimals
+        <br><br> "{0:C2}" -f 100000000000
+        <br>$100,000,000,000.00
+        <br> you can change the C to P for percentages... so N = numbers, C = currency, P = percentages
+        <br><br> get-psdrive | where-object {$_.free -gt 1} | foreach-object {write-host "free space for" $_.root "is" ("{0:N2}" -f ($_.free/1gb)) -foregroundColor blue}
+        <br><br>free space for C:\ is 26.47
+        <br>free space for D:\ is 455.39
+        <br>free space for E:\ is 1,370.59
+        <br>free space for V:\ is 2,346.08
+        <br>by including the Number format in the parentheses of our command we get a cleaner output
+    </p>
+    <p>
+        building out foreach-object -- in the first use is a simple for every item in the object the run the line;
+        <br>there is also a '3-step' ForEach-Object
+        <p>
+            get-psdrive | where-object {$_.free -gt 1} | foreach-object{$c = 0; write-host "this step only runs once."}{$c = $c + 1; write-host "this section runs once for each object in the pipe." $c}{write-host "this will run once everything else is done. The value
+            of the C variable is" $c}
+            <br><br>this returns:
+            <br>this step only runs once.
+            <br>this section runs once for each object in the pipe. 1
+            <br>this section runs once for each object in the pipe. 2
+            <br>this section runs once for each object in the pipe. 3
+            <br>this section runs once for each object in the pipe. 4
+            <br>this will run once everything else is done. The value of the C variable is 4
+            <br><br>our 3-step foreach-object works like this:
+            <br> foreach-object{$c = 0; write-host "this step only runs once."} - sets a variable c to = 0 at the start,
+            <br> the next step begins with the 2nd {$c = $c +1; write-host "this section runs once for each object in the pipe." $c} -- $c = $c + 1 -- increments through the variable;
+            <br> the 1st bracket code will run only once, the 2nd bracket code will run as many times as we have items in the pipe -- in this code it is 4 itmes (c, d, e, v)
+            <br><br> {write-host "This step runs once everything is done. The value of the C variable is" $c} -- the value of the $c variable outputs 4
+        </p>
+        <p>
+            you can simply use: <b>get-volume</b> -- to show similar information so the above example is mostly for teaching the process
+        </p>get volume is taxing to the system and take quite a bit of time.
+
+</body>
+
+</html>
