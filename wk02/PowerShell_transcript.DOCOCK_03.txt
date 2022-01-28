@@ -1,0 +1,1367 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20220126111520
+Username: DOCOCK\JSWalley
+RunAs User: DOCOCK\JSWalley
+Configuration Name: 
+Machine: DOCOCK (Microsoft Windows NT 10.0.19044.0)
+Host Application: powershell.exe
+Process ID: 2224
+PSVersion: 5.1.19041.1320
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.1320
+BuildVersion: 10.0.19041.1320
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\JSWalley\Documents\PowerShell_transcript.DOCOCK.Ulj9oa8X.20220126111520.txt
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-command | out-file commands.txt
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-date | out-file date.txt -append
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-content date.txt
+
+Wednesday, January 26, 2022 11:27:25 AM
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> cat date.txt
+
+Wednesday, January 26, 2022 11:27:25 AM
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-alias cat
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           cat -> Get-Content
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> write-host "hello"
+hello
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> write-host 'hello'
+hello
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-alias
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           % -> ForEach-Object
+Alias           ? -> Where-Object
+Alias           ac -> Add-Content
+Alias           asnp -> Add-PSSnapin
+Alias           cat -> Get-Content
+Alias           cd -> Set-Location
+Alias           CFS -> ConvertFrom-String                          3.1.0.0    Microsoft....
+Alias           chdir -> Set-Location
+Alias           clc -> Clear-Content
+Alias           clear -> Clear-Host
+Alias           clhy -> Clear-History
+Alias           cli -> Clear-Item
+Alias           clp -> Clear-ItemProperty
+Alias           cls -> Clear-Host
+Alias           clv -> Clear-Variable
+Alias           cnsn -> Connect-PSSession
+Alias           compare -> Compare-Object
+Alias           copy -> Copy-Item
+Alias           cp -> Copy-Item
+Alias           cpi -> Copy-Item
+Alias           cpp -> Copy-ItemProperty
+Alias           curl -> Invoke-WebRequest
+Alias           cvpa -> Convert-Path
+Alias           dbp -> Disable-PSBreakpoint
+Alias           del -> Remove-Item
+Alias           diff -> Compare-Object
+Alias           dir -> Get-ChildItem
+Alias           dnsn -> Disconnect-PSSession
+Alias           ebp -> Enable-PSBreakpoint
+Alias           echo -> Write-Output
+Alias           epal -> Export-Alias
+Alias           epcsv -> Export-Csv
+Alias           epsn -> Export-PSSession
+Alias           erase -> Remove-Item
+Alias           etsn -> Enter-PSSession
+Alias           exsn -> Exit-PSSession
+Alias           fc -> Format-Custom
+Alias           fhx -> Format-Hex                                  3.1.0.0    Microsoft....
+Alias           fl -> Format-List
+Alias           foreach -> ForEach-Object
+Alias           ft -> Format-Table
+Alias           fw -> Format-Wide
+Alias           gal -> Get-Alias
+Alias           gbp -> Get-PSBreakpoint
+Alias           gc -> Get-Content
+Alias           gcb -> Get-Clipboard                               3.1.0.0    Microsoft....
+Alias           gci -> Get-ChildItem
+Alias           gcm -> Get-Command
+Alias           gcs -> Get-PSCallStack
+Alias           gdr -> Get-PSDrive
+Alias           ghy -> Get-History
+Alias           gi -> Get-Item
+Alias           gin -> Get-ComputerInfo                            3.1.0.0    Microsoft....
+Alias           gjb -> Get-Job
+Alias           gl -> Get-Location
+Alias           gm -> Get-Member
+Alias           gmo -> Get-Module
+Alias           gp -> Get-ItemProperty
+Alias           gps -> Get-Process
+Alias           gpv -> Get-ItemPropertyValue
+Alias           group -> Group-Object
+Alias           gsn -> Get-PSSession
+Alias           gsnp -> Get-PSSnapin
+Alias           gsv -> Get-Service
+Alias           gtz -> Get-TimeZone                                3.1.0.0    Microsoft....
+Alias           gu -> Get-Unique
+Alias           gv -> Get-Variable
+Alias           gwmi -> Get-WmiObject
+Alias           h -> Get-History
+Alias           history -> Get-History
+Alias           icm -> Invoke-Command
+Alias           iex -> Invoke-Expression
+Alias           ihy -> Invoke-History
+Alias           ii -> Invoke-Item
+Alias           ipal -> Import-Alias
+Alias           ipcsv -> Import-Csv
+Alias           ipmo -> Import-Module
+Alias           ipsn -> Import-PSSession
+Alias           irm -> Invoke-RestMethod
+Alias           ise -> powershell_ise.exe
+Alias           iwmi -> Invoke-WmiMethod
+Alias           iwr -> Invoke-WebRequest
+Alias           kill -> Stop-Process
+Alias           lp -> Out-Printer
+Alias           ls -> Get-ChildItem
+Alias           man -> help
+Alias           md -> mkdir
+Alias           measure -> Measure-Object
+Alias           mi -> Move-Item
+Alias           mount -> New-PSDrive
+Alias           move -> Move-Item
+Alias           mp -> Move-ItemProperty
+Alias           mv -> Move-Item
+Alias           nal -> New-Alias
+Alias           ndr -> New-PSDrive
+Alias           ni -> New-Item
+Alias           nmo -> New-Module
+Alias           npssc -> New-PSSessionConfigurationFile
+Alias           nsn -> New-PSSession
+Alias           nv -> New-Variable
+Alias           ogv -> Out-GridView
+Alias           oh -> Out-Host
+Alias           popd -> Pop-Location
+Alias           ps -> Get-Process
+Alias           pushd -> Push-Location
+Alias           pwd -> Get-Location
+Alias           r -> Invoke-History
+Alias           rbp -> Remove-PSBreakpoint
+Alias           rcjb -> Receive-Job
+Alias           rcsn -> Receive-PSSession
+Alias           rd -> Remove-Item
+Alias           rdr -> Remove-PSDrive
+Alias           ren -> Rename-Item
+Alias           ri -> Remove-Item
+Alias           rjb -> Remove-Job
+Alias           rm -> Remove-Item
+Alias           rmdir -> Remove-Item
+Alias           rmo -> Remove-Module
+Alias           rni -> Rename-Item
+Alias           rnp -> Rename-ItemProperty
+Alias           rp -> Remove-ItemProperty
+Alias           rsn -> Remove-PSSession
+Alias           rsnp -> Remove-PSSnapin
+Alias           rujb -> Resume-Job
+Alias           rv -> Remove-Variable
+Alias           rvpa -> Resolve-Path
+Alias           rwmi -> Remove-WmiObject
+Alias           sajb -> Start-Job
+Alias           sal -> Set-Alias
+Alias           saps -> Start-Process
+Alias           sasv -> Start-Service
+Alias           sbp -> Set-PSBreakpoint
+Alias           sc -> Set-Content
+Alias           scb -> Set-Clipboard                               3.1.0.0    Microsoft....
+Alias           select -> Select-Object
+Alias           set -> Set-Variable
+Alias           shcm -> Show-Command
+Alias           si -> Set-Item
+Alias           sl -> Set-Location
+Alias           sleep -> Start-Sleep
+Alias           sls -> Select-String
+Alias           sort -> Sort-Object
+Alias           sp -> Set-ItemProperty
+Alias           spjb -> Stop-Job
+Alias           spps -> Stop-Process
+Alias           spsv -> Stop-Service
+Alias           start -> Start-Process
+Alias           stz -> Set-TimeZone                                3.1.0.0    Microsoft....
+Alias           sujb -> Suspend-Job
+Alias           sv -> Set-Variable
+Alias           swmi -> Set-WmiInstance
+Alias           tee -> Tee-Object
+Alias           trcm -> Trace-Command
+Alias           type -> Get-Content
+Alias           wget -> Invoke-WebRequest
+Alias           where -> Where-Object
+Alias           wjb -> Wait-Job
+Alias           write -> Write-Output
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-alias echo
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           echo -> Write-Output
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> echo 'hello'
+hello
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-psdrive
+
+Name           Used (GB)     Free (GB) Provider      Root                                Cu
+                                                                                         rr
+                                                                                         en
+                                                                                         tL
+                                                                                         oc
+                                                                                         at
+                                                                                         io
+                                                                                          n
+----           ---------     --------- --------      ----                                --
+Alias                                  Alias
+C                 265.80         26.57 FileSystem    C:\                                 02
+Cert                                   Certificate   \
+D                 476.54        454.98 FileSystem    D:\
+E                1423.80       1370.59 FileSystem    E:\
+Env                                    Environment
+Function                               Function
+HKCU                                   Registry      HKEY_CURRENT_USER
+HKLM                                   Registry      HKEY_LOCAL_MACHINE
+V                1379.82       2346.08 FileSystem    V:\
+Variable                               Variable
+WSMan                                  WSMan
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-command -noun *item*
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Function        Get-DAEntryPointTableItem                          1.0.0.0    DirectAcce...
+Function        Get-TestDriveItem                                  3.4.0      Pester
+Function        New-DAEntryPointTableItem                          1.0.0.0    DirectAcce...
+Function        Remove-DAEntryPointTableItem                       1.0.0.0    DirectAcce...
+Function        Rename-DAEntryPointTableItem                       1.0.0.0    DirectAcce...
+Function        Reset-DAEntryPointTableItem                        1.0.0.0    DirectAcce...
+Function        Set-DAEntryPointTableItem                          1.0.0.0    DirectAcce...
+Cmdlet          Clear-Item                                         3.1.0.0    Microsoft....
+Cmdlet          Clear-ItemProperty                                 3.1.0.0    Microsoft....
+Cmdlet          Copy-Item                                          3.1.0.0    Microsoft....
+Cmdlet          Copy-ItemProperty                                  3.1.0.0    Microsoft....
+Cmdlet          Get-ChildItem                                      3.1.0.0    Microsoft....
+Cmdlet          Get-ControlPanelItem                               3.1.0.0    Microsoft....
+Cmdlet          Get-Item                                           3.1.0.0    Microsoft....
+Cmdlet          Get-ItemProperty                                   3.1.0.0    Microsoft....
+Cmdlet          Get-ItemPropertyValue                              3.1.0.0    Microsoft....
+Cmdlet          Invoke-Item                                        3.1.0.0    Microsoft....
+Cmdlet          Move-Item                                          3.1.0.0    Microsoft....
+Cmdlet          Move-ItemProperty                                  3.1.0.0    Microsoft....
+Cmdlet          New-Item                                           3.1.0.0    Microsoft....
+Cmdlet          New-ItemProperty                                   3.1.0.0    Microsoft....
+Cmdlet          Remove-Item                                        3.1.0.0    Microsoft....
+Cmdlet          Remove-ItemProperty                                3.1.0.0    Microsoft....
+Cmdlet          Rename-Item                                        3.1.0.0    Microsoft....
+Cmdlet          Rename-ItemProperty                                3.1.0.0    Microsoft....
+Cmdlet          Set-Item                                           3.1.0.0    Microsoft....
+Cmdlet          Set-ItemProperty                                   3.1.0.0    Microsoft....
+Cmdlet          Show-ControlPanelItem                              3.1.0.0    Microsoft....
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-psdrive
+
+Name           Used (GB)     Free (GB) Provider      Root                                Cu
+                                                                                         rr
+                                                                                         en
+                                                                                         tL
+                                                                                         oc
+                                                                                         at
+                                                                                         io
+                                                                                          n
+----           ---------     --------- --------      ----                                --
+Alias                                  Alias
+C                 265.80         26.57 FileSystem    C:\                                 02
+Cert                                   Certificate   \
+D                 476.54        454.98 FileSystem    D:\
+E                1423.80       1370.59 FileSystem    E:\
+Env                                    Environment
+Function                               Function
+HKCU                                   Registry      HKEY_CURRENT_USER
+HKLM                                   Registry      HKEY_LOCAL_MACHINE
+V                1379.82       2346.08 FileSystem    V:\
+Variable                               Variable
+WSMan                                  WSMan
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-psdrive C
+
+Name           Used (GB)     Free (GB) Provider      Root                                Cu
+                                                                                         rr
+                                                                                         en
+                                                                                         tL
+                                                                                         oc
+                                                                                         at
+                                                                                         io
+                                                                                          n
+----           ---------     --------- --------      ----                                --
+C                 265.80         26.57 FileSystem    C:\                                 02
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-psdrive -psprovider filesystem
+
+Name           Used (GB)     Free (GB) Provider      Root                                Cu
+                                                                                         rr
+                                                                                         en
+                                                                                         tL
+                                                                                         oc
+                                                                                         at
+                                                                                         io
+                                                                                          n
+----           ---------     --------- --------      ----                                --
+C                 265.80         26.57 FileSystem    C:\                                 02
+D                 476.54        454.98 FileSystem    D:\
+E                1423.80       1370.59 FileSystem    E:\
+V                1379.82       2346.08 FileSystem    V:\
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-psdrive -psprovider registry
+
+Name           Used (GB)     Free (GB) Provider      Root                                Cu
+                                                                                         rr
+                                                                                         en
+                                                                                         tL
+                                                                                         oc
+                                                                                         at
+                                                                                         io
+                                                                                          n
+----           ---------     --------- --------      ----                                --
+HKCU                                   Registry      HKEY_CURRENT_USER
+HKLM                                   Registry      HKEY_LOCAL_MACHINE
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-command get-command -module microsoft.powershell.core
+
+CommandType     Name
+-----------     ----
+Cmdlet          Get-Command
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-command -module microsoft.powershell.core
+
+CommandType     Name
+-----------     ----
+Cmdlet          Add-History
+Cmdlet          Add-PSSnapin
+Cmdlet          Clear-History
+Cmdlet          Connect-PSSession
+Cmdlet          Debug-Job
+Cmdlet          Disable-PSRemoting
+Cmdlet          Disable-PSSessionConfiguration
+Cmdlet          Disconnect-PSSession
+Cmdlet          Enable-PSRemoting
+Cmdlet          Enable-PSSessionConfiguration
+Cmdlet          Enter-PSHostProcess
+Cmdlet          Enter-PSSession
+Cmdlet          Exit-PSHostProcess
+Cmdlet          Exit-PSSession
+Cmdlet          Export-Console
+Cmdlet          Export-ModuleMember
+Cmdlet          ForEach-Object
+Cmdlet          Get-Command
+Cmdlet          Get-Help
+Cmdlet          Get-History
+Cmdlet          Get-Job
+Cmdlet          Get-Module
+Cmdlet          Get-PSHostProcessInfo
+Cmdlet          Get-PSSession
+Cmdlet          Get-PSSessionCapability
+Cmdlet          Get-PSSessionConfiguration
+Cmdlet          Get-PSSnapin
+Cmdlet          Import-Module
+Cmdlet          Invoke-Command
+Cmdlet          Invoke-History
+Cmdlet          New-Module
+Cmdlet          New-ModuleManifest
+Cmdlet          New-PSRoleCapabilityFile
+Cmdlet          New-PSSession
+Cmdlet          New-PSSessionConfigurationFile
+Cmdlet          New-PSSessionOption
+Cmdlet          New-PSTransportOption
+Cmdlet          Out-Default
+Cmdlet          Out-Host
+Cmdlet          Out-Null
+Cmdlet          Receive-Job
+Cmdlet          Receive-PSSession
+Cmdlet          Register-ArgumentCompleter
+Cmdlet          Register-PSSessionConfiguration
+Cmdlet          Remove-Job
+Cmdlet          Remove-Module
+Cmdlet          Remove-PSSession
+Cmdlet          Remove-PSSnapin
+Cmdlet          Resume-Job
+Cmdlet          Save-Help
+Cmdlet          Set-PSDebug
+Cmdlet          Set-PSSessionConfiguration
+Cmdlet          Set-StrictMode
+Cmdlet          Start-Job
+Cmdlet          Stop-Job
+Cmdlet          Suspend-Job
+Cmdlet          Test-ModuleManifest
+Cmdlet          Test-PSSessionConfigurationFile
+Cmdlet          Unregister-PSSessionConfiguration
+Cmdlet          Update-Help
+Cmdlet          Wait-Job
+Cmdlet          Where-Object
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-command -module microsoft.powershell.core
+
+CommandType     Name
+-----------     ----
+Cmdlet          Add-History
+Cmdlet          Add-PSSnapin
+Cmdlet          Clear-History
+Cmdlet          Connect-PSSession
+Cmdlet          Debug-Job
+Cmdlet          Disable-PSRemoting
+Cmdlet          Disable-PSSessionConfiguration
+Cmdlet          Disconnect-PSSession
+Cmdlet          Enable-PSRemoting
+Cmdlet          Enable-PSSessionConfiguration
+Cmdlet          Enter-PSHostProcess
+Cmdlet          Enter-PSSession
+Cmdlet          Exit-PSHostProcess
+Cmdlet          Exit-PSSession
+Cmdlet          Export-Console
+Cmdlet          Export-ModuleMember
+Cmdlet          ForEach-Object
+Cmdlet          Get-Command
+Cmdlet          Get-Help
+Cmdlet          Get-History
+Cmdlet          Get-Job
+Cmdlet          Get-Module
+Cmdlet          Get-PSHostProcessInfo
+Cmdlet          Get-PSSession
+Cmdlet          Get-PSSessionCapability
+Cmdlet          Get-PSSessionConfiguration
+Cmdlet          Get-PSSnapin
+Cmdlet          Import-Module
+Cmdlet          Invoke-Command
+Cmdlet          Invoke-History
+Cmdlet          New-Module
+Cmdlet          New-ModuleManifest
+Cmdlet          New-PSRoleCapabilityFile
+Cmdlet          New-PSSession
+Cmdlet          New-PSSessionConfigurationFile
+Cmdlet          New-PSSessionOption
+Cmdlet          New-PSTransportOption
+Cmdlet          Out-Default
+Cmdlet          Out-Host
+Cmdlet          Out-Null
+Cmdlet          Receive-Job
+Cmdlet          Receive-PSSession
+Cmdlet          Register-ArgumentCompleter
+Cmdlet          Register-PSSessionConfiguration
+Cmdlet          Remove-Job
+Cmdlet          Remove-Module
+Cmdlet          Remove-PSSession
+Cmdlet          Remove-PSSnapin
+Cmdlet          Resume-Job
+Cmdlet          Save-Help
+Cmdlet          Set-PSDebug
+Cmdlet          Set-PSSessionConfiguration
+Cmdlet          Set-StrictMode
+Cmdlet          Start-Job
+Cmdlet          Stop-Job
+Cmdlet          Suspend-Job
+Cmdlet          Test-ModuleManifest
+Cmdlet          Test-PSSessionConfigurationFile
+Cmdlet          Unregister-PSSessionConfiguration
+Cmdlet          Update-Help
+Cmdlet          Wait-Job
+Cmdlet          Where-Object
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-verb
+
+Verb        Group
+----        -----
+Add         Common
+Clear       Common
+Close       Common
+Copy        Common
+Enter       Common
+Exit        Common
+Find        Common
+Format      Common
+Get         Common
+Hide        Common
+Join        Common
+Lock        Common
+Move        Common
+New         Common
+Open        Common
+Optimize    Common
+Pop         Common
+Push        Common
+Redo        Common
+Remove      Common
+Rename      Common
+Reset       Common
+Resize      Common
+Search      Common
+Select      Common
+Set         Common
+Show        Common
+Skip        Common
+Split       Common
+Step        Common
+Switch      Common
+Undo        Common
+Unlock      Common
+Watch       Common
+Backup      Data
+Checkpoint  Data
+Compare     Data
+Compress    Data
+Convert     Data
+ConvertFrom Data
+ConvertTo   Data
+Dismount    Data
+Edit        Data
+Expand      Data
+Export      Data
+Group       Data
+Import      Data
+Initialize  Data
+Limit       Data
+Merge       Data
+Mount       Data
+Out         Data
+Publish     Data
+Restore     Data
+Save        Data
+Sync        Data
+Unpublish   Data
+Update      Data
+Approve     Lifecycle
+Assert      Lifecycle
+Complete    Lifecycle
+Confirm     Lifecycle
+Deny        Lifecycle
+Disable     Lifecycle
+Enable      Lifecycle
+Install     Lifecycle
+Invoke      Lifecycle
+Register    Lifecycle
+Request     Lifecycle
+Restart     Lifecycle
+Resume      Lifecycle
+Start       Lifecycle
+Stop        Lifecycle
+Submit      Lifecycle
+Suspend     Lifecycle
+Uninstall   Lifecycle
+Unregister  Lifecycle
+Wait        Lifecycle
+Debug       Diagnostic
+Measure     Diagnostic
+Ping        Diagnostic
+Repair      Diagnostic
+Resolve     Diagnostic
+Test        Diagnostic
+Trace       Diagnostic
+Connect     Communications
+Disconnect  Communications
+Read        Communications
+Receive     Communications
+Send        Communications
+Write       Communications
+Block       Security
+Grant       Security
+Protect     Security
+Revoke      Security
+Unblock     Security
+Unprotect   Security
+Use         Other
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-help select-object -online
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-command -module microsoft.powershell.core
+
+CommandType     Name
+-----------     ----
+Cmdlet          Add-History
+Cmdlet          Add-PSSnapin
+Cmdlet          Clear-History
+Cmdlet          Connect-PSSession
+Cmdlet          Debug-Job
+Cmdlet          Disable-PSRemoting
+Cmdlet          Disable-PSSessionConfiguration
+Cmdlet          Disconnect-PSSession
+Cmdlet          Enable-PSRemoting
+Cmdlet          Enable-PSSessionConfiguration
+Cmdlet          Enter-PSHostProcess
+Cmdlet          Enter-PSSession
+Cmdlet          Exit-PSHostProcess
+Cmdlet          Exit-PSSession
+Cmdlet          Export-Console
+Cmdlet          Export-ModuleMember
+Cmdlet          ForEach-Object
+Cmdlet          Get-Command
+Cmdlet          Get-Help
+Cmdlet          Get-History
+Cmdlet          Get-Job
+Cmdlet          Get-Module
+Cmdlet          Get-PSHostProcessInfo
+Cmdlet          Get-PSSession
+Cmdlet          Get-PSSessionCapability
+Cmdlet          Get-PSSessionConfiguration
+Cmdlet          Get-PSSnapin
+Cmdlet          Import-Module
+Cmdlet          Invoke-Command
+Cmdlet          Invoke-History
+Cmdlet          New-Module
+Cmdlet          New-ModuleManifest
+Cmdlet          New-PSRoleCapabilityFile
+Cmdlet          New-PSSession
+Cmdlet          New-PSSessionConfigurationFile
+Cmdlet          New-PSSessionOption
+Cmdlet          New-PSTransportOption
+Cmdlet          Out-Default
+Cmdlet          Out-Host
+Cmdlet          Out-Null
+Cmdlet          Receive-Job
+Cmdlet          Receive-PSSession
+Cmdlet          Register-ArgumentCompleter
+Cmdlet          Register-PSSessionConfiguration
+Cmdlet          Remove-Job
+Cmdlet          Remove-Module
+Cmdlet          Remove-PSSession
+Cmdlet          Remove-PSSnapin
+Cmdlet          Resume-Job
+Cmdlet          Save-Help
+Cmdlet          Set-PSDebug
+Cmdlet          Set-PSSessionConfiguration
+Cmdlet          Set-StrictMode
+Cmdlet          Start-Job
+Cmdlet          Stop-Job
+Cmdlet          Suspend-Job
+Cmdlet          Test-ModuleManifest
+Cmdlet          Test-PSSessionConfigurationFile
+Cmdlet          Unregister-PSSessionConfiguration
+Cmdlet          Update-Help
+Cmdlet          Wait-Job
+Cmdlet          Where-Object
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-help sort-object -online
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-verb | sort-object -descending
+
+Verb        Group
+----        -----
+Enable      Lifecycle
+Install     Lifecycle
+Invoke      Lifecycle
+Confirm     Lifecycle
+Deny        Lifecycle
+Disable     Lifecycle
+Resume      Lifecycle
+Start       Lifecycle
+Stop        Lifecycle
+Register    Lifecycle
+Request     Lifecycle
+Restart     Lifecycle
+Publish     Data
+Restore     Data
+Save        Data
+Merge       Data
+Mount       Data
+Out         Data
+Approve     Lifecycle
+Assert      Lifecycle
+Complete    Lifecycle
+Sync        Data
+Unpublish   Data
+Update      Data
+Submit      Lifecycle
+Send        Communications
+Write       Communications
+Block       Security
+Disconnect  Communications
+Read        Communications
+Receive     Communications
+Unblock     Security
+Unprotect   Security
+Use         Other
+Grant       Security
+Protect     Security
+Revoke      Security
+Wait        Lifecycle
+Debug       Diagnostic
+Measure     Diagnostic
+Suspend     Lifecycle
+Uninstall   Lifecycle
+Unregister  Lifecycle
+Test        Diagnostic
+Trace       Diagnostic
+Connect     Communications
+Ping        Diagnostic
+Repair      Diagnostic
+Resolve     Diagnostic
+Optimize    Common
+Pop         Common
+Push        Common
+Move        Common
+New         Common
+Open        Common
+Reset       Common
+Resize      Common
+Search      Common
+Redo        Common
+Remove      Common
+Rename      Common
+Copy        Common
+Enter       Common
+Exit        Common
+Add         Common
+Clear       Common
+Close       Common
+Hide        Common
+Join        Common
+Lock        Common
+Find        Common
+Format      Common
+Get         Common
+Select      Common
+ConvertTo   Data
+Dismount    Data
+Edit        Data
+Compress    Data
+Convert     Data
+ConvertFrom Data
+Import      Data
+Initialize  Data
+Limit       Data
+Expand      Data
+Export      Data
+Group       Data
+Split       Common
+Step        Common
+Switch      Common
+Set         Common
+Show        Common
+Skip        Common
+Backup      Data
+Checkpoint  Data
+Compare     Data
+Undo        Common
+Unlock      Common
+Watch       Common
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-verb
+
+Verb        Group
+----        -----
+Add         Common
+Clear       Common
+Close       Common
+Copy        Common
+Enter       Common
+Exit        Common
+Find        Common
+Format      Common
+Get         Common
+Hide        Common
+Join        Common
+Lock        Common
+Move        Common
+New         Common
+Open        Common
+Optimize    Common
+Pop         Common
+Push        Common
+Redo        Common
+Remove      Common
+Rename      Common
+Reset       Common
+Resize      Common
+Search      Common
+Select      Common
+Set         Common
+Show        Common
+Skip        Common
+Split       Common
+Step        Common
+Switch      Common
+Undo        Common
+Unlock      Common
+Watch       Common
+Backup      Data
+Checkpoint  Data
+Compare     Data
+Compress    Data
+Convert     Data
+ConvertFrom Data
+ConvertTo   Data
+Dismount    Data
+Edit        Data
+Expand      Data
+Export      Data
+Group       Data
+Import      Data
+Initialize  Data
+Limit       Data
+Merge       Data
+Mount       Data
+Out         Data
+Publish     Data
+Restore     Data
+Save        Data
+Sync        Data
+Unpublish   Data
+Update      Data
+Approve     Lifecycle
+Assert      Lifecycle
+Complete    Lifecycle
+Confirm     Lifecycle
+Deny        Lifecycle
+Disable     Lifecycle
+Enable      Lifecycle
+Install     Lifecycle
+Invoke      Lifecycle
+Register    Lifecycle
+Request     Lifecycle
+Restart     Lifecycle
+Resume      Lifecycle
+Start       Lifecycle
+Stop        Lifecycle
+Submit      Lifecycle
+Suspend     Lifecycle
+Uninstall   Lifecycle
+Unregister  Lifecycle
+Wait        Lifecycle
+Debug       Diagnostic
+Measure     Diagnostic
+Ping        Diagnostic
+Repair      Diagnostic
+Resolve     Diagnostic
+Test        Diagnostic
+Trace       Diagnostic
+Connect     Communications
+Disconnect  Communications
+Read        Communications
+Receive     Communications
+Send        Communications
+Write       Communications
+Block       Security
+Grant       Security
+Protect     Security
+Revoke      Security
+Unblock     Security
+Unprotect   Security
+Use         Other
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-verb | sort-item
+sort-item : The term 'sort-item' is not recognized as the name of a cmdlet, function, script file, or operable program. 
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:12
++ get-verb | sort-item
++            ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (sort-item:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+sort-item : The term 'sort-item' is not recognized as the name of
+a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the
+path is correct and try again.
+At line:1 char:12
++ get-verb | sort-item
++            ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (sort-item:String)
+   [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-verb | sort-object
+
+Verb        Group
+----        -----
+Enable      Lifecycle
+Install     Lifecycle
+Invoke      Lifecycle
+Confirm     Lifecycle
+Deny        Lifecycle
+Disable     Lifecycle
+Resume      Lifecycle
+Start       Lifecycle
+Stop        Lifecycle
+Register    Lifecycle
+Request     Lifecycle
+Restart     Lifecycle
+Publish     Data
+Restore     Data
+Save        Data
+Merge       Data
+Mount       Data
+Out         Data
+Approve     Lifecycle
+Assert      Lifecycle
+Complete    Lifecycle
+Sync        Data
+Unpublish   Data
+Update      Data
+Submit      Lifecycle
+Send        Communications
+Write       Communications
+Block       Security
+Disconnect  Communications
+Read        Communications
+Receive     Communications
+Unblock     Security
+Unprotect   Security
+Use         Other
+Grant       Security
+Protect     Security
+Revoke      Security
+Wait        Lifecycle
+Debug       Diagnostic
+Measure     Diagnostic
+Suspend     Lifecycle
+Uninstall   Lifecycle
+Unregister  Lifecycle
+Test        Diagnostic
+Trace       Diagnostic
+Connect     Communications
+Ping        Diagnostic
+Repair      Diagnostic
+Resolve     Diagnostic
+Optimize    Common
+Pop         Common
+Push        Common
+Move        Common
+New         Common
+Open        Common
+Reset       Common
+Resize      Common
+Search      Common
+Redo        Common
+Remove      Common
+Rename      Common
+Copy        Common
+Enter       Common
+Exit        Common
+Add         Common
+Clear       Common
+Close       Common
+Hide        Common
+Join        Common
+Lock        Common
+Find        Common
+Format      Common
+Get         Common
+Select      Common
+ConvertTo   Data
+Dismount    Data
+Edit        Data
+Compress    Data
+Convert     Data
+ConvertFrom Data
+Import      Data
+Initialize  Data
+Limit       Data
+Expand      Data
+Export      Data
+Group       Data
+Split       Common
+Step        Common
+Switch      Common
+Set         Common
+Show        Common
+Skip        Common
+Backup      Data
+Checkpoint  Data
+Compare     Data
+Undo        Common
+Unlock      Common
+Watch       Common
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-verb | sort-object -auto
+>> TerminatingError(Sort-Object): "A parameter cannot be found that matches parameter name 'auto'."
+Sort-Object : A parameter cannot be found that matches parameter name 'auto'.
+At line:1 char:24
++ get-verb | sort-object -auto
++                        ~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Sort-Object], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.SortObjectCommand
+Sort-Object : A parameter cannot be found that matches parameter
+name 'auto'.
+At line:1 char:24
++ get-verb | sort-object -auto
++                        ~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Sort-Object],
+    ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.Po
+   werShell.Commands.SortObjectCommand
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-verb | sort-object
+
+Verb        Group
+----        -----
+Enable      Lifecycle
+Install     Lifecycle
+Invoke      Lifecycle
+Confirm     Lifecycle
+Deny        Lifecycle
+Disable     Lifecycle
+Resume      Lifecycle
+Start       Lifecycle
+Stop        Lifecycle
+Register    Lifecycle
+Request     Lifecycle
+Restart     Lifecycle
+Publish     Data
+Restore     Data
+Save        Data
+Merge       Data
+Mount       Data
+Out         Data
+Approve     Lifecycle
+Assert      Lifecycle
+Complete    Lifecycle
+Sync        Data
+Unpublish   Data
+Update      Data
+Submit      Lifecycle
+Send        Communications
+Write       Communications
+Block       Security
+Disconnect  Communications
+Read        Communications
+Receive     Communications
+Unblock     Security
+Unprotect   Security
+Use         Other
+Grant       Security
+Protect     Security
+Revoke      Security
+Wait        Lifecycle
+Debug       Diagnostic
+Measure     Diagnostic
+Suspend     Lifecycle
+Uninstall   Lifecycle
+Unregister  Lifecycle
+Test        Diagnostic
+Trace       Diagnostic
+Connect     Communications
+Ping        Diagnostic
+Repair      Diagnostic
+Resolve     Diagnostic
+Optimize    Common
+Pop         Common
+Push        Common
+Move        Common
+New         Common
+Open        Common
+Reset       Common
+Resize      Common
+Search      Common
+Redo        Common
+Remove      Common
+Rename      Common
+Copy        Common
+Enter       Common
+Exit        Common
+Add         Common
+Clear       Common
+Close       Common
+Hide        Common
+Join        Common
+Lock        Common
+Find        Common
+Format      Common
+Get         Common
+Select      Common
+ConvertTo   Data
+Dismount    Data
+Edit        Data
+Compress    Data
+Convert     Data
+ConvertFrom Data
+Import      Data
+Initialize  Data
+Limit       Data
+Expand      Data
+Export      Data
+Group       Data
+Split       Common
+Step        Common
+Switch      Common
+Set         Common
+Show        Common
+Skip        Common
+Backup      Data
+Checkpoint  Data
+Compare     Data
+Undo        Common
+Unlock      Common
+Watch       Common
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-verb | sort-object -descending
+
+Verb        Group
+----        -----
+Enable      Lifecycle
+Install     Lifecycle
+Invoke      Lifecycle
+Confirm     Lifecycle
+Deny        Lifecycle
+Disable     Lifecycle
+Resume      Lifecycle
+Start       Lifecycle
+Stop        Lifecycle
+Register    Lifecycle
+Request     Lifecycle
+Restart     Lifecycle
+Publish     Data
+Restore     Data
+Save        Data
+Merge       Data
+Mount       Data
+Out         Data
+Approve     Lifecycle
+Assert      Lifecycle
+Complete    Lifecycle
+Sync        Data
+Unpublish   Data
+Update      Data
+Submit      Lifecycle
+Send        Communications
+Write       Communications
+Block       Security
+Disconnect  Communications
+Read        Communications
+Receive     Communications
+Unblock     Security
+Unprotect   Security
+Use         Other
+Grant       Security
+Protect     Security
+Revoke      Security
+Wait        Lifecycle
+Debug       Diagnostic
+Measure     Diagnostic
+Suspend     Lifecycle
+Uninstall   Lifecycle
+Unregister  Lifecycle
+Test        Diagnostic
+Trace       Diagnostic
+Connect     Communications
+Ping        Diagnostic
+Repair      Diagnostic
+Resolve     Diagnostic
+Optimize    Common
+Pop         Common
+Push        Common
+Move        Common
+New         Common
+Open        Common
+Reset       Common
+Resize      Common
+Search      Common
+Redo        Common
+Remove      Common
+Rename      Common
+Copy        Common
+Enter       Common
+Exit        Common
+Add         Common
+Clear       Common
+Close       Common
+Hide        Common
+Join        Common
+Lock        Common
+Find        Common
+Format      Common
+Get         Common
+Select      Common
+ConvertTo   Data
+Dismount    Data
+Edit        Data
+Compress    Data
+Convert     Data
+ConvertFrom Data
+Import      Data
+Initialize  Data
+Limit       Data
+Expand      Data
+Export      Data
+Group       Data
+Split       Common
+Step        Common
+Switch      Common
+Set         Common
+Show        Common
+Skip        Common
+Backup      Data
+Checkpoint  Data
+Compare     Data
+Undo        Common
+Unlock      Common
+Watch       Common
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> Get-PSDrive | ?{$_.Free -gt 1} | %{$Count = 0; Write-Host "";} { $_.Name + ": Used: " + "{0:N2}" -f ($_.Used/1gb) + " Free: " + "{0:N2}" -f ($_.free/1gb) + " Total: " + "{0:N2}" -f (($_.Used/1gb)+($_.Free/1gb));
+    $Count = $Count + $_.Free;}{Write-Host"";Write-Host "Total Free Space " ("{0:N2}" -f ($Count/1gb)) -backgroundcolor magenta}
+
+C: Used: 265.81 Free: 26.55 Total: 292.37
+D: Used: 476.54 Free: 454.98 Total: 931.52
+E: Used: 1,423.80 Free: 1,370.59 Total: 2,794.39
+V: Used: 1,379.82 Free: 2,346.08 Total: 3,725.90
+
+Total Free Space  4,198.20
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-psdrive | where-object {$_.free -gt 1}
+
+Name           Used (GB)     Free (GB) Provider      Root
+----           ---------     --------- --------      ----
+C                 265.88         26.48 FileSystem    C:\
+D                 476.12        455.39 FileSystem    D:\
+E                1423.80       1370.59 FileSystem    E:\
+V                1379.82       2346.08 FileSystem    V:\
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-help where-object -online
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-psdrive | where-object {$_.free -gt 1} | select-object root, used, free
+
+Root          Used          Free
+----          ----          ----
+C:\   285500076032   28427845632
+D:\   511233454080  488975925248
+E:\  1528794480640 1471662743552
+V:\  1481568714752 2519082168320
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-psdrive | where-object {$_.free -gt 1} | select *
+
+
+Used            : 285498912768
+Free            : 28429008896
+CurrentLocation : Users\JSWalley\desktop\courses\ctec104\wk02
+Name            : C
+Provider        : Microsoft.PowerShell.Core\FileSystem
+Root            : C:\
+Description     : OS
+MaximumSize     :
+Credential      : System.Management.Automation.PSCredential
+DisplayRoot     :
+
+Used            : 511233454080
+Free            : 488975925248
+CurrentLocation :
+Name            : D
+Provider        : Microsoft.PowerShell.Core\FileSystem
+Root            : D:\
+Description     : DATA
+MaximumSize     :
+Credential      : System.Management.Automation.PSCredential
+DisplayRoot     :
+
+Used            : 1528794480640
+Free            : 1471662743552
+CurrentLocation :
+Name            : E
+Provider        : Microsoft.PowerShell.Core\FileSystem
+Root            : E:\
+Description     : Storage
+MaximumSize     :
+Credential      : System.Management.Automation.PSCredential
+DisplayRoot     :
+
+Used            : 1481568714752
+Free            : 2519082168320
+CurrentLocation :
+Name            : V
+Provider        : Microsoft.PowerShell.Core\FileSystem
+Root            : V:\
+Description     : VAULT
+MaximumSize     :
+Credential      : System.Management.Automation.PSCredential
+DisplayRoot     :
+
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-psdrive | where-object {$_.free -gt 1} | foreach-object {"ploppa"}
+ploppa
+ploppa
+ploppa
+ploppa
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-psdrive | where-object {$_.free -gt 1} | foreach-object {write-host "free space for" $_.root "is" $_.free -foregroundColor blue}
+free space for C:\ is 28425859072
+free space for D:\ is 488975794176
+free space for E:\ is 1471662743552
+free space for V:\ is 2519082168320
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-psdrive | where-object {$_.free -gt 1} | foreach-object {write-host "free space for" $_.root "is" ($_.free/1gb) -foregroundColor blue}
+free space for C:\ is 26.4718322753906
+free space for D:\ is 455.394195556641
+free space for E:\ is 1370.59273529053
+free space for V:\ is 2346.07809066772
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> "{0:N0}" -f 100000000000
+100,000,000,000
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> "{0:C2}" -f 100000000000
+$100,000,000,000.00
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-psdrive | where-object {$_.free -gt 1} | foreach-object {write-host "free space for" $_.root "is" ("{0:N2}" -f ($_.free/1gb)) -foregroundColor blue}
+free space for C:\ is 26.47
+free space for D:\ is 455.39
+free space for E:\ is 1,370.59
+free space for V:\ is 2,346.08
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-psdrive | where-object {$_.free -gt 1} | foreach-object{} 
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-psdrive | where-object {$_.free -gt 1} | foreach-object{$c = 0; write-host "this step only runs once."}{$c = $c + 1; write-host "this section runs once for each object in the pipe." $c}{write-host "this will run once everything else is done. The value of the C variable is" $c}
+this step only runs once.
+this section runs once for each object in the pipe. 1
+this section runs once for each object in the pipe. 2
+this section runs once for each object in the pipe. 3
+this section runs once for each object in the pipe. 4
+this will run once everything else is done. The value of the C variable is 4
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> cls
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> Get-PSDrive | where-object{$_.Free -gt 1} | foreach-object{$Count = 0; Write-Host "";} { $_.Name + ": Used: " + "{0:N2}" -f ($_.Used/1gb) + " Free: " + "{0:N2}" -f ($_.free/1gb) + " Total: " + "{0:N2}" -f (($_.Used/1gb)+($_.Free/1gb));
+    $Count = $Count + $_.Free;}{Write-Host"";Write-Host "Total Free Space " ("{0:N2}" -f ($Count/1gb)) -backgroundcolor blue}
+
+C: Used: 265.91 Free: 26.46 Total: 292.37
+D: Used: 476.12 Free: 455.39 Total: 931.52
+E: Used: 1,423.80 Free: 1,370.59 Total: 2,794.39
+V: Used: 1,379.82 Free: 2,346.08 Total: 3,725.90
+
+Total Free Space  4,198.53
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> Get-PSDrive | where-object{$_.Free -gt 1} | foreach-object{$Count = 0; Write-Host "";} { $_.Name + ": Used: " + "{0:N2}" -f ($_.Used/1gb) + " Free: " + "{0:N2}" -f ($_.free/1gb) + " Total: " + "{0:N2}" -f (($_.Used/1gb)+($_.Free/1gb));
+    $Count = $Count + $_.Free;}{Write-Host"";Write-Host "Total Free Space " ("{0:N2}" -f ($Count/1gb)) -backgroundcolor blue}
+
+C: Used: 265.91 Free: 26.46 Total: 292.37
+D: Used: 476.12 Free: 455.39 Total: 931.52
+E: Used: 1,423.80 Free: 1,370.59 Total: 2,794.39
+V: Used: 1,379.82 Free: 2,346.08 Total: 3,725.90
+
+Total Free Space  4,198.53
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> get-volume
+
+DriveLetter FriendlyName FileSystemType DriveType HealthStatus Operati
+                                                               onalSta
+                                                               tus
+----------- ------------ -------------- --------- ------------ -------
+V           VAULT        NTFS           Fixed     Healthy      OK
+E           Storage      NTFS           Fixed     Healthy      OK
+D           DATA         NTFS           Fixed     Healthy      OK
+C           OS           NTFS           Fixed     Healthy      OK
+            Recovery     NTFS           Fixed     Healthy      OK
+
+
+PS C:\Users\JSWalley\desktop\courses\ctec104\wk02> stop-transcript
+**********************
+Windows PowerShell transcript end
+End time: 20220126222442
+**********************
