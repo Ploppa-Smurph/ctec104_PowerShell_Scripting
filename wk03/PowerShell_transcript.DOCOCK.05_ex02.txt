@@ -1,0 +1,477 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20220203124516
+Username: DOCOCK\JSWalley
+RunAs User: DOCOCK\JSWalley
+Configuration Name: 
+Machine: DOCOCK (Microsoft Windows NT 10.0.19044.0)
+Host Application: powershell.exe
+Process ID: 23000
+PSVersion: 5.1.19041.1320
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.1320
+BuildVersion: 10.0.19041.1320
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is D:\Users\JSWalley\OneDrive - Bossier Parish Community College\Documents\PowerShell_transcript.DOCOCK.TL6412DC.20220203124516.txt
+PS C:\Users\JSWalley> new-item "C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1\test2.txt" -ItemType File -Value "test2"
+
+
+    Directory:
+    C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          2/3/2022  12:46 PM              5 test2.t
+                                                  xt
+
+
+PS C:\Users\JSWalley> ls
+
+
+    Directory: C:\Users\JSWalley
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        10/18/2021   2:51 PM                .Albion
+
+                                                  Online
+                                                  Launche
+                                                  r
+d-----          8/3/2021   8:09 AM                .androi
+                                                  d
+d-----         1/20/2022  11:39 PM                .bridge
+d-----         6/20/2021   6:23 PM                .cache
+d-----        12/18/2020   5:32 PM                .config
+d-----         1/20/2022   8:36 AM                .docker
+d-----         6/20/2021   6:23 PM                .eclips
+                                                  e
+d-----         8/19/2021   5:19 PM                .gradle
+d-----         1/22/2022   3:26 PM                .idlerc
+d-----         8/21/2021   4:34 PM                .m2
+d-----         7/14/2021   8:19 AM                .node_m
+                                                  odules_
+                                                  global
+d-----         7/19/2021   9:52 AM                .p2
+d-----        10/18/2021   2:51 PM                .QtWebE
+                                                  nginePr
+                                                  ocess
+d-----        12/17/2020   8:04 PM                .vscode
+d-----          2/3/2022   8:31 AM                .wakati
+                                                  me
+d-r---          1/8/2021  12:38 PM                3D
+                                                  Objects
+d-r---          1/8/2021  12:38 PM                Contact
+                                                  s
+d-----         8/23/2021   8:53 PM                data
+d-r---         1/31/2022  10:42 AM                Desktop
+d-----         1/28/2022   9:43 PM                Documen
+                                                  ts
+d-r---         1/11/2021  10:48 PM                Downloa
+                                                  ds
+d-r---          1/8/2021  12:38 PM                Favorit
+                                                  es
+d-r---          1/8/2021  12:38 PM                Links
+d-r---          1/8/2021  12:38 PM                Music
+dar---         1/28/2022   9:40 PM                OneDriv
+                                                  e
+d-r---         1/31/2022  10:26 AM                Picture
+                                                  s
+d-----         7/26/2021   3:04 PM                Postman
+d-r---          1/8/2021  12:38 PM                Saved
+                                                  Games
+d-r---          1/8/2021  12:38 PM                Searche
+                                                  s
+d-----         8/21/2021  10:46 PM                Users
+d-r---          1/8/2021  12:38 PM                Videos
+-a----          2/3/2022  10:07 AM             53 .git-fo
+                                                  r-windo
+                                                  ws-upda
+                                                  ter
+-a----          2/2/2022  10:07 AM            196 .gitcon
+                                                  fig
+-a----         8/22/2021   7:56 PM           2104 .h2.ser
+                                                  ver.pro
+                                                  perties
+-a----         8/10/2021  12:32 PM             20 .lesshs
+                                                  t
+-a----         7/13/2021  11:01 AM              7 .node_r
+                                                  epl_his
+                                                  tory
+-a----         1/18/2021   2:28 PM             47 .npmrc
+-a----          2/3/2022   8:30 AM             91 .wakati
+                                                  me-inte
+                                                  rnal.cf
+                                                  g
+-a----          2/3/2022  12:37 PM          32768 .wakati
+                                                  me.bdb
+-a----         1/20/2022  11:51 PM             58 .wakati
+                                                  me.cfg
+-a----         1/28/2022   9:39 PM           8898 .wakati
+                                                  me.log
+-a----         8/21/2021  10:55 PM          16384 blogPos
+                                                  t_db.mv
+                                                  .db
+-a----         8/12/2021   8:25 AM          20480 demodat
+                                                  a.mv.db
+-a----         1/17/2021  10:16 PM              0 _netrc
+
+
+PS C:\Users\JSWalley> cd Desktop\courses\ctec104\wk03
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03> ls
+
+
+    Directory:
+    C:\Users\JSWalley\Desktop\courses\ctec104\wk03
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          2/3/2022  12:46 PM                test1
+d-----          2/3/2022  12:18 PM                test2
+-a----          2/3/2022  12:41 PM          11129 b1-File
+                                                  System-
+                                                  Exercis
+                                                  e-Part
+                                                  Two.doc
+                                                  x
+-a----          2/3/2022  12:11 PM          11675 b1-File
+                                                  System-
+                                                  Exercis
+                                                  e.docx
+-a----          2/2/2022   6:02 PM         447781 b1-File
+                                                  System.
+                                                  pptx
+-a----          2/3/2022  12:27 PM           4277 index.h
+                                                  tm
+-a----          2/3/2022  11:48 AM         522030 PowerSh
+                                                  ell_tra
+                                                  nscript
+                                                  .DOCOCK
+                                                  .04_ex0
+                                                  1.txt
+
+
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03> cd test1
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1> ls
+
+
+    Directory:
+    C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          2/3/2022  12:41 PM              5 test1.t
+                                                  xt
+-a----          2/3/2022  12:46 PM              5 test2.t
+                                                  xt
+
+
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1> Move-Item C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1\test1.txt  C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1> ls
+
+
+    Directory:
+    C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          2/3/2022  12:46 PM              5 test2.t
+                                                  xt
+
+
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1> cd \test2
+cd : Cannot find path 'C:\test2' because it does not exist.
+At line:1 char:1
++ cd \test2
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\test2:String) [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+cd : Cannot find path 'C:\test2' because it does not
+exist.
+At line:1 char:1
++ cd \test2
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\test2:
+   String) [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.Pow
+   erShell.Commands.SetLocationCommand
+
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1> cd ..
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03> cd test2
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2> ls
+
+
+    Directory:
+    C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          2/3/2022  12:41 PM              5 test1.t
+                                                  xt
+
+
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2> Move-Item C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1\test2.txt  C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2> ls
+
+
+    Directory:
+    C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          2/3/2022  12:41 PM              5 test1.t
+                                                  xt
+-a----          2/3/2022  12:46 PM              5 test2.t
+                                                  xt
+
+
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2> Move-Item C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2\test1.txt  C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2> cd ..
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03> cd test1
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1> ls
+
+
+    Directory:
+    C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          2/3/2022  12:41 PM              5 test1.t
+                                                  xt
+
+
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1> cat test1.txt
+test1
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1> cd ..
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03> cd test2
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2> cat test2.txt
+test2
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2> ls
+
+
+    Directory:
+    C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          2/3/2022  12:46 PM              5 test2.t
+                                                  xt
+
+
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2> add-content "test2.txt" "Hello World"
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2> ls
+
+
+    Directory:
+    C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          2/3/2022   1:00 PM             18 test2.t
+                                                  xt
+
+
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2> cat test2.txt
+test2Hello World
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2> cd ..
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03> cd test 1
+>> TerminatingError(Set-Location): "A positional parameter cannot be found that accepts argument '1'."
+Set-Location : A positional parameter cannot be found that accepts argument '1'.
+At line:1 char:1
++ cd test 1
++ ~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Location], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+Set-Location : A positional parameter cannot be found
+that accepts argument '1'.
+At line:1 char:1
++ cd test 1
++ ~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-
+   Location], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFoun
+   d,Microsoft.PowerShell.Commands.SetLocationCommand
+
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03> cd test1
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1> add-content "test1.txt" "Hello World"
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1> ls
+
+
+    Directory:
+    C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          2/3/2022   1:01 PM             18 test1.t
+                                                  xt
+
+
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1> cat test1.txt
+test1Hello World
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1> set-content "test1.txt" "This is the new content"
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1> cat test1.txt
+This is the new content
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1> cd ..
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03> cd test2
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2> set-content "test2.txt" "This is the new content"
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2> cat test2.txt
+This is the new content
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2> get-acl test2.txt | select *
+
+
+PSPath                  : Microsoft.PowerShell.Core\FileS
+                          ystem::C:\Users\JSWalley\Deskto
+                          p\courses\ctec104\wk03\test2\te
+                          st2.txt
+PSParentPath            : Microsoft.PowerShell.Core\FileS
+                          ystem::C:\Users\JSWalley\Deskto
+                          p\courses\ctec104\wk03\test2
+PSChildName             : test2.txt
+PSDrive                 : C
+PSProvider              : Microsoft.PowerShell.Core\FileS
+                          ystem
+CentralAccessPolicyId   :
+CentralAccessPolicyName :
+Path                    : Microsoft.PowerShell.Core\FileS
+                          ystem::C:\Users\JSWalley\Deskto
+                          p\courses\ctec104\wk03\test2\te
+                          st2.txt
+Owner                   : DOCOCK\JSWalley
+Group                   : DOCOCK\None
+Access                  : {System.Security.AccessControl.
+                          FileSystemAccessRule, System.Se
+                          curity.AccessControl.FileSystem
+                          AccessRule, System.Security.Acc
+                          essControl.FileSystemAccessRule
+                          }
+Sddl                    : O:S-1-5-21-2923952825-327534549
+                          8-1819656022-1008G:S-1-5-21-292
+                          3952825-3275345498-1819656022-5
+                          13D:AI(A;ID;FA;;;SY)(A;ID;FA;;;
+                          BA)(A;ID;FA;;;S-1-5-21-29239528
+                          25-3275345498-1819656022-1008)
+AccessToString          : NT AUTHORITY\SYSTEM Allow
+                          FullControl
+                          BUILTIN\Administrators Allow
+                          FullControl
+                          DOCOCK\JSWalley Allow
+                          FullControl
+AuditToString           :
+AccessRightType         : System.Security.AccessControl.F
+                          ileSystemRights
+AccessRuleType          : System.Security.AccessControl.F
+                          ileSystemAccessRule
+AuditRuleType           : System.Security.AccessControl.F
+                          ileSystemAuditRule
+AreAccessRulesProtected : False
+AreAuditRulesProtected  : False
+AreAccessRulesCanonical : True
+AreAuditRulesCanonical  : True
+
+
+
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2> ren "test2.txt" renamedFile.txt
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2> ls
+
+
+    Directory:
+    C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          2/3/2022   1:06 PM             25 renamed
+                                                  File.tx
+                                                  t
+
+
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2> cd ..
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03> del test1
+Confirm
+The item at C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test1 has children and the Recurse parameter was not specified. If you continue, all children will be removed with the item. Are you sure you want to continue?
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+A
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03> ls
+
+
+    Directory:
+    C:\Users\JSWalley\Desktop\courses\ctec104\wk03
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          2/3/2022   1:11 PM                test2
+-a----          2/3/2022  12:53 PM          11265 b1-File
+                                                  System-
+                                                  Exercis
+                                                  e-Part
+                                                  Two.doc
+                                                  x
+-a----          2/3/2022  12:11 PM          11675 b1-File
+                                                  System-
+                                                  Exercis
+                                                  e.docx
+-a----          2/2/2022   6:02 PM         447781 b1-File
+                                                  System.
+                                                  pptx
+-a----          2/3/2022   1:05 PM           4394 index.h
+                                                  tm
+-a----          2/3/2022  11:48 AM         522030 PowerSh
+                                                  ell_tra
+                                                  nscript
+                                                  .DOCOCK
+                                                  .04_ex0
+                                                  1.txt
+
+
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03> del test2
+Confirm
+The item at C:\Users\JSWalley\Desktop\courses\ctec104\wk03\test2 has children and the Recurse parameter was not specified. If you continue, all children will be removed with the item. Are you sure you want to continue?
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+Y
+PS C:\Users\JSWalley\Desktop\courses\ctec104\wk03> ls
+
+
+    Directory:
+    C:\Users\JSWalley\Desktop\courses\ctec104\wk03
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          2/3/2022  12:53 PM          11265 b1-File
+                                                  System-
+                                                  Exercis
+                                                  e-Part
+                                                  Two.doc
+                                                  x
+-a----          2/3/2022  12:11 PM          11675 b1-File
+                                                  System-
+                                                  Exercis
+                                                  e.docx
+-a----          2/2/2022   6:02 PM         447781 b1-File
+                                                  System.
+                                                  pptx
+-a----          2/3/2022   1:05 PM           4394 index.h
+                                                  tm
+-a----          2/3/2022  11:48 AM         522030 PowerSh
+                                                  ell_tra
+                                                  nscript
+                                                  .DOCOCK
+                                                  .04_ex0
+                                                  1.txt
+
+

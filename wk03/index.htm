@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTEC-104 week 03 Working with the File System</title>
+</head>
+
+<body>
+    <h1>CTEC-104 Week 03 Working with the File System</h1>
+    <a href="https://www.youtube.com/watch?v=K0AEko90un8">Working with File System video</a><br><br>
+    <a href="https://www.youtube.com/playlist?list=PL6D474E721138865A">link to the Don Jones Learn PowerShell in a Month of Lunches Videos</a>
+    <br><br> this chapter will cover: File System Basics, Standard Commands, File Properties, File Permissions.
+    <p>
+        <b>File System</b> - hierarchical namespace containing the directories and files on your computer. includes all system drives where files are stored.
+        <br>includes HD, external drives, USB, and DVD drives.
+        <br><br>C: is normally the OS hard disk. A: and B: are rarely used any longer because they are associated with the floppy drives of yore.
+        <br> the <b>top level directory</b> is identified with a backslash '\' ex: top level directory of C drive is C:\.
+        <br>Any directory created inside the top level directory is a child or subdirectory of ie: C:\, the child directories of a child is also a subdirectory.
+        <br> Files are then stored in the directories which creates the orginization system for file storage.
+        <br><br>'.' = current directory; '..' = parent directory
+    </p>
+    <p>
+        <ul> Common CLI commands that are PowerShell aliases
+            <li><b>cd</b> - change directory - Set-Location</li>
+            <li><b>copy</b> - copy a file - = cp - Copy-Item</li>
+            <li><b>del</b> - delete a file or directory - Remove-Item</li>
+            <li><b>dir</b> - directory listing [does the same as 'ls'] - Get-ChildItem</li>
+            <li><b>mkdir</b> - make a new directory</li>
+            <li><b>move</b> - move a file - = mv - Move-Item</li>
+            <li><b>ren</b> - rename a file - Rename-Item</li>
+            <li><b>rmdir</b> - remove a directory</li>
+            <li><b>cat</b> - Get-Content</li>
+            <li><b>gp</b> - Get-ItemProperty</li>
+            <li><b>pwd</b> - Get-Location</li>
+        </ul>
+    </p>
+    <p>
+        change the current drive by: entering "cd d:" -- also you could simply enter "d:"" at the prompt to change the current drive.
+        <br><br> to move a file and rename at the same time: "move file1.txt C:\dir2\file2.txt" -- renames the file while it moves the file.
+    </p>
+    <h2> File Properties</h2>
+    when you ls or dir the output lists all of the files and directories in the current directory.
+    <br> this ouptut contains 4 properties: <b>Mode, Last Write Time, Length, and Name</b>
+    <br><br> files and directories have many more properties that are NOT listed by the dir command.
+    <br> -- to get all the properties of a file or directory:
+    <br> "get-item filename | select *" or "dir | select *" -- the 2nd will display of every file in the directory. get-item * | select * does the exact same thing
+    <br><br>select certain properties to display: dir | select name, length, attributes
+    <br><br> file permissions define the access rights that user's have when accessing the files and directories.
+    <br> the 'Get-Acl' command is used to get limited file permissions: <b><i>get-acl filename</i></b>
+    <br> to get the full permissions type: <b><i>get-acl filename | select *</i></b>
+    <br><br> the most important permissions we will concentrate on are: <b>AccessToString, Owner, and Group</b>
+    <br> AccessToString displays what control you have over a file
+    <br><br> ACL stands for Access Control Log.
+
+    <h3>exercise 2</h3>
+    <p>-- use New-Item to create a file in PowerShell
+        <br><br> ex: <b><i>New-Item "C:\files\open\file.txt" -ItemType File -Value "The first sentence in our file."
+        <br>Add-Content "C:\files\open\file.txt" "The second sentence in our file."</i></b>
+        <br> <br>these commands would create a text file with some text and then add an additional line of text to the file.
+        <br><br> set-content - replaces the original content and overwrites with the new content which is being set
+    </p>
+
+
+
+</body>
+
+</html>
