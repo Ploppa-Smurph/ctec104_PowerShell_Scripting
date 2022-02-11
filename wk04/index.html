@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTEC 104 - wk04 Working with Services and Processes</title>
+</head>
+<h1>CTEC-104 - wk04 Working with Services and Processes</h1>
+<a href="https://www.youtube.com/watch?v=anLZ-IcDEKQ">wk 04 link</a> what is an application? -- a program that can interact with your computer, Skype, Microsoft Office, Chrome
+<br><br>applications have many different associated processes - ie: each tab in Chrome is a separate process
+<br><br> What is an Application? -- an instance of a executable file or application, normally closes when the application closes, but some programs have background process that always run.
+<br><br> What is a Service? -- a type of process that runs in the background and does not interact with the desktop. almost all Services run as an instance of 'svchost.exe'
+<br> Services normally start when windows boots up. Services enable the creation of 'Long Running Processes' and Services can run long after the user logs off
+
+<h3>Get-Service</h3>
+get-service command displays all the running and stopped services currently on the computer.
+<br> returns 3 properties: Status, Name, and DisplayName.
+<br><br> ways to filter your service results -- the list is very long, so it is common to filter your search:
+<br>get-service b* = all services that start with the letter 'b'
+<br>get-service -displayname *remote* = returns all services with 'remote' in the DisplayName
+<br>get-service -name "win*" -exclude "winrm" = this get services named 'win', but will exclude 'winrm'
+<h3>Service Properties</h3>
+services have properties not displayed by the get-service command -- these can be displayed using the select command:
+<br> get-service schedule | select * = will display the properties of the schedule service
+<br><br>get-service "s*" | sort-object status = sort by status
+<br>get-service Spooler | Select * = will display the properties of the object spooler
+<br>get-service winmgmt | Select * = display properties of winmgmt
+<br><br><b>CanShutdown</b> = indicates whether a service should be notified when the system is shutting down.
+<br><b>CanPauseAndContinue</b> = indicates if the service can be paused and resumed
+<h3>Display Running and Stopped Services</h3>
+get-service | where-object {$_.status -eq "running"} = will show the runninng services
+<br>get-service | where ($_.status -eq "stopped") = will show the stopped Services
+<br><br> in the above examples we are filtering by a property of the object. to filter we use the $_.
+<br> the '-eq' in the above examples is a relational operator which means 'equal' - so we are filtering for $_.status to be -eq to "running" or "stopped" in these examples
+<h3>Dependent Services</h3>
+get-service "winrm" -dependentservices <i>= will return the services that are dependent on winrm</i>
+<br>get-service "winmgmt" -dependentservices <i> = actually returns some services on my system, my winrm was stopped and had no -dependentservices showing</i>
+<br><br> the following is an example of a command that will format the return
+<br> get-service | where {$_.dependentservices} | Format-List -Property Name, DependentServices, @{label="noofdependentservices"; expression={$_.dependentservices.count}}
+<br> the above returns filters the return and dipslays the name, any dependent services, and the number of dependent services
+<h3>Important Service Properties</h3>
+<b>RequiredServices</b> - list the services that must be running for the service to work correctly.
+<br><b>DependentServices</b> - list services that need this service to be running in order to work correctly
+<br><b>CanPauseAndContinue</b> - if "True" the service can be paused and continued
+<br><b>CanStop</b> - if "True" the service can be stopped; if "False" the service must run all the time
+<br><b>StartType</b> - specifies how the service is started
+<h3>Standard Commands</h3>
+<b>start-service servicename</b> - starts a currently non-running, "stopped", service
+<br><b>stop-service servicename</b> - will stop a currently running service
+<br><b>stop-service servicename -force</b> - force a service to start
+<br><b>suspend-service servicename</b>
+<br><b>resume-service servicename</b>
+<h3>Processes</h3>
+every program running on the computer will run as a process. at any time there are hundreds of processes running. to see all the processes use:
+<br><b>get-process</b>
+<br><br>it's best to filter this search, because it returns too many processes
+<br><b>get-process m*</b> - gives you processes that start with m
+<h4>Process Properties</h4>
+<ul>properties displayed by get-process are broken down into 2 catagories:
+    <li>more technical items: CPU usage of the process, NPM, PM, WS. these items tell you about CPU and Memory usage of the process</li>
+    <li>and Meta-Data info: ID, SI, and ProcessName, which help identify the process</li>
+</ul>
+we will be concentrating on the 2nd catagory, the Identifying data
+<br><br>
+<b>ID</b> - a unique number identifying the process
+<br><b>ProcessName</b> - is the name of the process
+<br><b>SI (Session ID)</b> - each user is assigned a unique Session ID, system boot is ID 0; Session ID 1 will be the 1st additional user; Session ID 2 will be the 2nd additional user, and so on -- there normally will not be many SIs
+<br>each Process does have additional properties which can be viewed:
+<br><br><b>get-process name | select *</b>
+<br>a valuable property that we will utilize is the: <b><i>Path</i></b> - which identifies the executable program associated with the process
+<h3>more Standard Commands</h3>
+<b>stop-process ID</b> - stop a process by it's ID Number
+<br><b>stop-process -Name processname</b> - stop a process by it's name
+<br><b>start-process notepad</b> - will start notepad (same as double clicking the GUI icon)
+<br>be certain to give path if the program is not in windows system path folder
+<h3>Find number of running processes and services</h3>
+<b>(get-process).SI.count</b> - will count the process Session IDs.
+<br> in the above we are using a method on get-process. we are first executing the get-command, the '.' (dot) operator specifies we want Session IDs, dot operator we want the count of SI processes
+<br><br><b>(get-service).count</b> - returns the count of ALL services (running and stopped)
+<br><b>(get-service | where {$_.status -eq "running"}).count</b> -- counts all Running Services
+<br><br><b>get-process notepad | select id, si, path, name</b> -gives the ID, SI, Path, and Name of the process
+<br>to stop you can use the name or the id (stated above)
+<h4>Find Number of processes of Spooler Services</h4>
+<b>get-service Spooler | Select dependentservices</b>
+<br><b>get-service spooler | where-object {$_.dependentservices.count -eq "2"}</b>
+<h3>Service Host (svchost)</h3>
+services are organized into logical groupsand then a single service host instance is created to host each group.
+<br>-- there are different service hosts for storage, security, user data, networking, audio, graphics, and hardware
+<br><br> Security with svchost -
+<br><b>get-process svchost | select id, path</b> - to find a suspicious process look for duplicate IDs or unfamiliar paths. also you can compare to the known svchost processes online for windows 10
+<h3> read chapter 6 and do the homework exercise</h3>
+
+</body>
+
+</html>

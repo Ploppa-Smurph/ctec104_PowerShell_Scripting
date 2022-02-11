@@ -1,0 +1,319 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20220127140256
+Username: DOCOCK\JSWalley
+RunAs User: DOCOCK\JSWalley
+Configuration Name: 
+Machine: DOCOCK (Microsoft Windows NT 10.0.19044.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 18444
+PSVersion: 5.1.19041.1320
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.1320
+BuildVersion: 10.0.19041.1320
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\JSWalley\Documents\PowerShell_transcript.DOCOCK.SAPvvJmX.20220127140256.txt
+PS C:\Users\JSWalley> get-verb | sort-object verb
+
+Verb        Group
+----        -----
+Add         Common
+Approve     Lifecycle
+Assert      Lifecycle
+Backup      Data
+Block       Security
+Checkpoint  Data
+Clear       Common
+Close       Common
+Compare     Data
+Complete    Lifecycle
+Compress    Data
+Confirm     Lifecycle
+Connect     Communications
+Convert     Data
+ConvertFrom Data
+ConvertTo   Data
+Copy        Common
+Debug       Diagnostic
+Deny        Lifecycle
+Disable     Lifecycle
+Disconnect  Communications
+Dismount    Data
+Edit        Data
+Enable      Lifecycle
+Enter       Common
+Exit        Common
+Expand      Data
+Export      Data
+Find        Common
+Format      Common
+Get         Common
+Grant       Security
+Group       Data
+Hide        Common
+Import      Data
+Initialize  Data
+Install     Lifecycle
+Invoke      Lifecycle
+Join        Common
+Limit       Data
+Lock        Common
+Measure     Diagnostic
+Merge       Data
+Mount       Data
+Move        Common
+New         Common
+Open        Common
+Optimize    Common
+Out         Data
+Ping        Diagnostic
+Pop         Common
+Protect     Security
+Publish     Data
+Push        Common
+Read        Communications
+Receive     Communications
+Redo        Common
+Register    Lifecycle
+Remove      Common
+Rename      Common
+Repair      Diagnostic
+Request     Lifecycle
+Reset       Common
+Resize      Common
+Resolve     Diagnostic
+Restart     Lifecycle
+Restore     Data
+Resume      Lifecycle
+Revoke      Security
+Save        Data
+Search      Common
+Select      Common
+Send        Communications
+Set         Common
+Show        Common
+Skip        Common
+Split       Common
+Start       Lifecycle
+Step        Common
+Stop        Lifecycle
+Submit      Lifecycle
+Suspend     Lifecycle
+Switch      Common
+Sync        Data
+Test        Diagnostic
+Trace       Diagnostic
+Unblock     Security
+Undo        Common
+Uninstall   Lifecycle
+Unlock      Common
+Unprotect   Security
+Unpublish   Data
+Unregister  Lifecycle
+Update      Data
+Use         Other
+Wait        Lifecycle
+Watch       Common
+Write       Communications
+
+
+PS C:\Users\JSWalley> get-command module microsoft.powershell.core
+get-command : The term 'module' is not recognized as the name of a cmdlet, function, script file, or operable program. 
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ get-command module microsoft.powershell.core
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (module:String) [Get-Command], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException,Microsoft.PowerShell.Commands.GetCommandCommand
+get-command : The term 'module' is not recognized as the name of a
+cmdlet, function, script file, or operable program. Check the spelling
+of the name, or if a path was included, verify that the path is correct
+and try again.
+At line:1 char:1
++ get-command module microsoft.powershell.core
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (module:String) [Get-Comma
+   nd], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException,Microsoft.PowerSh
+   ell.Commands.GetCommandCommand
+
+PS C:\Users\JSWalley> get-command -module microsoft.powershell.core
+
+CommandType     Name                                               Versio
+                                                                   n
+-----------     ----                                               ------
+Cmdlet          Add-History                                        3.0...
+Cmdlet          Add-PSSnapin                                       3.0...
+Cmdlet          Clear-History                                      3.0...
+Cmdlet          Connect-PSSession                                  3.0...
+Cmdlet          Debug-Job                                          3.0...
+Cmdlet          Disable-PSRemoting                                 3.0...
+Cmdlet          Disable-PSSessionConfiguration                     3.0...
+Cmdlet          Disconnect-PSSession                               3.0...
+Cmdlet          Enable-PSRemoting                                  3.0...
+Cmdlet          Enable-PSSessionConfiguration                      3.0...
+Cmdlet          Enter-PSHostProcess                                3.0...
+Cmdlet          Enter-PSSession                                    3.0...
+Cmdlet          Exit-PSHostProcess                                 3.0...
+Cmdlet          Exit-PSSession                                     3.0...
+Cmdlet          Export-Console                                     3.0...
+Cmdlet          Export-ModuleMember                                3.0...
+Cmdlet          ForEach-Object                                     3.0...
+Cmdlet          Get-Command                                        3.0...
+Cmdlet          Get-Help                                           3.0...
+Cmdlet          Get-History                                        3.0...
+Cmdlet          Get-Job                                            3.0...
+Cmdlet          Get-Module                                         3.0...
+Cmdlet          Get-PSHostProcessInfo                              3.0...
+Cmdlet          Get-PSSession                                      3.0...
+Cmdlet          Get-PSSessionCapability                            3.0...
+Cmdlet          Get-PSSessionConfiguration                         3.0...
+Cmdlet          Get-PSSnapin                                       3.0...
+Cmdlet          Import-Module                                      3.0...
+Cmdlet          Invoke-Command                                     3.0...
+Cmdlet          Invoke-History                                     3.0...
+Cmdlet          New-Module                                         3.0...
+Cmdlet          New-ModuleManifest                                 3.0...
+Cmdlet          New-PSRoleCapabilityFile                           3.0...
+Cmdlet          New-PSSession                                      3.0...
+Cmdlet          New-PSSessionConfigurationFile                     3.0...
+Cmdlet          New-PSSessionOption                                3.0...
+Cmdlet          New-PSTransportOption                              3.0...
+Cmdlet          Out-Default                                        3.0...
+Cmdlet          Out-Host                                           3.0...
+Cmdlet          Out-Null                                           3.0...
+Cmdlet          Receive-Job                                        3.0...
+Cmdlet          Receive-PSSession                                  3.0...
+Cmdlet          Register-ArgumentCompleter                         3.0...
+Cmdlet          Register-PSSessionConfiguration                    3.0...
+Cmdlet          Remove-Job                                         3.0...
+Cmdlet          Remove-Module                                      3.0...
+Cmdlet          Remove-PSSession                                   3.0...
+Cmdlet          Remove-PSSnapin                                    3.0...
+Cmdlet          Resume-Job                                         3.0...
+Cmdlet          Save-Help                                          3.0...
+Cmdlet          Set-PSDebug                                        3.0...
+Cmdlet          Set-PSSessionConfiguration                         3.0...
+Cmdlet          Set-StrictMode                                     3.0...
+Cmdlet          Start-Job                                          3.0...
+Cmdlet          Stop-Job                                           3.0...
+Cmdlet          Suspend-Job                                        3.0...
+Cmdlet          Test-ModuleManifest                                3.0...
+Cmdlet          Test-PSSessionConfigurationFile                    3.0...
+Cmdlet          Unregister-PSSessionConfiguration                  3.0...
+Cmdlet          Update-Help                                        3.0...
+Cmdlet          Wait-Job                                           3.0...
+Cmdlet          Where-Object                                       3.0...
+
+
+PS C:\Users\JSWalley> get-verb
+
+Verb        Group
+----        -----
+Add         Common
+Clear       Common
+Close       Common
+Copy        Common
+Enter       Common
+Exit        Common
+Find        Common
+Format      Common
+Get         Common
+Hide        Common
+Join        Common
+Lock        Common
+Move        Common
+New         Common
+Open        Common
+Optimize    Common
+Pop         Common
+Push        Common
+Redo        Common
+Remove      Common
+Rename      Common
+Reset       Common
+Resize      Common
+Search      Common
+Select      Common
+Set         Common
+Show        Common
+Skip        Common
+Split       Common
+Step        Common
+Switch      Common
+Undo        Common
+Unlock      Common
+Watch       Common
+Backup      Data
+Checkpoint  Data
+Compare     Data
+Compress    Data
+Convert     Data
+ConvertFrom Data
+ConvertTo   Data
+Dismount    Data
+Edit        Data
+Expand      Data
+Export      Data
+Group       Data
+Import      Data
+Initialize  Data
+Limit       Data
+Merge       Data
+Mount       Data
+Out         Data
+Publish     Data
+Restore     Data
+Save        Data
+Sync        Data
+Unpublish   Data
+Update      Data
+Approve     Lifecycle
+Assert      Lifecycle
+Complete    Lifecycle
+Confirm     Lifecycle
+Deny        Lifecycle
+Disable     Lifecycle
+Enable      Lifecycle
+Install     Lifecycle
+Invoke      Lifecycle
+Register    Lifecycle
+Request     Lifecycle
+Restart     Lifecycle
+Resume      Lifecycle
+Start       Lifecycle
+Stop        Lifecycle
+Submit      Lifecycle
+Suspend     Lifecycle
+Uninstall   Lifecycle
+Unregister  Lifecycle
+Wait        Lifecycle
+Debug       Diagnostic
+Measure     Diagnostic
+Ping        Diagnostic
+Repair      Diagnostic
+Resolve     Diagnostic
+Test        Diagnostic
+Trace       Diagnostic
+Connect     Communications
+Disconnect  Communications
+Read        Communications
+Receive     Communications
+Send        Communications
+Write       Communications
+Block       Security
+Grant       Security
+Protect     Security
+Revoke      Security
+Unblock     Security
+Unprotect   Security
+Use         Other
+
+
+PS C:\Users\JSWalley> get-help select-object -online
+PS C:\Users\JSWalley> get-help sort-object -online
+PS C:\Users\JSWalley> get-help select-object -online
