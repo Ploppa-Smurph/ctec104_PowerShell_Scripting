@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTEC-104 Week 05 - Registry </title>
+    looking over the notes -- b3-Registry.pptx
+</head>
+
+<body>
+    <h1>CTEC-104 Week 05 - Registry</h1>
+    registry is a database that stores values for os, users, and apps
+    <br>registry is a PSProvider - meaning it will show up as a drive
+    <br> has a similar structure to FileSystems - it is Hierarchical and uses directory structures
+    <br><br> registry is made of sections called 'hives':
+    <ul>
+        <li>HKEY_CLASSES_ROOT(HKCR)</li>
+        <li><b>HKEY_CURRENT_USER(HKCU)</b></li>
+        <li><b>HKEY_LOCAL_MACHINE(HKLM)</b></li>
+        <li>HKEY_USERS(HKU)</li>
+        <li>HKEY_CURRENT_CONFIG(HKCC)</li>
+    </ul>
+    PowerShell is designed to access 'hives' HKEY_CURRENT_USER(HKCU) and HKEY_LOCAL_MACHINE(HKLM)
+    <br><br> each hive is made up of keys - 'keys' have properties and sub-keys
+    <br> keys and sub-keys make up the hierarchy of the Registry and properties store data config values
+    <br>HKLM and HKCU are the root keys for their respective hives
+    <br><br> the main thing we will do in the registry is remove keys from malware or unwanted software that will not properly uninstall
+    <br> it is important to remember the keys and sub-keys only create the structure, the properties actually contain the data used by the computer
+    <h3>Registry Editor - GUI</h3>
+    regedit -- displays keys to the left, name, type (properties), data
+    <h4>HKLM = Hive Key Local Machine</h4>
+    this hive stores the majority of configuration information for the OS and installed apps
+    <br>it also contains the 'boot configuration' and information about currently detected hardware
+    <br><br>the <b><u>Hardware</u></b> subkey holds data pertaining to the BIOS, processors, and other hardware devices
+    <br> the <b><u>Software</u></b> subkey holds data pertaining to software settings and UI config
+    <br> in regedit if you go to 'HKEY_LOCAL_MACHINE' there are subkeys for 'HARDWARE' and 'SOFTWARE'
+    <h4>HKCU - Hive Key Current User</h4>
+    stores config info for currently logged in user, including:
+    <br>display settings
+    <br>environment variables
+    <br>mapped network drives
+    <br>keyboard layout
+    <br>desktop wallpaper... and more
+    <br><br> many of the settings from the Control Panel are stored here
+    <h3>Retrieving Keys with 'get-childitem'</h3>
+    Registry keys create the hierarchy to store data - 'get-childitem' is used to display the sub-key of a Registry key
+    <br>ex: <i>get-childitem "HKCU:\Control Panel" | select name</i> - will display sub-keys for the Control Panel
+    <br> and: <i>get-childitem "HKCU:\Control Panel" -Recurse | select name</i> displays the sub-keys with all of their sub-key entries making a more complete list
+    <h4>Using the 'Include' parameter</h4>
+    <i>get-childitem -path HKCU:\Software\logitech\* -include *</i> - will retrieve all keys from the logitech subkey
+    <br>you <b>MUST</b> use the * 'wildcard' in the path name, otherwise no keys will be returned
+    <br> the 'Path' parameter <b>MUST</b> be used with the 'Include' parameter
+    <br><br> get all keys from Valve Steam
+    <br><b><i>get-childitem "HKCU:\Software\Valve\Steam" -recurse</i></b> - this way you will not be blocked from accessing any key
+    <h3>Creating and Renaming Keys</h3>
+    to create a new key: <b><i>new-item -Path "HKCU:\...\ParentKey" -Name NewKey</i></b>
+    <br> in the above command the path must specify the full hierarchy of the parent key
+    <br><br> to rename a key: <b><i>rename-item -Path "HKCU:\...\key" -NewName Key2</i></b>
+    <br><br> ex: we make a new key called 'PersonalSoftware'
+    <br><b><i>New-Item -Path "HKCU:\Software" -Name PersonalSoftware</i></b> - this creates a new 'Software' subkey named 'PersonalSoftware' in my registry
+    <br><br> let's view the permissions of our new key:
+    <br><b><i>cd HKCU:\SOFTWARE\ get-acl PersonalSoftware</i></b> or <b><i>cd HKCU:\SOFTWARE\ get-acl PersonalSoftware | select *</i></b> to show much greater detail
+    <h3>get the Key's Properties</h3>
+    properties store data in the Registry.
+    <br><br><b><i>get-itemproperty -path "HKCU:\console\git cmd"</i></b> -- will display properties for a Registry Key 'git cmd'
+    <br><br><b><i>get-itemproperty -path "HKCU:\console\git cmd" -name PropertyName</i></b> will display individual properties for a Registry Key
+    <h3>Setting Key Properties</h3>
+    to create a new property or change an existing value:
+    <br><b><i>set-itemproperty -path "HKCU:\software\personalsoftware" -name Property -value XXX</i></b>
+    <br> now our PersonalSoftware subkey in 'Software' has a new property named 'Property' with a value of 'XXX'
+    <br><br>to rename a property<b><i>rename-itemproperty -Path "HKCU:\software\personalsoftware" -name Property -newname Stuber</i></b>
+    <br> the property named 'Property' in PersonalSoftware has been renamed to 'Stuber'
+    <br><br>creating a 'Start Value' in our PersonalSoftware Key:
+    <br><b><i>set-itemproperty -path "HKCU:\Software\PersonalSoftware" -Name StartVal -value 10</i></b>
+    <br> this creates an additional property named 'StartVal' with data and a 'REG_DWORD' Property Type
+    <h3>Removing a Key Property</h3>
+    to remove: <b>remove-itemproperty -path "hkcu:\software\personalsoftware" -name stuber</b>
+    <br> removed 'stuber' from the 'personalsoftware' list of properties
+    <br><br> to remove a key: <b>remove-item -path "hkcu:\software\personalsoftware" -recurse</b>
+    <br> this will remove the key and all sub-keys - BE CERTAIN TO REVIEW CONTENT BEFORE REMOVING
+    <br> without the 'Recourse' parameter you will be prompted to confirm removal
+    <h3>homework</h3><a href="https://www.youtube.com/watch?v=E6ROLfd8RFo">link to Registry Video</a>
+    <br><br> additional video: <a href="https://www.youtube.com/watch?v=-bsLmDfvF1Y&t=6s">TechsavvyProductions Registry Understand and Troubleshoot</a>
+
+</body>
+
+</html>

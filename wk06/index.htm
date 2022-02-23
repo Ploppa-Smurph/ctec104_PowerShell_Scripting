@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTEC-104 wk 06 Working with Event Logs</title>
+</head>
+
+<body>
+    <h1>CTEC-104 wk 06 Working with Event Logs</h1>
+    <h3>Event Logs</h3>
+    used to store audited events on a system
+    <ul>
+        <li><b>System</b></li>
+        <li><b>Security</b></li>
+        <li><b>Application</b></li>
+        <li><b>Windows PowerShell</b></li>
+    </ul>
+    we will be concentrating on System, Security, and Application.
+    <br><b>get-eventlog -list</b> will give you all the events on your system
+    <br>there are additional event logs other than the 4 already listed, but this course will concentrate on the previously listed 4
+    <br><br><u>Max(k)</u> lists the amount of memory allocated for the log on the HD
+    <br><u>entries</u> list how many entries are in each log
+    <br><u>OverflowAction</u> specifies what happens to old entries in the log
+    <h4>get-eventlog</h4>use the get-eventlog command to get events from the logs;
+    <br>specify which log to retrieve from and parameters about what to receive
+    <br><b>get-eventlog System -newest 20</b> [this will retrieve the 20 most recent events stored in the System log]
+    <ul>5 Entry Type Events
+        <li><b>Error</b></li>
+        <li><b>Information</b></li>
+        <li><b>FailureAudit</b></li>
+        <li><b>SuccessAudit</b></li>
+        <li><b>Warning</b></li>
+    </ul>
+    to specify event logs by event type:
+    <br><b>get-eventlog System -EntryType Error</b> :: this will specify Error entries in the System log
+    <br><br> 'UserName' parameter allows you to return entries for a specific user
+    <br>'After' parameter allows you to get events after a certain date; in order to use this parameter we must create a DateTime variable
+    <br><br><b>$d = (get-date).AddDays(-5)</b> -- this first command creates a DateTime variable set 5 days earlier than the current date
+    <br><b>get-eventlog System -After $d</b> -- the second command then pulls all System event logs from the last 5 days
+    <h3>Event Properties</h3>
+    <b>get-eventlog system -newest 1 | select *</b>
+    <ul> the main properties we will be concerned with are:
+        <li><b>Index</b>- ID# of each entry in the log</li>
+        <li><b>EntryType</b>- entry type for the event</li>
+        <li><b>TimeGenerated</b>- date and time the event occurred</li>
+        <li><b>Source</b>- system resource that generated event</li>
+        <li><b>UserName</b>- user that generated event [Blank for System generated events]</li>
+        <li><b>Message</b>- plain text description of the event</li>
+    </ul>
+    when reviewing events the most important property to read is the message, which is abbreviated in the powershell output.
+    <br>Best to export the output to a CSV file and review the event using Excel
+    <br><br> you can also view the full event message by retrieving the event based on it's index:
+    <br><b>get-eventlog Security -Newest 50 | select index, message</b> -- retrieve the 50 most recent commands from security log
+    <br><b>get-eventlog security | where {$_.index -eq 2424140} | select *</b> -- display full properties for event 2424140
+    <br><br> another way to see the full message for the event is to use the format-list command
+    <br>ex:
+    <br><b>get-eventlog System -entrytype error -newest 5 | format-list</b>
+</body>
+
+</html>
