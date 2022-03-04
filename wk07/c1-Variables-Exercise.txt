@@ -1,0 +1,40 @@
+Jeffrey Walley
+Variables Exercise
+------------------
+
+1. Display the system variables.  What are the values of:
+
+	a. HOME: C:\Users\JSWalley
+
+	b. PROFILE:  D:\Users\JSWalley\OneDrive - Bossier Parish Community College\			Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+
+	c. PWD: Path
+		  ----
+		  C:\Users\JSWalley
+
+	d. PSHOME: C:\Windows\System32\WindowsPowerShell\v1.0
+
+
+2. Look up the environment variables Path and PSModulePath online.
+
+	a. How are the directories in Path used by PowerShell? The Path variable 					stores the directories used to search for Executable Files
+
+	b. How are the directories in PSModulePath used by PowerShell? PSModulePath 					stores the location of Modules stored on the disk
+
+
+3. Get all of the processes for svchost and store them in a variable. 
+			$svc = get-process svchost
+
+	a. What object type is stored in the variable? $svc = get-process svchost  					this shows the objects are Process Objects
+
+	b. How many objects are stored in this varaible? $svc.count – 81, on my 											system 
+
+
+4. Get the current date and store it in a variable.
+				$date = get-date; $date | get-member
+
+	a. What is the command to display the date in Short Date format?
+				$date.ToShortDateString()
+	
+	b. What is the command to display the date in Long Date format?
+				$date.ToLongDateString()

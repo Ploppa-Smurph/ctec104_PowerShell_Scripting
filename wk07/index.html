@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTEC-104 PowerShell wk07 Variables</title>
+</head>
+
+<body>
+    <h1>CTEC-104 PowerShell wk07 Variables</h1>
+    <a href="https://www.youtube.com/watch?v=1uE3OAujOpA">link to video</a>
+    <br> types of variables, using variables, arrays
+    <h3>Variables</h3>variables store values. The data stored by variables can be different types.
+    <br> In PowerShell variables can be single objects or arrays of objects.
+    <br><br> <b>Variables</b> can be created by the user of the system
+    <br>variable names always start with '$' in PowerShell. Variables are NOT Case Sensitive in PowerShell.
+    <br><br> ex: <b>$my_var</b>
+    <h4>4 types of variables</h4>
+    <ul>
+        <li><b>User Created</b></li> temporary variables that disappear when PowerShell closes
+        <li><b>Automatic</b></li> system created variables that store the state of PowerShell, cannot modify these variables
+        <li><b>Preference</b></li> store user preferences, populated by PowerShell and modified by the user
+        <li><b>Environment</b></li> similar to preference variables, but store information about the operating system which can be modified.
+    </ul>
+    <br> User Created, Automatic, and Preference variables are stored in the variable drive.
+    <br> <b>get-childitem variable:</b> to view them in your system
+    <br><br>Environmental variables are stored in the Env drive, to view them:
+    <br><b>get-childitem env:</b>
+    <h2>Types of Variables</h2>
+    <h4>Automatic Variables</h4>
+    <b>$HOME</b> - personal directory for user account
+    <br><b>$PROFILE</b> - directory and file identifies your user profile
+    <br>you can store aliases and other personal variables in the file. they are available in the PowerShell window
+    <br><b>$PWD</b> your current working directory
+    <h4>Environmental Variables</h4>
+    <b>$Env:Path</b> - long list of directories, locations where PowerShell search for executables
+    <br><b>$Env:PSModulePath</b> contains a list of directories. PowerShell modules are stored.
+    <br> One of the directories is inside your user account. this is where we store our personal modules that we create
+    <h4>Help for Variables</h4>
+    <ul>
+        <li>get-help about_Automatic_Variables</li>
+        <li>get-help about_Preference_Variables</li>
+        <li>get-help about_Environment_Variables</li>
+        <li>get-help about_Profiles</li>
+    </ul>
+    <h2>Using Variables</h2>
+    mostly used to store the output of a command
+    <br>use this format: <b>$var = cmd</b>
+    <br> the command will run and store it's output in $var instead of displaying in the window.
+    <br> the variable can store the result of complex pipelined commands, eg:
+    <br><b>$var = cmd | cmd | cmd</b> -- the output of the final command is stored in the instance
+    <br><br> to view the contents of a variable simply type the variable name. ex: $var
+    <br><br> Variables store PowerShell objects so they have a full set of properties and methods
+    <br><b>$var | get-member</b>- to see variables object type and method
+    <br><b>$var | select *</b> - see the variables full properties type
+    <br><br><b>$d = get-date</b> sets the variable $d to the command get-date, so when you <b>$d | get-member</b>
+    <br> the get-member cmd will show that $d contains a DateTime object.
+    <br><b>$d | select *</b> the select command will display the properties of $d
+    <h2>Arrays</h2>
+    many times the output will be several objects, in those instances the variable holds and Array.
+    <br>an <b>Array</b> is a set of multiple items that are all of the same object. Object Arrays are useful input into many PowerShell commands
+    <br><br><b>$sv = get-process svchost</b>
+    <br><b>$sv | get-member</b>
+    <br> output of get-member command shows that $sv is store 'Process' objects. get-member also displays all the methods $sv can use
+    <br><b>$sv</b> will list the full list of objects
+    <br><br><b>ToString()</b> $sv.ToString(); the output is 'System.Object[]' -- the brackets indicate the object is an array
+    <br><br><b>$d = get-date</b>
+    <br><b>$d.ToString()</b>
+    <br> $d is a single object & ToString displays the contents of the object -- this is a quick easy way to identify object arrays.
+    <br> to she the number of objects in the array: <b>$d.Count</b>
+    <br> In scripting we will learn about commands than can be used to iterate through the objects in an array
+    <h4>on to the Homework Exercise - c1 variables-exercise.txt</h4>
+</body>
+
+</html>
