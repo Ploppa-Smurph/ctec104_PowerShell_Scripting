@@ -1,0 +1,61 @@
+Jeffrey Walley
+
+c2-Strings-Exercise
+-------------------
+
+1. Create a string variable by entering the value from the keyboard.
+	
+
+	a. What command did you use?
+		$a = Read-Host “Please enter a number”
+
+	b. What is the only property that this variable has?
+		Length; find it by: $a | select-object  :get the properties of the 											object 
+
+2. Look up the PowerShell String variable online.  What do the following methods do?	
+				On Microsoft.NET API Browser Docs == String Class
+	a. StartsWith
+	     Determines whether the beginning of the string instance matches the        beginning of the specified string, or whichever arguments that are used
+	
+	b. EndsWith
+		  Determines whether the end of the string method matches the specified  string
+
+	c. Equals
+           Determines if the instance and a specified object, which Must be a String, have the same value		
+
+	d. IndexOf
+		  Reports the zero-based index of the first occurance o fthe specified string in the instance [will return 0 or -1] <T or F>
+
+	e. Trim
+		   Removes all leading and trailing white-space charaters from the current string
+		   
+
+3. What is the command to compare two strings and determine if they are equal?			 Equals()  – $x.Equals($y)  – will return True or False
+
+4. Look up PowerShell String Arrays online.  What is the command to create a string array variable? 
+		  $a = “old”,“new”,”rough”  - Separate them with commas  
+
+5. What is the command to convert your string array variable into a single string with commas between each value?
+		  $b = $a -join “,”    - use the Join option
+
+
+6. Look up PowerShell String Concatenation online.  What is the syntax to perform this operation?
+			$c = “string” + “ “ + “concatenation”
+
+
+
+
+7. Look up PowerShell Split online.
+
+	a. What characters can be used as string delimiters when performing a split?
+		The default is whitespace; you can specify characters, strings, patterns, or script blocks as the delimiter
+
+	b. What happens to the delimiter when a split is performed?
+		   When the strings are split the delimiter is omitted from the substrings
+
+8. Look up PowerShell Join online.
+
+	a. What is the key difference between a join and string concatenation?
+Join operator concatenates a set of strings into a single string, whereas Concatenate	functunality simply puts 2 or more strings together	  
+
+	b. What can be used as a delimiter when performing a join?

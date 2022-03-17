@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTEC-104 wk08 Strings </title>
+</head>
+
+<body>
+    <h1>CTEC-104 wk08 Strings</h1>
+    <a href="https://www.youtube.com/watch?v=9uHGcw24wGQ">string lecture in powershell</a>
+    <br>intro, string methods, splits and joins, string / number conversion
+
+    <br>normally store strings in variables for use in commands. ex:
+    <br><b>$s = "the variable s holds this string"</b>
+    <br>string data is within "" quotes and is CaSe SensItive
+    <br><br> -- string have a length property.
+    <br>ex: <b>$s.Length</b> -- will return the length of the string variable s (29 in this example)
+
+    <h3>Read-Host</h3>
+    get input with Read-Host. Read-Host returns a string, ex:
+    <br><b>$s = Read-Host "Enter a value"</b> -- this will accept a user inputted value
+    <h3>Some Useful Methods of Strings</h3>
+    <b>ToUpper()</b> - converts all letters in the string to uppercase
+    <br><br><b>ToLower()</b> - converts to lowercase
+    <br><br><b>Contains("val")</b> - returns true or false
+    <br><br><b>Substring(x,y)</b> - returns value starting at x for y characters (0 indexed)
+    <br><br><b>Substring(x)</b> - returns value of x to the end
+    <pre>
+    $s="Hello"
+    $t=s.ToUpper()    -- takes Hello and makes it all uppercase
+    $s.Contains("L")   -- False -- $s only contains lowercase 'l'
+    $s.Contains("H")   -- True $s does contain 'H'
+    $u = $s.Substring(1,3)  -- will store the characters of the string $s from 'e'(index 1), to the 2nd 'l'(index 3). 
+            $u - will contain 'ell'. characters starting at index 1 and ending at 3
+</pre>
+    <h3>Splitting and Joining Strings</h3>
+    <pre>
+PS C:\Users\JSWalley> $m = "str1 str2 str3 str4"
+PS C:\Users\JSWalley> $n = $m.Split()
+PS C:\Users\JSWalley> $n
+str1
+str2
+str3
+str4
+PS C:\Users\JSWalley> $n.ToString()
+System.String[]
+    </pre>
+    <br> there is also a Join command to do the opposite of split. you can specify whether or not to place separator between the strings.
+    <pre>
+    $p = -join $n                -- will join with NO space   
+    $q = $n -join " "            -- will join with a space
+    $r = $n -join ", "           -- will join with a comma and space following
+</pre> get-help about_Split
+    <br>get-help about_Join -online -- to read more
+    <h3>Data Types in PowerShell</h3>
+    3 major data types: String, int, and double
+    <h3>Data Type Conversion example using Read-Host</h3>
+    <pre>
+PS C:\Users\JSWalley> $a = Read-Host "Enter a whole number"
+Enter a whole number: 3
+PS C:\Users\JSWalley> $b = $a -as [int]
+PS C:\Users\JSWalley> $c = Read-Host "Enter a decimal number"
+Enter a decimal number: 5.4
+PS C:\Users\JSWalley> $d = $c -as [double]
+PS C:\Users\JSWalley> $b | get-member
+
+   TypeName: System.Int32
+
+Name        MemberType Definition
+----        ---------- ----------
+CompareTo   Method     int CompareTo(System.Object value), int CompareTo(int value), int IComparable.CompareTo(System.…
+Equals      Method     bool Equals(System.Object obj), bool Equals(int obj), bool IEquatable[int].Equals(int other)
+GetHashCode Method     int GetHashCode()
+GetType     Method     type GetType()
+GetTypeCode Method     System.TypeCode GetTypeCode(), System.TypeCode IConvertible.GetTypeCode()
+ToBoolean   Method     bool IConvertible.ToBoolean(System.IFormatProvider provider)
+ToByte      Method     byte IConvertible.ToByte(System.IFormatProvider provider)
+ToChar      Method     char IConvertible.ToChar(System.IFormatProvider provider)
+ToDateTime  Method     datetime IConvertible.ToDateTime(System.IFormatProvider provider)
+ToDecimal   Method     decimal IConvertible.ToDecimal(System.IFormatProvider provider)
+ToDouble    Method     double IConvertible.ToDouble(System.IFormatProvider provider)
+ToInt16     Method     short IConvertible.ToInt16(System.IFormatProvider provider)
+ToInt32     Method     int IConvertible.ToInt32(System.IFormatProvider provider)
+ToInt64     Method     long IConvertible.ToInt64(System.IFormatProvider provider)
+ToSByte     Method     sbyte IConvertible.ToSByte(System.IFormatProvider provider)
+ToSingle    Method     float IConvertible.ToSingle(System.IFormatProvider provider)
+ToString    Method     string ToString(), string ToString(string format), string ToString(System.IFormatProvider provi…
+ToType      Method     System.Object IConvertible.ToType(type conversionType, System.IFormatProvider provider)
+ToUInt16    Method     ushort IConvertible.ToUInt16(System.IFormatProvider provider)
+ToUInt32    Method     uint IConvertible.ToUInt32(System.IFormatProvider provider)
+ToUInt64    Method     ulong IConvertible.ToUInt64(System.IFormatProvider provider)
+TryFormat   Method     bool TryFormat(System.Span[char] destination, [ref] int charsWritten, System.ReadOnlySpan[char]…
+
+PS C:\Users\JSWalley> $d | get-member
+
+   TypeName: System.Double
+
+Name        MemberType Definition
+----        ---------- ----------
+CompareTo   Method     int CompareTo(System.Object value), int CompareTo(double value), int IComparable.CompareTo(Syst…
+Equals      Method     bool Equals(System.Object obj), bool Equals(double obj), bool IEquatable[double].Equals(double …
+GetHashCode Method     int GetHashCode()
+GetType     Method     type GetType()
+GetTypeCode Method     System.TypeCode GetTypeCode(), System.TypeCode IConvertible.GetTypeCode()
+ToBoolean   Method     bool IConvertible.ToBoolean(System.IFormatProvider provider)
+ToByte      Method     byte IConvertible.ToByte(System.IFormatProvider provider)
+ToChar      Method     char IConvertible.ToChar(System.IFormatProvider provider)
+ToDateTime  Method     datetime IConvertible.ToDateTime(System.IFormatProvider provider)
+ToDecimal   Method     decimal IConvertible.ToDecimal(System.IFormatProvider provider)
+ToDouble    Method     double IConvertible.ToDouble(System.IFormatProvider provider)
+ToInt16     Method     short IConvertible.ToInt16(System.IFormatProvider provider)
+ToInt32     Method     int IConvertible.ToInt32(System.IFormatProvider provider)
+ToInt64     Method     long IConvertible.ToInt64(System.IFormatProvider provider)
+ToSByte     Method     sbyte IConvertible.ToSByte(System.IFormatProvider provider)
+ToSingle    Method     float IConvertible.ToSingle(System.IFormatProvider provider)
+ToString    Method     string ToString(), string ToString(string format), string ToString(System.IFormatProvider provi…
+ToType      Method     System.Object IConvertible.ToType(type conversionType, System.IFormatProvider provider)
+ToUInt16    Method     ushort IConvertible.ToUInt16(System.IFormatProvider provider)
+ToUInt32    Method     uint IConvertible.ToUInt32(System.IFormatProvider provider)
+ToUInt64    Method     ulong IConvertible.ToUInt64(System.IFormatProvider provider)
+TryFormat   Method     bool TryFormat(System.Span[char] destination, [ref] int charsWritten, System.ReadOnlySpan[char]…
+    
+</pre>
+
+    <h3> going over the homework</h3>
+</body>
+
+</html>
