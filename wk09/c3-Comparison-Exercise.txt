@@ -1,0 +1,64 @@
+Jeffrey Walley
+Comparison Exercise
+-------------------
+
+1. Look up the help for comparison operators.
+
+	a. What is the requirement when using the -eq operator?
+		The entire pattern must match in order to return a value of True
+	
+	b. What data types should you use with -gt, -ge, -lt, and -le?
+		Numbers or Numerical Value (int and double)
+	
+	c. How are -like and -notlike different than -eq and -neq?						-like and -not like you can use with * (wildcard characters)	
+
+2. Consider the following commands.
+
+   Get-ChildItem | Where {$_.mode -ne "d"}
+
+   Get-ChildItem | Where {$_.mode -notlike "d*"}
+
+	a. What problem does the first command have?
+		The not equal is looking for ‘d’ exactly and ‘d-----’ is not the same
+	
+	b. How does the second command correct this problem?
+		We can use the * wildcard operator and let the search know there can be 			characters after the ‘d’ character
+	
+	c. What is the output of the second command?
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          2/3/2022  10:07 AM             53 .git-for-windows-updater
+-a----          2/2/2022  10:07 AM            196 .gitconfig
+-a----         8/22/2021   7:56 PM           2104 .h2.server.properties
+-a----         8/10/2021  12:32 PM             20 .lesshst
+-a----         7/13/2021  11:01 AM              7 .node_repl_history
+-a----         1/18/2021   2:28 PM             47 .npmrc
+-a----         2/23/2022  11:24 AM             91 .wakatime-internal.cfg
+-a----         3/22/2022   4:09 PM          32768 .wakatime.bdb
+-a----         1/20/2022  11:51 PM             58 .wakatime.cfg
+-a----         1/28/2022   9:39 PM           8898 .wakatime.log
+-a----         8/21/2021  10:55 PM          16384 blogPost_db.mv.db
+-a----         8/12/2021   8:25 AM          20480 demodata.mv.db
+-a----         1/17/2021  10:16 PM              0 _netrc
+
+
+3. Go to the C:\Windows\System32 directory.
+   Using the where-object command, what is the command to display the files with the .exe extension?
+	 get-childitem | where-object {$_.Name -Like "*.exe"}
+
+
+4. In the Registry, what is the command to display all of the sub-keys of HKCU:\Software:
+
+	a. Where the SubKeyCount is greater than 1?
+	get-childitem -path HKCU:\Software | where-object {$_.SubKeyCount -gt 1}
+
+
+	b. Repeat a and display the name and subkeycount?
+get-childitem -path HKCU:\Software | where-object {$_.SubKeyCount -gt 1} 
+	| select Name,SubKeyCount
+
+	c. What is the largest sub-key count?  Which sub-key is it?
+		719, Software\Classes 
+
+5. What is the command to display all of the services that are running and begin with the letter b?
+	Get-service | where {$_.Status -eq “Running” -and $_.Name -like “b*”}

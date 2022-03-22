@@ -1,0 +1,45 @@
+Jeffrey Walley
+Math Exercise
+-------------
+
+1. What series of commands do you use to have the user input two numbers at the keyboard and add those numbers together?
+	$num1 = Read-Host ‘input first number’
+	$num2 = Read-Host ‘input second number’
+	$total = $num1 + $num2
+	$total 
+
+2. Look up PowerShell arithmetic operators online.
+
+	a. What does the modulus operator do?
+		Remainder 
+
+	b. What data type should you use to perform modulus?
+		int32
+
+	c. What is the operator precedence for math operations?
+() parens, ^ exponents, * multiplication, / division, + addition, - subtraction
+
+	d. What is a unary operator?
+		Operates on only one operand
+
+	e. What is the difference between integer and double division?
+	Int32 division will drop decimal points, while double div will keep 	decimal points
+
+3. Look up PowerShell operators online.
+
+	a. What does the += operator do?
+	Adds a value to the operand and stores it back to the original variable
+
+	b. What does the -= operator do?
+  Subtracts a value from the operand and stores it back to the original variable
+
+4. Look up PowerShell arrays online.
+
+	a. What is the syntax to create an array of numbers?
+	   $a = 1,2,3,4,5,6,7,8
+
+	b. What is the syntax to access the first item in this array?
+		$a[0]
+
+	c. What is the syntax to access the second item in this array? The third item?		
+		$a[1]; $a[2]

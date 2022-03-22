@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTEC-104 Comparison and Math with PowerShell wk09</title>
+</head>
+
+<body>
+    <h1>CTEC-104 Comparison and Math with PowerShell wk09</h1>
+    <h2>Comparison in PowerShell</h2>
+    <a href="https://www.youtube.com/watch?v=Vkn9OE0BR3g">comparison video</a>
+    <br><br><b>where-object</b> or <b>where</b>
+    <br>ex: <b>get-service | where {$_.status -eq "Running"}</b> -- will display all services that are currently running
+    <br> in this example Where-Object uses the $_ operator to iterate through objects that it receives as input
+    <br> using the above example:
+    <ol>
+        <li>Get-Service retrieves all of the services that are currently loaded in memory</li>
+        <li>Pipe passes the service objects to the where-object command</li>
+        <li>$_ indicates that where-object iterates through the array one at a time and retrieve the status property of the object</li>
+        <li>Then compares the property to "Running" and selects the objects from the array where these values are equal</li>
+        <li>Outputs a new smaller array with only objects meeting the criteria</li>
+    </ol>
+    <b>where-object </b>- can perform comparisons using any available property of an object
+    <br> the purpose is to select a group of objects from an array that meet certain criteria -- called narrowing your search
+    <ul>
+        <li><b>-eq</b> == Equal to</li>
+        <li><b>-ne</b> != Not Equal to</li>
+        <li><b>-gt</b> > Greater Than</li>
+        <li><b>-ge</b> >= Greather Than or Equal to</li>
+        <li><b>-lt</b>
+            < Less Than</li>
+                <li><b>-le</b>
+                    <=L ess Than or Equal to</li>
+    </ul>
+
+    <br> ex:
+    <br><b>get-process | where {$_.handles -gt 500}</b> -- get processes where the handles are greater than 500
+    <br><b>get-process | where {$_.handles -ge 1000}</b> -- greater than or equal to 1000: <i>these commands identify processes that utilize a lot of memory resources</i>
+    <br><br><b>get-process | where {$_.cpu -lt 1}</b> -- <i>identify processes that are NOT utilizing a lot of memory resources</i>
+    <br><br>Two additional comparison operators
+    <br> <b>-Like</b> and <b>-NotLike</b> -- used to find properties that contain or not contain certain text strings; can use wildcards *
+    <br>ex: <b>get-service | where {$_.DisplayName -Like "*rpc*"}</b> - retrieves all of the RPC services
+    <br><br><b>get-eventlog Security -Newest 50 | where {$_.Message -Like "*logged on*"}</b> - <i>retrieves Security events related to logins</i>
+    <h3>Logical Operators</h3>
+    use to check more than one condition
+    <ul>
+        <li><b>-and</b> -checks 2 conditions and both must be true</li> checks 2 conditions and both must be true
+        <li><b>-or</b> -checks 2 conditions and one or the other must be true</li>
+        <li><b>-not</b> -checks for condition Not being true</li>
+    </ul>
+    <b>get-service | where {$_.DisplayName -Like "*rpc*" -and $_.Status -eq "Running"}</b>
+    <i> finds RPC services that are currently running</i>
+    <br><br> <b>get-service | where {$_.DisplayName -Like "*rpc*" -or $_.DisplayName -like "*Hyper-V*"}</b>
+    <i>command finds all services whose name is RPC or Hyper-V</i>
+    <br><br>using <b>-not</b> -- you must place the -not condition in parentheses to resolve correctly, there can be better ways to find the answer than using -not
+    <br><b>get-service | where {-not ($_.Status -eq "Running")}</b> -- the <b>-not</b> operator is the least used logical operator and serves certain unique circumstances
+    <br> more info about operators:
+    <ul>
+        <li>get-help about_Operators</li>
+        <li>get-help about_Comparison_Operators</li>
+        <li>get-help about_Logical_Operators</li>
+    </ul>
+    <h3>homework c3</h3>
+    <h2>Math Operators</h2>
+    <a href="https://www.youtube.com/watch?v=ExDUYdL12OA">link to Math Operators video</a> when you create a variable with common numeric types are:
+    <ul>
+        <li><b>Int32</b>- assigned to whole numbers</li>
+        <li><b>Double</b>- assigned to numbers with decimal values</li>
+    </ul>
+    if an int32 is operated upon by a Double, it will be automatically converted to a double
+    <br> you can also assign a memory value to the int or double
+    <br><b>$x = 25mb</b>
+    <br><br> PowerShell uses standard math operators that are used by programming languages.
+    <ul>
+        <li><b>()</b>: paranthesis</li>
+        <li><b>^</b>: exponents</li>
+        <li><b>*</b>: multiplication</li>
+        <li><b>/</b>: division</li>
+        <li><b>+</b>: addition</li>
+        <li><b>-</b>: subtraction</li>
+    </ul>
+    <br> <b>Unary Operators</b> <i>++</i> and <i>--</i> to increment and decrement a number
+    <br>ex: <b>$n++</b> or <b>$n--</b>
+</body>
+
+</html>
