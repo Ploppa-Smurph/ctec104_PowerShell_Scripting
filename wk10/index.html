@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTEC-104 Iteration</title>
+</head>
+
+<body>
+    <h1>CTEC-104 Iteration wk10</h1>
+    <a href="https://www.youtube.com/watch?v=LwDaPWN-1io">link to video on Iteration</a>
+    <br><br> standard format for iteration in PowerShell:
+    <br><b> cmd | where { cmp} | foreach-object { operation }
+<br> the cmd retrieves an array of objects; the where-object performs the specified comparison to narrow the array of objects to a specified set; the foreach-object command iterates through the array of objects one at the time and performs the specified operation using the object
+<br> the Foreach-object command performs the iteration through the array of input
+<br> the commands and operations will run once for each object of input; you can place as many commands as you like in the curly braces; separate multiple commands by ';'
+<br><br> ex: <b>get-service | where {$_.DisplayName -like "Remote*"} | foreach-object {$_.DisplayName}</b>
+    <br> in this example Get-Service retrieves system services and stores them in an array of Service Objects
+    <br>Where-Object then narrows this array to just the service whose Display Name begins with "Remote"
+    <br>Foreach-Object then displays the Display Name for each service
+    <br><br> example with math operations:
+    <br><b>$n = 0</b>
+    <br><b>get-process | where {$_.SI -eq 2} | foreach-object {$n += $_.NPM + $_.PM}</b>
+    <br>$n
+    <br> this example creates a variable $n set to 0; we then Get the Process for Session ID (SI)
+    <2 in my case>; the Foreach-object adds all the memory space being used by the processes; $n then contains the total memory usage in kilobytes for this session
+        <br>the result is 2.47GB of memory on my system
+        <br><br>sometimes the Where-Object / Where is not necessary in iteration
+        <br>ex: <b>get-childitem b* | foreach-object {cmd}</b>
+        <br>this did something with strange to my computer.
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
