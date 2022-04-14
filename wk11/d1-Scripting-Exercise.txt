@@ -1,0 +1,42 @@
+Scripting Exercise
+------------------
+
+1. Open the PowerShell ISE.  Open the Sysevents.ps1 file.
+
+	a. The top pane displays the script file.  What advantages does this pane have over Notepad?
+
+	b. The bottom pane is a PowerShell window.  What will display in this window?
+
+2. Lookup PowerShell ISE debug online.
+
+	a. What are breakpoints used for in debugging?
+
+	b. What types of breakpoints are available?
+
+	c. What item do you select in the Debug menu to launch debugging?
+
+	d. In the Debug menu, what does Step Over do?
+
+	e. What does Step Into do?
+
+	f. What does Step Out do?
+
+3. Lookup set-psbreakpoint online.
+
+	a. What is the syntax to set a breakpoint on a line?
+
+	b. What is the syntax to set a breakpoint on a command?
+
+	c. What is the syntax to set a breakpoint on a variable?
+
+	d. For variable breakpoints, what Modes are available?
+
+4. Place the cursor on the line "if ($e.EntryType -eq "Error") {" and select Debug -> Toggle Breakpoint.
+
+	a. Select Debug -> Run/Continue.  What happens?
+
+	b. In the bottom pane, enter $e.EntryType at the prompt.  What is displayed?
+
+	c. At this point, which item in the if-elseif structure will resolve?  What will happen?
+
+5. How many times will a Foreach block normally run?
