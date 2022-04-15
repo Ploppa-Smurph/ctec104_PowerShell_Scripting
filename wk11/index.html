@@ -11,33 +11,98 @@
 <body>
     <h1>CTEC-104 Intro to Scripting</h1>
     <h2>PowerShell Scripts slideshow</h2>
-
-
-
-
-
-
-
+    Automate Common System Tasks. Scripts allow you to take a series of commands for some type of task and encapsulate into a single file.
+    <br>Any command can be saved as a script; can also perform 'Block Programming' that resolve conditions and perform loops
+    <h3>Script Files</h3>
+    have a <b>.ps1</b> extension. Scripts can be created with a text editor like notepad, or with VSCode.
+    <br>Scripts can contain both Simple and Pipelined commands; Variables, and Block Structure (Loops)
+    <br> -- run your script by typing the path. If in the current directory <b><i>.\abc.ps1</i></b>
+    <br><br> The PowerShell ISE is the Integrated Scripting Environment - it is used to write Script and to Debug
+    <h3>Script Permissions</h3>
+    Scripts from websites might not be safe to run -- Microsoft has implemented Security Features to protect your system from dangerous scripts
+    <br> the 1st important security features is the: <b>ExecutionPolicy</b> - which determines what scripts can run on your system.
+    <br><b>get-executionpolicy</b> will display your current execution policy setting.
+    <br><b>set-executionpolicy restricted</b>; or <b>set-executionpolicy unrestricted</b> - will change your current policy settings
+    <br>another ex: <b>set-executionpolicy remotesigned</b> -- this will let you run all personally created scripts freely and scripts from outside sources as long as they are 'Digitally Signed'
+    <br><br>another security feature is having to include the pathname in front of the script. --- see the above note <b>.\abc.ps1</b>
+    <h3>Block Structure</h3>
+    PowerShell supports programming block structures: we will look at 'If Conditions', 'While Loops', and 'ForEach Loops'
+    <br> will use ex: <i>Sysevents.ps1</i>
+    <br> <b>If</b> is used to resolve commands based on True / False conditions (Boolean)
+    <br> simple 'if' block ex:
+    <br><br><b><i>$s = get-service winmgmt</i></b>
+    <br><b><i>if ($s.CanStop) {</i></b>
+    <br><b><i>write-host "Process can be Stopped"</i></b>
+    <br>'if' statements can have Else, or Elseif statements associated with them. -- see ex: <i>Sysevents.ps1</i>
+    <br><br> the <b>'While'</b> block will execute multiple times as long as a specified condition remains True
+    <br> ex:
+    <br><br><b><i>$x = 1</i></b>
+    <br><b><i>while ($x -le 10) {</i></b>
+    <br><b><i>pass</i></b>
+    <br><b><i>pass</i></b>
+    <br><b><i>$x = $x + 1</i></b>
+    <br><b><i>}</i></b>
+    <br> this loop will stop running when x increments to 10 -- it will run 10 times
+    <br><br> the MVP of the Block Structure is the <b>"ForEach"</b> block
+    <br> 'ForEach' will iterate through an array of objects one object at a time
+    <br> ex:
+    <br><br><b><i>$procs = get-process i*</i></b>
+    <br><b><i>foreach ($p in $procs) {</i></b>
+    <br><b><i>$p.Name</i></b>
+    <br><b><i>$p.GetType()</i></b>
+    <br><b><i>}</i></b>
+    <br> this loop displays the name and process type of all process beginning with 'i'
+    <br><br> For more info on Block structures:
+    <uL>
+        <li><b>get-help about_If</b></li>
+        <li><b>get-help about_While</b></li>
+        <li><b>get-help about_ForEach</b></li>
+    </uL>
     <h2>Scripting with PowerShell</h2>
     <a href="https://www.youtube.com/watch?v=uqvCmtYjvUc&t=4s">PowerShell and Scripting Koenig Solutions</a>
-
-
-
-
+    <br> starting to write script in PowerShell - <b>Get-ExecutionPolicy</b> - must be in 'unrestricted' mode (can be 'restricted' or 'unrestricted') there are also 'remotesigned'; 'allsigned'; default and many others]
+    <br>'unrestricted' allows everyone to execute the script -- to set the executionpolicy you must run as administrator
+    <br><b>.ps1</b> is the PowerShell script extension
+    <br><br><b>"get-process" | out-file C:\report\bios.ps1</b> -- outputs the cmdlt to file bios.ps1 in the report folder
+    <br><b>.\bios.ps1</b> -- will run the script (if you are in the report folder)
+    <br> you can also 'touch' or create a new text file and name it '.ps1' and
+    <br><br>in PowerShell v6+ the Get-Wmiobject is replaced with the <b>Get-CimInstance</b>
+    <br><br> see ex: <i>testscript.ps1</i> and <i>test02.ps1</i>
 
 
     <h2>PowerShell Debugging</h2>
     <a href="https://www.youtube.com/watch?v=1f1Y0ICtpTA">PowerShell Debugging Video with Denise Hager</a>
+    <br>using the debug tool in PowerShell ISE
+    <br>using exampled : <i>abc.ps1</i>
+    <br><br> When debugging in the ISE - put your cursor on the 'Breakpoint' you want to set and hit <b>F9</b>
+    <br> you can also go to the Debug Tab at the top of the program and click 'Toggle Breakpoint'
+    <br><br> the console in the ISE will show "[DBG]:" at the prompt to let you know you are in Debug Mode
+    <br> In Debug Mode you can enter PowerShell Cmdlets
+    <br>ex: <b>get-childitem .</b> will display the information in the current folder
+    <br> to continue to the next step of the script hit <b>F11</b> or the Debug Tab -> Step Into
+    <br><br> as we F11 to the next step in the script we can check the $_ "instance variable"
+    <br> We can see the script iterate through the data in the current directory and saves each instance into an array
+    <br> Once we hit the Else Statement - we will display the subdirectories in the current folder -- it will iterate through and store those into an variable array, also
+    <br><br> To exit Debug Mode - go back to the <b>Debug Tab</b> -> and 'Remove All Breakpoints'
+    <pre>
+<h4>Debugging Task</h4>
 
+<b>Step Into</b> - Executes the current statement and then stops at the next statement. If the current statement is a function or script call, then the debugger steps into that function or script, otherwise it stops at the next statement.
 
+In the Command Pane, type S and press ENTER, or, on the Debug menu, click Step Into.
 
+<b>Step Over</b> - Executes the current statement and then stops at the next statement. If the current statement is a function or script call then the debugger executes the whole function or script, and it stops at the next statement after the function call.
 
+In the Command Pane, type V and press ENTER, or, on the Debug menu, click Step Over.
 
+<b>Step Out</b> - Steps out of the current function and up one level if the function is nested. If in the main body, the script is executed to the end, or to the next breakpoint. The skipped statements are executed, but not stepped through.
 
+In the Command Pane, type O and press ENTER, or, on the Debug menu, click Step Out.
 
+<b>Continue</b> - Continues execution to the end, or to the next breakpoint. The skipped functions and invocations are executed, but not stepped through.
 
-
-
+In the Command Pane, type C and press ENTER, or, on the Debug menu, click Run/Continue.
+    </pre>
 
 
 
