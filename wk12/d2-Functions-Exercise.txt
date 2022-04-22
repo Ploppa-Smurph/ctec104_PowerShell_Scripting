@@ -1,0 +1,47 @@
+Functions Exrecise
+------------------
+
+1. Consider the following function:
+
+ 1	function get-afiles {
+ 2	   [CmdletBinding()]
+ 3	   param(
+ 4	      [parameter(Mandatory=$true,
+ 5	      ValueFromPipeline=$true)]
+ 6	      $af
+ 7	   )
+ 8	   process {
+ 9	      $a = $af | Where {$_.mode -like "*a*"}
+10	      write-output $a
+11	   }
+12	}
+
+	a. What does the second line of this function definition do?
+
+	b. What are the requirements for the function's parameter?
+
+	c. What does this function do?
+
+	d. What types of commands should be used for pipelining input to this command?
+
+	e. What types of commands can receive the output of this command in the pipeline?
+
+2. Lookup the online help for PowerShell functions.
+
+	a. What is the purpose of the begin block?
+
+	b. What is the purpose of the process block?
+
+	c. What is the purpose of the end block?
+
+	d. What happens if none of the blocks are defined?
+
+3. The function example in Question 1 showed one method for accessing parameters from the pipeline.
+
+	a. Do pipelined parameters have to be defined in the param block?
+
+	b. What other approach can be used to access pipelined parameters?
+
+4. When you write a function, where should you place it in order to have access to it?
+
+5. What are the essential differences between a function and a script?

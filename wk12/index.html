@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTEC-104 Functions</title>
+</head>
+
+<body>
+    <h1>CTEC-104 Functions in PowerShell</h1>
+    from the Slides: -- Functions are created and work the same way as scripts; a difference is that 'Functions' are made to use in command pipelines
+    <br>Functions must be able to receive input from the pipeline and send output to the pipeline
+    <br>Functions can also accept additional command line parameters
+    <ul>To be used in the pipelines must support 4 capabilities:
+        <li>Named Parameters</li>
+        <li>Positional Parameters</li>
+        <li>Receive Input to pipeline</li>
+        <li>Writing Output to pipeline</li>
+    </ul>
+    <h4>Named Parameters</h4>
+    the most basic function parameter, the name of the parameter is given in the command line before declaring the value.
+    <br><br>ex: <b><i>cmd -Parm value</i></b> (-Parm) is the 'Named Parameter' in this example
+    <br> to create a Named Parameter:
+    <br><br><b><i>function FunctionName {</i></b>
+    <br><b><i>param ($Parm1, $Parm2)</i></b>
+    <br><b><i>cmds</i></b>
+    <br><b><i>}</i></b>
+    <br>you can give a Named Parameter a default value. in the above ex: we could say
+    <br><br><b><i>($Parm1 = 100, $Parm2)</i></b> and if no argument is given for $Parm1 then it will default to a value of 100
+    <br>you can make a parameter <b>Mandatory</b>
+    <br><br>ex: <b><i>param([parameter(Mandatory=$true)]$Parm1, $Parm2)</i></b> -- in this ex: $Parm1 is Mandatory and $Parm2 is optional
+    <br><br> define the Data Type for your parameter: <b><i>param ([int]$Parm1, [string]$Parm2)</i></b>
+    <h4>Positional Parameters</h4>Do not have to have the -Name in front of the value
+    <br><br> to make a Positional Parameter: <b><i>param ([parameter(Position=0)]$Parm1, $Parm2)</i></b>
+    <br> the above example sets $Parm1 as a 'Positional Parameter'; $Parm2 is still a 'Named Parameter'
+    <br><br> the counting of 'Positional Parameters' starts with an index value of 0. according to the slides we will rarely see more than 3 positional parameters. 0,1,2
+    <br> if you DO NOT define positional parameters the PowerShell defaults to the position they appear in the parameter block
+    <h3>Pipeline Support</h3>
+    First step is to define the function to act like a 'Cmdlet'
+    <br><br><b><i>function FunctionName {</i></b>
+    <br><b><i>[CmdletBinding()]</i></b>
+    <br><b><i>param(...</i></b>
+    <br><br> the <b>CmdletBinding</b> feature tells PowerShell to use this function in the same manner as a Cmdlet
+    <br>When using Pipeline input you need to define a 'Process Block in your function. the 'Process Block' works as a regular function block
+    <br><br>ex:
+    <br><b><i>function ExampleFunc {</i></b>
+    <br><b><i>param (</i></b>
+    <br><b><i>[parameter(Mandatory=$true, ValueFromPipeline=$true)]</i></b>
+    <br><b><i>$Parm1, $Parm2)</i></b>
+    <br><b><i>process {</i></b>
+    <br><b><i>cmds</i></b>
+    <br><b><i>}</i></b>
+    <br><b><i>}</i></b>
+    <br><br>To send output to the pipeline you use the <b>Write-Output</b> command.
+    <br>ex:
+    <br><b><i>write-output $var</i></b>
+    <br> the 'Write-Output' will normally be placed at the end of your function's process block
+    <h3>Modules</h3>
+    Once you create a function you need to place it in a module in order to use it in PowerShell
+    <br>Modules contain sets of related functions and can easily be imported into a PowerShell session
+    <br>there are various modules available that are provided for accessing various resources
+    <br>including: <b><i>Active Directory, SharePoint, Microsoft Exchange, Microsoft Office</i></b>
+    <br><br> to view the modules currently available: <b><i>get-module -listavailable</i></b>
+    <br> if you need a module no currently on the system you can download it from the internet
+    <br>to import a module: <b><i>import-module ModuleName</i></b> -- most modules auto-import when a function is used so you rarely need to import
+    <br>if you edit a module then you will HAVE TO REMOVE and RE-IMPORT it to access changes.
+    <br><br> personal modules are placed in:
+    <br><i>$HOME\documents\WindowsPowerShell</i> -- there will be a Modules folder and EACH Module will have a folder with the module name.
+    <br>the modules will be named with a <b>.psm1</b> extension
+
+
+
+    <h2>Additional Video: Basic Functions in PowerShell</h2><a href="https://www.youtube.com/watch?v=SEn92sz-xQQ">PowerShell Bytes Function video</a>
+    <br>Basic function and Advanced functions - this video only deals with Basic Functions
+    <br>ex:
+    <br><b><i>function hello {"Hello World"}</i></b> -- this is creates a function (with the function keyword) named 'hello' which will output "Hello World"
+    <br><b><i>hello</i></b> -- this is how you run a function in PowerShell -- does not need parens after to run the function
+    <br><br>ex 02:
+    <br><b><i>function hello {"Hello $args"}</i></b> - uses the $args variable (an Automatic Variable that returns the arguments provided to the function)
+    <br><b><i>hello Bob Smith</i></b> -- will call a function and provide the argument Bob Smith
+    <br><b><i>Hello Bob Smith</i></b> -- would be the return -- it outputs "Hello" + the argument (Bob Smith)
+    <br><br>In the above example the $args variable is an automatic variable that takes the arguments and stores them as an Array
+    <br>Since the $args variable stores it's information as an Array it is Indexable
+    <br>ex: <b><i>$args[0]</i></b> -- will return only the first data element from the Array
+    <br> in order to use the indexed $args variable we must use it as a 'Sub-Expression'
+    <br><br> ex 03:
+    <br><b><i>function hello {"Hello $($args[1])"}</i></b> -- the $() create a sub-expression which is needed to process the indexed $args in "quotes"
+    <br><b>hello Bob Smith<i></i></b> -- will return "Hello Smith"
+    <h3>Named Parameters</h3>
+    When trying to call on the Indexed elements of a long $args array then it is easier to use Named Parameters
+    <br><br>ex 04:
+    <br><b><i>function Write-MessageTo ($Message, $Person){</i></b> -- creates function named Write-MessageTo and adds 2 Parameters: $Message and $Person
+    <br><b><i>"Dear $Person, $Message"</i></b>
+    <br><b><i>Write-MessageTo -Message "How are you?" -Person "Bob"</i></b> calls the function with arguments
+    <br><b><i>Dear Bob, How are you?</i></b> -- is the output
+
+    <h2>PowerShell Functions from TechThoughts</h2>
+    <a href="https://www.youtube.com/watch?v=qrwPvbCWRtI">Functions in PowerShell TechThoughts</a>
+    <br><br>advanced functions have 'param', 'begin', 'process', and 'end' blocks.
+    <pre>
+## Anatomy of a PowerShell Function
+# function help (optional but encouraged)
+# function name
+# CmdletBinding (optional)
+# parameters (optional)
+# function logic (optional Begin / Process / End)
+# return (optional)
+</pre>
+    <br> if using VSCode - the powershell extension will have a template for help if you type: <b><i>comment-help</i></b>
+    <br> see ex: <i>techThough_ex.ps1</i>
+    <br><br> by including <b>CmdletBinding</b> - you turn a 'basic function' to an 'advanced function'
+    <br> True Cmdlets in PowerShell are compiled in C#; CmdletBinding creates a Cmdlet with PowerShell
+    <br>with CmdletBinding we get more advanced features like a true cmdlet:
+    <br><b>-verbose</b> - see ex: techThough_ex02.ps1 -- has CmdletBinding and -write-verbose so that you can add verbose to your functions
+    <br><b>-shouldProcess</b> - allows for confirmation if there are dangerous things your functions can perform
+    <br><b>-whatIf</b> and <b>Positional Bindings</b>
+    <h3>getWeather.ps1</h3>
+    just learned a lot watching the part of the video about the weather exercise. see example: <i>getWeather.ps1</i>
+    <br><br> <i>if you highlight the entirety of the code (including the help)</i><b>F8</b> it will load your code into memory in VSCode
+    <br> you can then type: <b><i>get-help get-weather -ShowWindow</i></b> -- it will show the help in a separate window
+    <br><br> example about using 'Begin', 'Process', and 'End' blocks: <i>getPipeline.ps1</i>
+    <br><br> example: <i>functionScope.ps1</i> -- talked about <b>Write-Debug</b>
+    <br><br> Final Example; ex: <i>getReddit.ps1</i>
+    <br><b><i>get-help get-reddit -showwindow</i></b> -- show the help for the get-reddit function
+    <br><b><i>get-help show-pics -showwindow</i></b>
+</body>
+
+</html>

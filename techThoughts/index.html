@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerShell Beginners Studies by TechThoughts on YouTube</title>
+</head>
+
+<body>
+    <h1>PowerShell Beginners Studies by TechThoughts on YouTube</h1>
+    <h2>ep01 Learn and Use PowerShell with 3 Commands</h2>
+    <a href="https://www.youtube.com/watch?v=FiTZgpRpWv0&list=PL2j0_s2VJe2hzQuQyn6yfMS2olhhs4UnQ&index=2">ep01- Learn 3 Commands link</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h2>ep11: Functions</h2>
+    <a href="https://www.youtube.com/watch?v=qrwPvbCWRtI">ep11- Functions link</a>
+    <br><br>advanced functions have 'param', 'begin', 'process', and 'end' blocks.
+    <pre>
+## Anatomy of a PowerShell Function
+# function help (optional but encouraged)
+# function name
+# CmdletBinding (optional)
+# parameters (optional)
+# function logic (optional Begin / Process / End)
+# return (optional)
+</pre>
+    <br> if using VSCode - the powershell extension will have a template for help if you type: <b><i>comment-help</i></b>
+    <br> see ex: <i>techThough_ex.ps1</i>
+    <br><br> by including <b>CmdletBinding</b> - you turn a 'basic function' to an 'advanced function'
+    <br> True Cmdlets in PowerShell are compiled in C#; CmdletBinding creates a Cmdlet with PowerShell
+    <br>with CmdletBinding we get more advanced features like a true cmdlet:
+    <br><b>-verbose</b> - see ex: techThough_ex02.ps1 -- has CmdletBinding and -write-verbose so that you can add verbose to your functions
+    <br><b>-shouldProcess</b> - allows for confirmation if there are dangerous things your functions can perform
+    <br><b>-whatIf</b> and <b>Positional Bindings</b>
+    <h3>getWeather.ps1</h3>
+    just learned a lot watching the part of the video about the weather exercise. see example: <i>getWeather.ps1</i>
+    <br><br> <i>if you highlight the entirety of the code (including the help)</i><b>F8</b> it will load your code into memory in VSCode
+    <br> you can then type: <b><i>get-help get-weather -ShowWindow</i></b> -- it will show the help in a separate window
+    <br><br> example about using 'Begin', 'Process', and 'End' blocks: <i>getPipeline.ps1</i>
+    <br><br> example: <i>functionScope.ps1</i> -- talked about <b>Write-Debug</b>
+    <br><br> Final Example; ex: <i>getReddit.ps1</i>
+    <br><b><i>get-help get-reddit -showwindow</i></b> -- show the help for the get-reddit function
+    <br><b><i>get-help show-pics -showwindow</i></b>
+
+
+</body>
+
+</html>
