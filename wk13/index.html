@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTEC-104 Unix/Linux Shell Scripting</title>
+</head>
+
+<body>
+    <h1>CTEC-104 Unix/Linux Shell Scripting</h1>
+    Major Unix Shells, Regular Expressions, Scripting Commands
+    <br>history of Unix Shells: 1977= Bourne Shell; 1978= C Shell; 1983= Korn Shell; and 1989 = BASH
+    <h3>Key Characteristics of Unix / Linux Shell</h3>
+    <ul>
+        <li>Designed to work with the file system</li>
+        <li>NO scripting support for: processes, system logs, or system configuration -- all of those are defined in text based files</li>
+        <li>Unix Shells do not have any object data types -- All commands are text-based</li>
+        <li>NO built in system security for shell scripts or 'profiles'</li>
+    </ul>
+    <h4>Profile</h4>
+    the 'profile' was created for Unix shells -- it is a text file stored in the user's home directory
+    <br>Profile file stores initial configuration for the user's shell environment & user's personal aliases
+    <br> commands in the Profile run every time a user opens a new Shell
+    <h2>Major Unix Shells</h2>
+    <b>Bourne Shell</b> named after creator Stephen Bourne, was the 1st modern Shell (1977)
+    <br>Bourne Shells were the first to offer:
+    <ul>
+        <li>Shell scripts could use pipelined execution</li>
+        <li>Control Flow with 'if' conditions and looping</li>
+        <li>Variables for user data</li>
+        <li>Environment variables that define operating characteristics for the shell</li>
+    </ul>
+    <b>C Shell</b> was next in 1978
+    <ul>
+        <li>syntax closely resembles C programming language</li>
+        <li>added: Command History</li>
+        <li>added: Aliases</li>
+        <li>added: Command Completion</li>
+        <li>added: Job Control</li>
+    </ul>
+    <b>Korn Shell</b> developed in 1983
+    <br> Korn was backwards compatible with Bourne Shell and incorporated the new shell features of C shell
+    <ul>
+        <li>job control</li>
+        <li>aliases</li>
+        <li>command history</li>
+        <li>added: Associative Arrays for data storage</li>
+    </ul>
+    <b>BASH (Bourne Again SHell)</b> was introduced in 1989
+    <br>-- BASH contains all features developed after the 1st Bourne Release and is backwards compatible with Bourne Shell
+    <br>BASH is the most popular of available shells
+    <h2>Regular Expressions</h2>
+    an essential part of scripting in linux is the text-based restriction for commands
+    <br> Developers have created advanced ways to manipulate text data
+    <ul>Some Commands are
+        <li>grep</li>
+        <li>sed</li>
+        <li>awk</li>
+    </ul>
+    The basis of all text manipulation commands is regular expressions
+    <br><b>Regular Expression</b> is a sequence of characters used to define a search pattern
+    <br> these search patterns are used to identify information like:
+    <ul>
+        <li>File and Directory names</li>
+        <li>Lines of data inside a text file</li>
+        <li>Output of a command that is pipelined to another command</li>
+    </ul>
+    Regular expressions work like wildcards but with more options
+    <h3>Common Regular Expression Metacharacters</h3>
+    <b>[]</b> brackets are used to match a single character for a set:
+    <br>ex: <i>file[1-9]</i> = file1, file2, file3, file4, file5, file6, file7, file8, file9
+    <br>ex02: <i>file[abc]</i> = filea, fileb, filec
+    <br><br><b>.</b> period (dot) is used to match a single character
+    <br>ex: <i>wo.d</i> == wood, word, wo2d, woTd, etc...
+    <br><br>
+    <b>*</b> asterisk is used to match the previous value zero or more times
+    <br>ex: <i>ab*c</i> translates to ac, abc, abbc, abbbc, abbbbc, etc...
+    <br> there are many more Regular Expressions and they can look indecipherable at times
+    <h2>Scripting Commands</h2>
+    <b>grep</b> = Globally find a Regular Expression and Print (GREP)
+    <br> this command searches a text file / or pipelined input and prints all the lines containing the text string
+    <br><b><i>grep [options] pattern [file]</i></b>
+    <br> grep output can be: Displayed to Screen, Saved in an Output File, or Piped to another command
+    <br><br>ex: <i>grep tcp services </i> -- this will search the 'services' file and look for lines containing 'tcp'
+    <br>ex02: <i>ls | grep 20211215</i> == receives a directory listing as input and displays all of the files with the given date as part of their name
+    <br><br><b>sed == 'stream editor'</b> this command will read lines of text from a text file / input stream and perform operations on the text
+    <br><b>sed</b> has around 25 commands to perform various text manipulations
+    <br> output of <b>sed</b> can be: displayed to screen, saved as output, piped to another command
+    <br><b><i>sed</i></b> you create script files to store a set of command operation to perform on the input
+    <br><br>ex: <i>sed 's/Nick/John/g' report.txt > report_new.txt</i> -- performs a global search and replaces the name in the report file
+    <br>ex02: <i>sed -n 12,18p file.txt</i> -- displays lines 12 -18 of file.txt
+    <br><br><b>awk</b> - is an abbreviation of the creators last names. 'awk' has more advanced manipulation features than sed
+    <br> awk supports variables, arrays, functions, and programming control structures
+    <br>awk is considered it's own scripting language and is much more complex. It is an example of how programmers managed data before modern shells like PowerShell.
+
+
+
+
+
+
+</body>
+
+</html>

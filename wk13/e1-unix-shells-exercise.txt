@@ -1,0 +1,53 @@
+Jeffrey Walley
+
+Unix Shells Exercise
+--------------------
+
+1. The three Unix shells covered in the slides are the C Shell, Korn Shell, and BASH.
+
+	a. What was the main goal in creating the C Shell?
+		To have syntax similar to the C programming language, also added: Command History, Aliases, Command Completion, and Job Control
+
+	b. How is the major difference between the C Shell and the Korn Shell/BASH?
+		Korn took all the improvements that C Shell made and made them backwards compatible with Bourne Shell
+
+	c. How is BASH different than the Korn Shell?
+		Bash added ALL new features created since Bourne Shell and made them backwards compatible with Bourne. BASH = Bourne Again SHell
+
+2. What is the purpose of regular expressions?
+	It is similar to a wildcard but with more options
+
+3. Open the bash-example.txt file.
+
+	a. In the get_files function, what is stored in the files variable?
+		A list of file names with the .ch extension
+
+	b. In the count_lines functions, "wc -l" returns the number of lines in the file specified by $f."
+	   How is this value passed back to the script below?
+		with sed saved to a file
+		
+	c. What does the line "for f in $files" perform?
+		It is the variable that holds the iterattion through the list of files
+
+	d. The variables l, n, and s are all initialized to 0. What do these variables represent in the for loop?
+		‘l’ = counts the lines; ‘n’ = the number of files; ‘s’ = the total number of lines
+
+	e. What are the steps performed in the for loop?
+		Count lines, increase counter, increase sum of total
+
+4. Open the cshell-example.txt file.
+
+	a. What arguments are required for this script to run?
+		Names for ‘dir1’ and ‘dir2’
+
+	b. What does this script do if directory 2 already exists?
+		It prints that the directory name ‘already exists’ and exits 
+
+	c. What does the command "foreach file ($dir1/*)" perform?
+		Begins the loop through of files in $dir1
+
+	d. What happens to directories in the foreach loop?
+		They are not copied – output is printed to the screen stating ‘Skipping var (is a directory)’
+
+	e. What value is returned if the script exits with an error?
+		‘exit 1’ = error
