@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTEC-104 Perl and PHP Scripting</title>
+</head>
+
+<body>
+    <h1>CTEC-104 Perl and PHP Scripting</h1>
+    <h2>PERL - Practical Extraction and Report Language</h2>
+    PERL is a scripting language designed to manipulate Text. PERL borrows syntax and context from many langauges
+    <br>PERL has an extensive ability to interface with multiple resources:
+    <br>Database integration supports Oracle, Sybase, Postgres, MySQL and others
+    <br>works with HTML, XML, and other mark-up languages. Often imbeded in web pages to speed up text processing
+    <h3>Variables</h3> in Perl work as they do in other languages. PERL supports 3 types of variables:
+    <ul>
+        <li><b>Scalar</b> - store single value that can be number, string, or reference</li>
+        <li><b>Array</b> - store multiple values</li>
+        <li><b>Hashes</b> - store key / value pairs</li>
+    </ul>
+    Perl supports all standard math operators +-*/% and ** for exponents
+    <br>String variables are the same as in other languages.
+    <br>Reference variables hold the location of variables (like Pointers in C)
+    <br>Arrays hold multiple values (numeric, string, or reference)
+    <br><br><b><i>@vals = (25, 30, 35)</i></b> is an ex: of an array in Perl. Arrays in Perl start with '<b>@</b>'
+    <br>ex:<b><i>$v = $vals[1]</i></b> will set the value '30' to the variable '$v'
+    <br><br><b>Hash</b> - a hash is a set of key/value pairs that can be stored in any order
+    <br><b>%</b> precedes a hash group. ex: <b><i>$data{'a' = 45};</i></b> <b><i>$data{'b' = 50}</i></b> adds data 1 pair at a time;
+    <br><b>%data = ('a', 45, 'b', 50, 'c', 55)</b> -- enters grouped data into a hash array
+    <br><br> you can extract all the keys from a hash: <b><i>@k = keys %data</i></b>
+    <br>extract the value from a hash: <b><i>@a = values %data</i></b>
+    <h3>Control Structures</h3> Perl supports standard control structures (if / if-else; while; for; and foreach)
+    <br>Perl uses the same syntax as C
+    <ul>
+        <li><b>if</b> if (condition) { }</li>
+        <li><b>if-else</b> if (condition) { } else { }</li>
+        <li><b>while</b> while (condition) { }</li>
+        <li><b>for</b> for ($i = 1; $i
+            <=1 0; $i=$ i +1) { }</li>
+                <li><b>foreach</b> <b><i>ex: @list = (14, 17, 22, 26, 30, 33, 39)</i></b></li>
+                <b>foreach $a (@list) { }</b> - will iterate over the list
+    </ul>
+    <h3>Subroutines</h3> Perl uses syntax similar to other scripting languages
+    <br><b><i>sub subroutine_name{ }</i></b>
+    <br><br> main difference between Perl and other scripting languages is that Perl does not have a parameter list after the subroutine name
+    <br> Perl uses <b>@_</b> to reference the parameter list as an array
+    <br> and uses<b>$_</b> to retrieve parameter values
+    <br><pre>
+        sub example1 {
+            $n = scalar(@_);
+            for ($i = 0; $i < $n; $i = $i + 1) {
+               print “$_[$i]”;
+         
+               sub example2 {
+            foreach $item (@_) {
+               print “$item”;
+</pre> in the above examples both example 1 and example 2 do the same thing.
+    <h2>PHP</h2>
+    PHP allows webpages to interact with databases. PHP supports MySQL, PostgreSQL, Oracle, Sybase, MicrosoftSQL and more
+    <br>PHP is similar to C. PHP is imbedded in HTML like JavaScript and VBScript.
+    <br> ALL PHP code is processed on the web server and output to the client is pure HTML
+    <ul>3 components are required to use PHP:
+        <li>a web server like Apache or Microsoft IIS</li>
+        <li>a database</li>
+        <li>a PHP parser to generate HTML output</li>
+    </ul>
+    <pre>
+    .<.html>
+   .<.body>
+      .<.?php
+         print(“Hello”);
+      ?.>.
+      
+   .<./body>
+.<./html>
+</pre> above is an example of PHP inside HTML -- the <b><?php ?></b> tags are used to open and close PHP -- i had to add the .
+    <. in there to print it, otherwise it thought it was HTML code for my notes </body>
+        <br><br> variables in PHP begin with <b>$</b>
+        <br> variables can be integers, doubles, strings, Booleans, and references
+        <br> in PHP variables are not assigned a data type -- PHP resolves the data type based on how the variable is used
+        <br>PHP supports all standard math operators, and also includes '++'' and '--'' support to increment/decrement
+        <ul>PHP supports 3 variants of Array
+            <li><b>Standard array</b> = <i>$arr = array (1, 2, 3, 4, 5)</i></li>
+            <li><b>Associative array</b> has key/value pairs = <i>$arr = array('a' => 10, 'b' => 20)</i></li>
+            <li><b>Two-dimensional array</b> an array where each element is a subarray</li>
+        </ul>
+        <h3>Control Structures in PHP</h3>
+        the following is an ex: of 'if-else' loop
+        <pre>
+            <.?php
+         $d = date("D");
+         
+         if ($d == "Fri")
+            echo "Have a nice weekend!"; 
+         
+         else
+            echo "Have a nice day!"; 
+      ?.>
+        </pre> the following is a 'While' loop:
+        <pre>
+            <.?php
+            $i = 0;
+            $num = 50;
+            
+            while( $i < 10) {
+               $num--;
+               $i++;
+            }
+            echo ("Loop stopped at num = $num" );
+         ?.>
+</pre> the next example is a 'For' loop:
+        <pre>
+        <.?php
+        $a = 0;
+        
+        for( $i = 0; $i<5; $i++ ) {
+           $a += 10;
+        }
+        echo ("At the end of the loop a = $a" );
+     ?.>
+    </pre> Finally a 'ForEach' loop:
+        <pre>
+    <.?php
+    $array = array(1, 2, 3, 4, 5);
+    
+    foreach( $array as $value ) {
+       echo "Value is $value <br />";
+    }
+ .?>
+</pre> Function parameters are specified in parentheses after the function name. Functions can return a value using a return statement
+        <pre>
+    <.?php
+    function addFunction($num1, $num2) {
+       $sum = $num1 + $num2;
+       return $sum;
+    }
+    $return_value = addFunction(10, 20);
+    
+ ?.></pre> the above is an example of a function in PHP
+        <h3>Database Access</h3>
+        main reason to use PHP is to access database from a webpage
+        <ul>PHP provides full functionality to:
+            <li>Connect to a database</li>
+            <li>Create new tables in database</li>
+            <li>Retrieve data from a database</li>
+            <li>Insert data into a database</li>
+            <li>Update data in a database</li>
+            <li>Delete data from a database</li>
+        </ul>
+        <pre>Retrieving Data ex: 
+    <.?php
+   $dbhost = 'localhost:3036';
+   $dbuser = 'root';
+   $dbpass = 'rootpassword';
+   $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+  
+   $sql = 'SELECT emp_id, emp_salary FROM employee';
+   mysql_select_db('test_db');
+   $retval = mysql_query( $sql, $conn );
+   
+   mysql_close($conn);
+?.>
+</pre>
+        <pre>Inserting into database ex:
+    <.?php
+   $dbhost = 'localhost:3036';
+   $dbuser = 'root';
+   $dbpass = 'rootpassword';
+   $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+   
+   $sql = 'INSERT INTO employee '.
+      '(emp_name,emp_address, emp_salary, join_date) '.
+      'VALUES ( "guest", "XYZ", 2000, NOW() )';
+      
+   mysql_select_db('test_db');
+   mysql_query( $sql, $conn );
+   
+   mysql_close($conn);
+?.>
+</pre>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+Other Scripting Exercise
+------------------------
+
+1. What is the main purpose of the Perl language?
+
+2. Open the perl-dns-query.txt file.
+
+	a. Look up "DNS Resolver" online. What does a DNS Resolver do?
+
+	b. What is the IP address of the Name Server referenced by this script?
+
+	c. What web site address is being resolved in this script?
+
+	d. What is a DNS "A" record?
+
+	e. Why does this script use a foreach loop when displaying the query values?
+
+3. What is the main purpose of PHP?
+
+4. Open the customer.php file.
+
+	a. What is the title of the page displayed by this file?
+
+	b. What is the name of the made up company?
+
+	c. What is the database accessed by this file?
+
+	d. Where is the query selected from?
+
+	e. What are the fields in the query?
